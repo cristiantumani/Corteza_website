@@ -35,9 +35,20 @@ const BetaTest = () => {
           <p className="text-muted-foreground">
             Click the button below to install in your Slack workspace:
           </p>
-          <Button variant="hero" size="lg" className="group">
-            Add to Slack
-            <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="group"
+            asChild
+          >
+            <a 
+              href="https://slack.com/oauth/v2/authorize?client_id=30663056564.10060673235955&scope=channels:history,channels:read,chat:write,chat:write.public,commands,files:read,groups:history,im:history,mpim:history,users:read,users:read.email&user_scope="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add to Slack
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </Button>
           <ul className="text-sm text-muted-foreground space-y-1 mt-4">
             <li className="flex items-center gap-2">
