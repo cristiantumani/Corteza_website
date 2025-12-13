@@ -7,6 +7,7 @@ import DecisionHub from "@/components/landing/DecisionHub";
 import AITrust from "@/components/landing/AITrust";
 import Integrations from "@/components/landing/Integrations";
 import Vision from "@/components/landing/Vision";
+import BetaTest from "@/components/landing/BetaTest";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
@@ -23,6 +24,7 @@ const Index = () => {
         <AITrust />
         <Integrations />
         <Vision />
+        <BetaTest />
         <FinalCTA />
       </main>
       <Footer />
