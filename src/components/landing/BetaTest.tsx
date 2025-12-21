@@ -132,6 +132,7 @@ const BetaTest = () => {
     "Link decisions to Jira epics",
     "View/filter/search decisions in dashboard",
     "Edit and delete decisions from dashboard",
+    "Ask the AI bot to find relevant past decisions using natural language",
   ];
 
   return (
