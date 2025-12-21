@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-sm">D</span>
+              <span className="text-accent-foreground font-bold text-sm">C</span>
             </div>
-            <span className="font-semibold text-lg text-foreground">Decisionlog</span>
+            <span className="font-semibold text-lg text-foreground">corteza.app</span>
           </div>
 
           <div className="flex items-center gap-8">
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2024 Decisionlog. All rights reserved.
+            © 2024 corteza.app. All rights reserved.
           </p>
         </div>
       </div>

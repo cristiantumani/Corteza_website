@@ -10,9 +10,9 @@ const Header = () => {
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-            <span className="text-accent-foreground font-bold text-sm">D</span>
+            <span className="text-accent-foreground font-bold text-sm">C</span>
           </div>
-          <span className="font-semibold text-lg text-foreground">Decisionlog</span>
+          <span className="font-semibold text-lg text-foreground">corteza.app</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">

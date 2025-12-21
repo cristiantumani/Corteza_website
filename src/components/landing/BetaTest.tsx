@@ -146,7 +146,7 @@ const BetaTest = () => {
             Get Started as a Beta Tester
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Thanks for joining the beta! Follow these steps to install and start testing Decision Logger Bot.
+            Thanks for joining the beta! Follow these steps to install and start testing corteza.app.
           </p>
         </div>
 

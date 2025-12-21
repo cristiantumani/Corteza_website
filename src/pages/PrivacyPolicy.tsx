@@ -325,7 +325,7 @@ const PrivacyPolicy = () => {
             </ul>
 
             <h3 className="text-xl font-medium text-foreground mb-3">Business Purpose</h3>
-            <p className="text-muted-foreground mb-4">We use this information solely to provide the Decision Logger service. We do not sell your personal information.</p>
+            <p className="text-muted-foreground mb-4">We use this information solely to provide the corteza.app service. We do not sell your personal information.</p>
 
             <h3 className="text-xl font-medium text-foreground mb-3">Your CCPA Rights</h3>
             <ul className="list-disc pl-6 text-muted-foreground space-y-1">
