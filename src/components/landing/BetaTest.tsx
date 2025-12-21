@@ -109,14 +109,14 @@ const BetaTest = () => {
       content: (
         <div className="space-y-3">
           <p className="text-muted-foreground">
-            Get your workspace ID by typing:
+            Access your dashboard by typing:
           </p>
           <div 
             className="bg-muted/50 border border-border rounded-lg p-3 font-mono text-sm flex items-center justify-between cursor-pointer hover:bg-muted/70 transition-colors"
-            onClick={() => copyToClipboard("/decisions workspace", "Workspace command")}
+            onClick={() => copyToClipboard("/login", "Login command")}
           >
-            <code className="text-foreground">/decisions workspace</code>
-            <Copy className={`w-4 h-4 ${copiedCommand === "Workspace command" ? "text-accent" : "text-muted-foreground"}`} />
+            <code className="text-foreground">/login</code>
+            <Copy className={`w-4 h-4 ${copiedCommand === "Login command" ? "text-accent" : "text-muted-foreground"}`} />
           </div>
           <p className="text-sm text-muted-foreground">
             Click the dashboard link in the response to see all your decisions!
