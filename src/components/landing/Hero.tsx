@@ -1,48 +1,8 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight, Sparkles, Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  const { toast } = useToast();
-
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    if (!email.trim()) {
-      setError("Email is required");
-      return;
-    }
-
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email");
-      return;
-    }
-
-    setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsLoading(false);
-    setEmail("");
-    
-    toast({
-      title: "You're on the list!",
-      description: "We'll be in touch soon with early access details.",
-    });
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden pt-16">
       {/* Background decorative elements */}
@@ -76,44 +36,14 @@ const Hero = () => {
             Never lose context on why something was decided.
           </p>
 
-          {/* Email Capture Form */}
-          <form onSubmit={handleSubmit} className="animate-fade-in-up delay-200">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
-              <div className="w-full sm:flex-1">
-                <Input
-                  type="email"
-                  placeholder="Enter your work email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (error) setError("");
-                  }}
-                  className="h-12 bg-card border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-accent/20"
-                />
-              </div>
-              <Button 
-                type="submit" 
-                variant="hero" 
-                size="xl" 
-                className="group w-full sm:w-auto"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : (
-                  <>
-                    Join early access
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
+            <Link to="/early-access">
+              <Button variant="hero" size="xl" className="group">
+                Join early access
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
-            {error && (
-              <p className="text-destructive text-sm mt-2 animate-fade-in">{error}</p>
-            )}
-          </form>
-          
-          <div className="mt-4 animate-fade-in-up delay-250">
+            </Link>
             <Button variant="heroOutline" size="lg">
               See how it works
             </Button>
