@@ -31,9 +31,11 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">
-            Sign in
-          </Button>
+          <a href="https://app.corteza.app" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="sm">
+              Sign in
+            </Button>
+          </a>
           <Button variant="hero" size="sm">
             Join early access
           </Button>
@@ -63,9 +65,11 @@ const Header = () => {
               Integrations
             </a>
             <div className="flex flex-col gap-2 pt-4 border-t border-border">
-              <Button variant="ghost" size="sm">
-                Sign in
-              </Button>
+              <a href="https://app.corteza.app" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="sm">
+                  Sign in
+                </Button>
+              </a>
               <Button variant="hero" size="sm">
                 Join early access
               </Button>
