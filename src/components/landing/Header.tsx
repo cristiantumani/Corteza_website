@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,9 +37,11 @@ const Header = () => {
               Sign in
             </Button>
           </a>
-          <Button variant="hero" size="sm">
-            Join early access
-          </Button>
+          <Link to="/early-access">
+            <Button variant="hero" size="sm">
+              Join early access
+            </Button>
+          </Link>
         </div>
 
         <button 
@@ -70,9 +73,11 @@ const Header = () => {
                   Sign in
                 </Button>
               </a>
-              <Button variant="hero" size="sm">
-                Join early access
-              </Button>
+              <Link to="/early-access">
+                <Button variant="hero" size="sm">
+                  Join early access
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
