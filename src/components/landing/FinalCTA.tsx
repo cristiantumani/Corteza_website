@@ -8,14 +8,14 @@ const FinalCTA = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-headline font-bold text-foreground mb-6">
-            Stop losing decisions in the noise
+            Stop losing team knowledge in the noise
           </h2>
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Every day, your team makes decisions that shape your product, your culture, 
-            and your future. Most of them are lost before they're ever documented.
+            Every day, your team shares decisions, explanations, and context that shape 
+            your product and culture. Most of it is lost before it's ever documented.
           </p>
           <p className="text-lg text-foreground mb-10 font-medium">
-            It's time to give decisions the respect they deserve.
+            It's time to give your team's knowledge the respect it deserves.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
