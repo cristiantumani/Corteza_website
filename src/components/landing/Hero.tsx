@@ -44,9 +44,6 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Button variant="heroOutline" size="lg">
-              See how it works
-            </Button>
           </div>
 
           {/* Social proof hint */}
