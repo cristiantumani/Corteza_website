@@ -1,10 +1,10 @@
 import { CheckCircle2 } from "lucide-react";
 
 const features = [
-  "Capture decisions automatically from Slack and meetings",
-  "AI detects decisions — humans approve or reject",
-  "Every decision linked to context and Jira tickets",
-  "Searchable, traceable, auditable decision history",
+  "Capture decisions, explanations, and context from Slack and meetings",
+  "AI extracts team knowledge — humans approve or reject",
+  "Every piece of knowledge linked to Jira tickets and sources",
+  "Searchable, traceable, auditable team memory",
 ];
 
 const Solution = () => {
@@ -18,12 +18,12 @@ const Solution = () => {
                 The solution
               </div>
               <h2 className="text-headline font-bold text-foreground mb-6">
-                A system of record for your decisions
+                A system of record for your team memory
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Not another meeting notes tool. Not a task manager. A dedicated layer 
-                for decision intelligence and governance — so every choice your team makes 
-                is captured, contextualized, and connected to execution.
+                for capturing team knowledge — decisions, explanations, and context — so 
+                nothing important is lost and everything connects to execution.
               </p>
 
               <div className="space-y-4">
@@ -44,7 +44,7 @@ const Solution = () => {
                   <div className="p-4 rounded-xl bg-secondary/50 border border-border">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-medium px-2 py-1 rounded-full bg-accent/10 text-accent">
-                        Approved
+                        ✅ Decision
                       </span>
                       <span className="text-xs text-muted-foreground">2 hours ago</span>
                     </div>
@@ -57,22 +57,37 @@ const Solution = () => {
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span className="px-2 py-1 rounded bg-secondary">JIRA-2341</span>
                       <span>•</span>
-                      <span>Sprint Planning Meeting</span>
+                      <span>Sprint Planning</span>
                     </div>
                   </div>
 
                   <div className="p-4 rounded-xl bg-secondary/50 border border-border">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-medium px-2 py-1 rounded-full bg-accent/20 text-accent">
-                        Pending review
+                      <span className="text-xs font-medium px-2 py-1 rounded-full bg-blue-500/10 text-blue-500">
+                        💡 Explanation
+                      </span>
+                      <span className="text-xs text-muted-foreground">1 hour ago</span>
+                    </div>
+                    <h4 className="font-medium text-foreground mb-2">
+                      How auth token refresh works
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Technical walkthrough from eng sync meeting
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-secondary/50 border border-border">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-medium px-2 py-1 rounded-full bg-orange-500/10 text-orange-500">
+                        📌 Context
                       </span>
                       <span className="text-xs text-muted-foreground">Just now</span>
                     </div>
                     <h4 className="font-medium text-foreground mb-2">
-                      Use feature flags for gradual rollout
+                      Q4 budget constraints approved
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      AI detected from Slack #platform discussion
+                      AI extracted from Slack #leadership
                     </p>
                   </div>
                 </div>

@@ -37,10 +37,10 @@ const Problem = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-headline font-bold text-foreground mb-6">
-            Decisions are the most valuable output of work
+            Team knowledge is your most valuable asset
           </h2>
           <p className="text-lg text-muted-foreground text-balance">
-            Yet they're scattered across Slack threads, lost in meeting recordings, 
+            Yet decisions, explanations, and context are scattered across Slack threads, lost in meeting recordings, 
             and forgotten before they're ever documented. The cost? Confusion, rework, and blame.
           </p>
         </div>

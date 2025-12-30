@@ -40,7 +40,7 @@ const Vision = () => {
               Where we're heading
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Today, we capture and organize decisions. Tomorrow, we'll help you 
+              Today, we capture and organize team knowledge. Tomorrow, we'll help you 
               understand patterns, prevent conflicts, and make better decisions faster.
             </p>
           </div>

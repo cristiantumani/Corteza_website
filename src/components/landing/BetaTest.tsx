@@ -68,7 +68,7 @@ const BetaTest = () => {
     },
     {
       step: 2,
-      title: "Try Creating a Decision",
+      title: "Try Saving Team Memory",
       icon: MessageSquare,
       content: (
         <div className="space-y-3">
@@ -77,9 +77,9 @@ const BetaTest = () => {
           </p>
           <div 
             className="bg-muted/50 border border-border rounded-lg p-3 font-mono text-sm flex items-center justify-between cursor-pointer hover:bg-muted/70 transition-colors"
-            onClick={() => copyToClipboard("/decision We decided to use React for the frontend", "Command")}
+            onClick={() => copyToClipboard("/memory We decided to use React for the frontend", "Command")}
           >
-            <code className="text-foreground">/decision We decided to use React for the frontend</code>
+            <code className="text-foreground">/memory We decided to use React for the frontend</code>
             <Copy className={`w-4 h-4 ${copiedCommand === "Command" ? "text-accent" : "text-muted-foreground"}`} />
           </div>
           <p className="text-sm text-muted-foreground mt-3">
@@ -88,7 +88,7 @@ const BetaTest = () => {
           <ul className="text-sm text-muted-foreground space-y-1">
             <li className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-accent" />
-              Choose decision type (Product, UX, Technical)
+              Choose memory type (Decision, Explanation, Context)
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-accent" />
@@ -119,7 +119,7 @@ const BetaTest = () => {
             <Copy className={`w-4 h-4 ${copiedCommand === "Login command" ? "text-accent" : "text-muted-foreground"}`} />
           </div>
           <p className="text-sm text-muted-foreground">
-            Click the dashboard link in the response to see all your decisions!
+            Click the dashboard link in the response to see all your team memory!
           </p>
         </div>
       ),
@@ -127,12 +127,12 @@ const BetaTest = () => {
   ];
 
   const featuresToTest = [
-    "Create decisions via /decision command",
+    "Create team memory via /memory command (decisions, explanations, context)",
     "Upload meeting transcripts for AI extraction (text files)",
-    "Link decisions to Jira epics",
-    "View/filter/search decisions in dashboard",
-    "Edit and delete decisions from dashboard",
-    "Ask the AI bot to find relevant past decisions using natural language",
+    "Link knowledge items to Jira epics",
+    "View/filter/search all team memory in dashboard",
+    "Edit and delete items from dashboard",
+    "Ask the AI bot to find relevant knowledge using natural language",
   ];
 
   return (

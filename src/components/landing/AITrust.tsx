@@ -4,17 +4,17 @@ const trustPoints = [
   {
     icon: Eye,
     title: "Full transparency",
-    description: "See exactly what the AI detected and why. Every suggestion includes the source context.",
+    description: "See exactly what the AI extracted and why. Every suggestion includes the source context.",
   },
   {
     icon: UserCheck,
     title: "Human approval required",
-    description: "Nothing enters the decision record without explicit human review and approval.",
+    description: "Nothing enters your team memory without explicit human review and approval.",
   },
   {
     icon: Lock,
     title: "No hallucinations",
-    description: "AI only surfaces decisions from your actual conversations. No fabricated content.",
+    description: "AI only surfaces knowledge from your actual conversations. No fabricated content.",
   },
   {
     icon: Shield,
@@ -33,11 +33,11 @@ const AITrust = () => {
               AI you can trust
             </div>
             <h2 className="text-headline font-bold text-foreground mb-6">
-              AI detection, human control
+              AI extraction, human control
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We believe AI should assist, not decide. Our system suggests — you approve. 
-              Every decision in your record is verified by a human.
+              We believe AI should assist, not decide. Our system extracts — you approve. 
+              Every piece of knowledge in your team memory is verified by a human.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ const AITrust = () => {
                   <span className="text-accent text-sm font-bold">AI</span>
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-foreground">Decision detected</div>
+                  <div className="text-sm font-medium text-foreground">Knowledge extracted</div>
                   <div className="text-xs text-muted-foreground">From Slack #product-decisions</div>
                 </div>
                 <span className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent">Pending review</span>
@@ -87,9 +87,11 @@ const AITrust = () => {
                 <button className="px-4 py-2 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors">
                   Reject
                 </button>
-                <button className="px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 transition-colors">
-                  Approve as decision
-                </button>
+                <select className="px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 transition-colors border-0 cursor-pointer">
+                  <option>✅ Approve as Decision</option>
+                  <option>💡 Approve as Explanation</option>
+                  <option>📌 Approve as Context</option>
+                </select>
               </div>
             </div>
           </div>

@@ -23,7 +23,7 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-display font-bold text-foreground mb-6 animate-fade-in-up text-balance leading-[1.1]">
-            Your decisions deserve
+            Your team's knowledge deserves
             <br />
             <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
               a system of record
@@ -32,8 +32,8 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100 text-balance">
-            Capture decisions from Slack and meetings. Let AI detect them. Keep humans in control. 
-            Never lose context on why something was decided.
+            Capture decisions, explanations, and context from Slack and meetings. AI extracts them, humans approve. 
+            Never lose the knowledge that makes your team effective.
           </p>
 
           {/* CTA Buttons */}
@@ -72,9 +72,9 @@ const Hero = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
-                  { title: "Decision detected", desc: "API rate limiting strategy", source: "Slack #engineering" },
-                  { title: "Awaiting approval", desc: "Q4 roadmap priorities", source: "Product sync meeting" },
-                  { title: "Linked to JIRA-1234", desc: "Authentication refactor", source: "Sprint planning" },
+                  { title: "✅ Decision", desc: "API rate limiting strategy", source: "Slack #engineering" },
+                  { title: "💡 Explanation", desc: "How auth token refresh works", source: "Product sync meeting" },
+                  { title: "📌 Context", desc: "Q4 budget constraints", source: "Sprint planning" },
                 ].map((item, i) => (
                   <div 
                     key={i}

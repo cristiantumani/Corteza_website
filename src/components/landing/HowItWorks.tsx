@@ -5,19 +5,19 @@ const steps = [
     icon: MessageSquare,
     number: "01",
     title: "Capture from where work happens",
-    description: "Connect Slack channels and meeting transcripts. Decisions are detected from natural conversations — no extra effort required.",
+    description: "Connect Slack channels and meeting transcripts. Decisions, explanations, and context are extracted from natural conversations — no extra effort required.",
   },
   {
     icon: Brain,
     number: "02",
-    title: "AI suggests, humans approve",
-    description: "Our AI identifies potential decisions and presents them for review. You approve, reject, or edit. Nothing goes into the record without your consent.",
+    title: "AI extracts, humans approve",
+    description: "Our AI identifies valuable team knowledge and presents it for review. You approve, reject, or edit. Nothing goes into your team memory without your consent.",
   },
   {
     icon: Link2,
     number: "03",
-    title: "Decisions connect to execution",
-    description: "Approved decisions automatically link to Jira tickets. See what was decided, when, why, and what action followed.",
+    title: "Knowledge connects to execution",
+    description: "Approved items automatically link to Jira tickets. See what was decided, explained, or noted — and trace it back to action.",
   },
 ];
 
@@ -30,7 +30,7 @@ const HowItWorks = () => {
             How it works
           </div>
           <h2 className="text-headline font-bold text-foreground mb-6">
-            Three steps to decision clarity
+            Three steps to team memory clarity
           </h2>
           <p className="text-lg text-muted-foreground">
             No new workflows. No behavior change. Just capture what's already happening.
