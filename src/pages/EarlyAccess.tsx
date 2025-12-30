@@ -65,9 +65,8 @@ const EarlyAccess = () => {
         email: email.trim().toLowerCase(),
       });
 
-    setIsLoading(false);
-
     if (error) {
+      setIsLoading(false);
       if (error.code === "23505") {
         toast({
           title: "Already signed up",
@@ -84,6 +83,27 @@ const EarlyAccess = () => {
       return;
     }
 
+    // Trigger n8n webhook for email notifications
+    try {
+      await fetch("https://cristiantumani.app.n8n.cloud/webhook/e0486aa6-ee8b-4c5b-9e8f-9795d9e11f1a", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim().toLowerCase(),
+          timestamp: new Date().toISOString(),
+        }),
+      });
+    } catch (webhookError) {
+      console.error("Webhook error:", webhookError);
+      // Don't block signup if webhook fails
+    }
+
+    setIsLoading(false);
     setIsSubmitted(true);
 
     toast({
