@@ -83,21 +83,22 @@ const EarlyAccess = () => {
       return;
     }
 
-    // Trigger n8n webhook for email notifications
+    // Trigger n8n webhook via edge function (avoids CORS, has retry logic)
     try {
-      await fetch("https://cristiantumani.app.n8n.cloud/webhook/e0486aa6-ee8b-4c5b-9e8f-9795d9e11f1a", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
+      const webhookResponse = await supabase.functions.invoke('trigger-webhook', {
+        body: {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: email.trim().toLowerCase(),
           timestamp: new Date().toISOString(),
-        }),
+        },
       });
+      
+      if (webhookResponse.error) {
+        console.error("Webhook edge function error:", webhookResponse.error);
+      } else {
+        console.log("Webhook response:", webhookResponse.data);
+      }
     } catch (webhookError) {
       console.error("Webhook error:", webhookError);
       // Don't block signup if webhook fails
