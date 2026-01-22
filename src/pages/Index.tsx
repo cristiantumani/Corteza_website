@@ -1,5 +1,6 @@
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
+import BeforeAfter from "@/components/landing/BeforeAfter";
 import Problem from "@/components/landing/Problem";
 import Solution from "@/components/landing/Solution";
 import HowItWorks from "@/components/landing/HowItWorks";
@@ -17,6 +18,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <BeforeAfter />
         <Problem />
         <Solution />
         <HowItWorks />
