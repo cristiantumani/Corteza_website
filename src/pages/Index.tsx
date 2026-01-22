@@ -2,6 +2,7 @@ import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import BeforeAfter from "@/components/landing/BeforeAfter";
 import Features from "@/components/landing/Features";
+import Testimonials from "@/components/landing/Testimonials";
 import Problem from "@/components/landing/Problem";
 import Solution from "@/components/landing/Solution";
 import HowItWorks from "@/components/landing/HowItWorks";
@@ -21,6 +22,7 @@ const Index = () => {
         <Hero />
         <BeforeAfter />
         <Features />
+        <Testimonials />
         <Problem />
         <Solution />
         <HowItWorks />
