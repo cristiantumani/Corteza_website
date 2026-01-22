@@ -7,7 +7,7 @@ const testimonials = [
     role: "Engineering Lead",
     company: "TechCorp",
     initials: "JS",
-    avatarColor: "bg-blue-500",
+    avatarColor: "bg-accent",
   },
   {
     quote: "Finally, new engineers can understand why we built things the way we did. Onboarding time cut in half.",
@@ -15,7 +15,7 @@ const testimonials = [
     role: "VP of Engineering",
     company: "ScaleUp",
     initials: "SC",
-    avatarColor: "bg-purple-500",
+    avatarColor: "bg-primary",
   },
   {
     quote: "We used to lose decisions in 1000+ message threads. Now everything is captured and searchable instantly.",
@@ -23,7 +23,7 @@ const testimonials = [
     role: "Product Manager",
     company: "BuildFast",
     initials: "MT",
-    avatarColor: "bg-emerald-500",
+    avatarColor: "bg-success",
   },
 ];
 

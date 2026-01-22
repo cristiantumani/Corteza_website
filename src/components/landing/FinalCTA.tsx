@@ -39,15 +39,15 @@ const FinalCTA = () => {
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/70 text-sm">
             <span className="flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-green-400" />
+              <Check className="w-4 h-4 text-[#2EB67D]" />
               Free during beta
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-green-400" />
+              <Check className="w-4 h-4 text-[#2EB67D]" />
               2-minute setup
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-green-400" />
+              <Check className="w-4 h-4 text-[#2EB67D]" />
               No credit card required
             </span>
           </div>

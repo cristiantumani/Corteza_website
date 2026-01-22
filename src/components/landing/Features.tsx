@@ -27,7 +27,7 @@ const features = [
 const SlackDecisionVisual = () => (
   <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden">
     {/* Slack header */}
-    <div className="bg-[#4A154B] px-4 py-3 flex items-center gap-3">
+    <div className="bg-primary px-4 py-3 flex items-center gap-3">
       <div className="flex gap-1.5">
         <div className="w-3 h-3 rounded-full bg-white/20" />
         <div className="w-3 h-3 rounded-full bg-white/20" />
@@ -77,7 +77,7 @@ const SlackDecisionVisual = () => (
           </div>
           <div className="bg-accent/10 border border-accent/20 rounded-lg p-3">
             <div className="flex items-center gap-2 text-foreground">
-              <Check className="w-4 h-4 text-green-600" />
+              <Check className="w-4 h-4 text-success" />
               <span className="font-medium">Decision captured!</span>
             </div>
             <p className="text-sm text-muted-foreground mt-1">
@@ -152,7 +152,7 @@ const JiraIntegrationVisual = () => (
     <div className="p-5">
       {/* Jira ticket summary */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
+        <div className="w-6 h-6 bg-success rounded flex items-center justify-center">
           <Check className="w-4 h-4 text-white" />
         </div>
         <div>
