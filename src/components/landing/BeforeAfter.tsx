@@ -101,8 +101,8 @@ const BeforeAfter = () => {
               <div className="space-y-4 mb-8">
                 {afterPoints.map((point, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-green-600" />
+                    <div className="w-5 h-5 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-success" />
                     </div>
                     <div>
                       <span className="text-foreground">{point.question}</span>
@@ -127,11 +127,11 @@ const BeforeAfter = () => {
                     </div>
                     <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                       <li className="flex items-center gap-2">
-                        <Check className="w-3 h-3 text-green-600" />
+                        <Check className="w-3 h-3 text-success" />
                         Better JSON support for our API needs
                       </li>
                       <li className="flex items-center gap-2">
-                        <Check className="w-3 h-3 text-green-600" />
+                        <Check className="w-3 h-3 text-success" />
                         Sarah's prior experience with it
                       </li>
                     </ul>

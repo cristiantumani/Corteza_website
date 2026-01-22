@@ -39,6 +39,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -67,10 +71,10 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'headline': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
-        'title': ['2rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
-        'subtitle': ['1.25rem', { lineHeight: '1.5' }],
+        'display': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'headline': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'title': ['2rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'subtitle': ['1.25rem', { lineHeight: '1.5', fontWeight: '400' }],
       },
       keyframes: {
         "accordion-down": {
