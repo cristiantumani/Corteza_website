@@ -29,9 +29,7 @@ const Hero = () => {
             <div className="animate-fade-in-up delay-200">
               <Link to="/early-access">
                 <Button 
-                  variant="hero"
-                  size="xl" 
-                  className="group"
+                  className="group bg-[#4A154B] hover:bg-[#4A154B]/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
                 >
                   Add to Slack - Free Beta
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
