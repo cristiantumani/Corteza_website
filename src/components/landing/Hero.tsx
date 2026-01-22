@@ -1,87 +1,105 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden pt-24 pb-16">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-subtle" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/3 rounded-full blur-3xl animate-pulse-subtle delay-500" />
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-muted-foreground">
-              Now in early access
-            </span>
-          </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Left Column - 40% (2/5) */}
+          <div className="lg:col-span-2 text-left">
+            {/* Headline */}
+            <h1 className="text-4xl md:text-[48px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.15] tracking-tight">
+              Your team's institutional memory, powered by AI
+            </h1>
 
-          {/* Headline */}
-          <h1 className="text-display font-bold text-foreground mb-6 animate-fade-in-up text-balance leading-[1.1]">
-            Your team's knowledge deserves
-            <br />
-            <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
-              a system of record
-            </span>
-          </h1>
+            {/* Subheadline */}
+            <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
+              Stop losing decisions in Slack threads. Corteza remembers everything—and explains why.
+            </p>
 
-          {/* Subheadline */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100 text-balance">
-            Capture decisions, explanations, and context from Slack and meetings. AI extracts them, humans approve. 
-            Never lose the knowledge that makes your team effective.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
-            <Link to="/early-access">
-              <Button variant="hero" size="xl" className="group">
-                Join early access
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-
-          {/* Social proof hint */}
-          <p className="mt-10 text-sm text-muted-foreground animate-fade-in-up delay-300">
-            Built for product, engineering, and leadership teams
-          </p>
-        </div>
-
-        {/* Hero visual */}
-        <div className="mt-16 max-w-5xl mx-auto animate-fade-in-up delay-400">
-          <div className="relative rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50" />
-            <div className="p-8 relative">
-              {/* Mock UI */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                  <div className="w-3 h-3 rounded-full bg-accent/40" />
-                  <div className="w-3 h-3 rounded-full bg-accent/60" />
-                </div>
-                <div className="flex-1 h-6 bg-secondary rounded-md" />
-              </div>
+            {/* CTA Button */}
+            <div className="animate-fade-in-up delay-200">
+              <Link to="/early-access">
+                <Button 
+                  size="xl" 
+                  className="group bg-[#4A154B] hover:bg-[#3a1039] text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-semibold"
+                >
+                  Add to Slack - Free Beta
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  { title: "✅ Decision", desc: "API rate limiting strategy", source: "Slack #engineering" },
-                  { title: "💡 Explanation", desc: "How auth token refresh works", source: "Product sync meeting" },
-                  { title: "📌 Context", desc: "Q4 budget constraints", source: "Sprint planning" },
-                ].map((item, i) => (
-                  <div 
-                    key={i}
-                    className="p-4 rounded-xl bg-secondary/50 border border-border/50 hover:border-accent/30 transition-colors"
-                  >
-                    <div className="text-xs font-medium text-accent mb-2">{item.title}</div>
-                    <div className="text-sm font-medium text-foreground mb-1">{item.desc}</div>
-                    <div className="text-xs text-muted-foreground">{item.source}</div>
+              {/* Small text below button */}
+              <p className="mt-4 text-sm text-muted-foreground">
+                No credit card required • 2-minute setup
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - 60% (3/5) */}
+          <div className="lg:col-span-3 animate-fade-in-up delay-300">
+            <div className="relative rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
+              {/* Video/Demo Container */}
+              <div className="aspect-video bg-secondary/30 relative">
+                {/* Demo animation placeholder - replace with actual video */}
+                <div className="absolute inset-0 flex flex-col justify-center p-8 space-y-6">
+                  {/* Step 1: Typing /decision */}
+                  <div className="flex items-start gap-3 animate-fade-in">
+                    <div className="w-8 h-8 rounded-full bg-[#4A154B] flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">S</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-background rounded-lg p-3 shadow-sm border border-border/50 inline-block">
+                        <code className="text-sm text-foreground">/decision</code>
+                        <span className="text-muted-foreground text-sm ml-2">We're going with PostgreSQL for the new service</span>
+                      </div>
+                    </div>
                   </div>
-                ))}
+
+                  {/* Step 2: Bot responding */}
+                  <div className="flex items-start gap-3 animate-fade-in delay-200 ml-4">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <span className="text-accent-foreground text-xs font-bold">C</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-accent/10 rounded-lg p-3 border border-accent/20 inline-block">
+                        <p className="text-sm text-foreground">✅ Decision captured! I've logged this with context from your recent #backend discussions.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 3: Someone asking */}
+                  <div className="flex items-start gap-3 animate-fade-in delay-400">
+                    <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">M</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-background rounded-lg p-3 shadow-sm border border-border/50 inline-block">
+                        <span className="text-sm text-foreground">@corteza why did we choose PostgreSQL?</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 4: AI answering */}
+                  <div className="flex items-start gap-3 animate-fade-in delay-600 ml-4">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <span className="text-accent-foreground text-xs font-bold">C</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-accent/10 rounded-lg p-3 border border-accent/20 inline-block">
+                        <p className="text-sm text-foreground">On Jan 15, the team decided PostgreSQL for better JSON support and Sarah's prior experience. This was discussed in #backend.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
