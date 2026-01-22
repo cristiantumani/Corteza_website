@@ -25,7 +25,7 @@ const features = [
 ];
 
 const SlackDecisionVisual = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden">
+  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
     {/* Slack header */}
     <div className="bg-primary px-4 py-3 flex items-center gap-3">
       <div className="flex gap-1.5">
@@ -91,7 +91,7 @@ const SlackDecisionVisual = () => (
 );
 
 const AIResponseVisual = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden">
+  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
     {/* Header */}
     <div className="bg-secondary px-4 py-3 border-b border-border flex items-center gap-2">
       <Search className="w-4 h-4 text-muted-foreground" />
@@ -138,7 +138,7 @@ const AIResponseVisual = () => (
 );
 
 const JiraIntegrationVisual = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden">
+  <div className="bg-card rounded-xl border border-border shadow-elegant overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
     {/* Jira header */}
     <div className="bg-[#0052CC] px-4 py-3 flex items-center gap-3">
       <div className="flex gap-1.5">

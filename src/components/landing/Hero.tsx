@@ -47,7 +47,7 @@ const Hero = () => {
 
           {/* Right Column - 60% (3/5) */}
           <div className="lg:col-span-3 animate-fade-in-up delay-300">
-            <div className="relative rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
+            <div className="relative rounded-2xl border border-border bg-card shadow-elegant overflow-hidden transition-all duration-300 ease-out hover:shadow-xl">
               {/* Video/Demo Container */}
               <div className="aspect-video bg-secondary/30 relative">
                 {/* Demo animation placeholder - replace with actual video */}
