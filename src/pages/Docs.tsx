@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import slackModalScreenshot from "@/assets/slack-modal-screenshot.png";
+import dashboardChatScreenshot from "@/assets/dashboard-chat-screenshot.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -39,6 +40,7 @@ const DocsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedTips, setExpandedTips] = useState<string[]>([]);
   const [expandedTroubleshooting, setExpandedTroubleshooting] = useState<string[]>([]);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const tableOfContents = [
     {
@@ -118,6 +120,27 @@ const DocsPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={() => setLightboxImage(null)}
+            aria-label="Close lightbox"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={lightboxImage} 
+            alt="Full size preview"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
         <nav className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
@@ -366,11 +389,17 @@ const DocsPage = () => {
                 
                 {/* Slack Modal Screenshot */}
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={slackModalScreenshot} 
-                    alt="The Corteza decision logging modal in Slack" 
-                    className="max-w-[600px] w-full rounded-lg shadow-md border border-gray-200"
-                  />
+                  <button 
+                    onClick={() => setLightboxImage(slackModalScreenshot)}
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                  >
+                    <img 
+                      src={slackModalScreenshot} 
+                      alt="The Corteza decision logging modal in Slack"
+                      loading="lazy"
+                      className="max-w-[600px] w-full rounded-lg shadow-md border border-[#E1E4E8] hover:shadow-lg transition-shadow"
+                    />
+                  </button>
                   <p className="text-sm text-gray-500 mt-3 italic">
                     The Corteza decision logging modal in Slack
                   </p>
@@ -465,6 +494,25 @@ const DocsPage = () => {
                     "What did we decide about beta testing?"
                   </code>
                 </div>
+
+                {/* Dashboard Chat Screenshot */}
+                <div className="flex flex-col items-center mt-6">
+                  <button 
+                    onClick={() => setLightboxImage(dashboardChatScreenshot)}
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                  >
+                    <img 
+                      src={dashboardChatScreenshot} 
+                      alt="AI-powered semantic search in the dashboard showing decision results"
+                      loading="lazy"
+                      className="max-w-[700px] w-full rounded-lg shadow-md border border-[#E1E4E8] hover:shadow-lg transition-shadow"
+                    />
+                  </button>
+                  <p className="text-sm text-gray-500 mt-3 italic">
+                    AI-powered semantic search in the dashboard
+                  </p>
+                </div>
+
                 <p className="text-gray-600">
                   AI responds with relevant decisions from your team's memory.
                 </p>
@@ -780,6 +828,24 @@ Action items:
                   <code className="block bg-gray-900 text-green-400 px-4 py-2 rounded-lg font-mono text-sm">
                     "Find context about our Q1 roadmap"
                   </code>
+                </div>
+
+                {/* Dashboard Chat Screenshot */}
+                <div className="flex flex-col items-center mt-6">
+                  <button 
+                    onClick={() => setLightboxImage(dashboardChatScreenshot)}
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                  >
+                    <img 
+                      src={dashboardChatScreenshot} 
+                      alt="AI-powered semantic search in the dashboard showing decision results"
+                      loading="lazy"
+                      className="max-w-[700px] w-full rounded-lg shadow-md border border-[#E1E4E8] hover:shadow-lg transition-shadow"
+                    />
+                  </button>
+                  <p className="text-sm text-gray-500 mt-3 italic">
+                    AI-powered semantic search in the dashboard
+                  </p>
                 </div>
               </div>
 
