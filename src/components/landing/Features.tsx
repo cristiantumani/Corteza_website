@@ -209,7 +209,7 @@ const FeatureVisual = ({ type }: { type: string }) => {
 
 const Features = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="how-it-works" className="py-20 bg-background">
       <div className="container mx-auto px-6 max-w-[1200px]">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

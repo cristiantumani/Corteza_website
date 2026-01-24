@@ -20,7 +20,7 @@ const Header = () => {
           <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Why
           </a>
-          <a href="#solution" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Solution
           </a>
           <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -58,7 +58,7 @@ const Header = () => {
             <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               Why
             </a>
-            <a href="#solution" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+            <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               Solution
             </a>
             <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
