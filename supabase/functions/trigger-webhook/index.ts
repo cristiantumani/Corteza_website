@@ -5,10 +5,33 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const WEBHOOK_URL = "https://cristiantumani.app.n8n.cloud/webhook/e0486aa6-ee8b-4c5b-9e8f-9795d9e11f1a";
 const TIMEOUT_MS = 30000; // 30 second timeout
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000; // 1 second between retries
+
+// Allowed origins for the webhook trigger (prevents abuse from external sites)
+const ALLOWED_ORIGINS = [
+  'https://decision-well.lovable.app',
+  'https://corteza.app',
+  'http://localhost:5173',
+  'http://localhost:8080',
+];
+
+function getWebhookUrl(): string {
+  const url = Deno.env.get('N8N_WEBHOOK_URL');
+  if (!url) {
+    throw new Error('N8N_WEBHOOK_URL environment variable is not configured');
+  }
+  return url;
+}
+
+function isValidOrigin(origin: string | null): boolean {
+  if (!origin) return false;
+  // Check exact match or if it's a Lovable preview URL
+  return ALLOWED_ORIGINS.includes(origin) || 
+         origin.includes('.lovable.app') ||
+         origin.includes('localhost');
+}
 
 async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number): Promise<Response> {
   const controller = new AbortController();
@@ -25,14 +48,14 @@ async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: nu
   }
 }
 
-async function callWebhookWithRetry(payload: unknown): Promise<{ success: boolean; attempt: number; error?: string; status?: number }> {
+async function callWebhookWithRetry(payload: unknown, webhookUrl: string): Promise<{ success: boolean; attempt: number; error?: string; status?: number }> {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`[Webhook] Attempt ${attempt}/${MAX_RETRIES} - Calling n8n webhook`);
     console.log(`[Webhook] Payload:`, JSON.stringify(payload));
     
     try {
       const response = await fetchWithTimeout(
-        WEBHOOK_URL,
+        webhookUrl,
         {
           method: "POST",
           headers: {
@@ -92,13 +115,29 @@ serve(async (req) => {
   }
 
   try {
+    // Validate origin to prevent abuse from external sites
+    const origin = req.headers.get('origin');
+    if (!isValidOrigin(origin)) {
+      console.error(`[Webhook] Rejected request from unauthorized origin: ${origin}`);
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized origin' }),
+        { 
+          status: 403, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Get webhook URL from environment
+    const webhookUrl = getWebhookUrl();
+    
     const payload = await req.json();
-    console.log(`[Webhook] Received request to trigger n8n webhook`);
+    console.log(`[Webhook] Received request from origin: ${origin}`);
     
     const result = await callWebhookWithRetry({
       ...payload,
       triggered_at: new Date().toISOString(),
-    });
+    }, webhookUrl);
     
     if (result.success) {
       return new Response(
