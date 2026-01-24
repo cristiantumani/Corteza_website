@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import slackModalScreenshot from "@/assets/slack-modal-screenshot.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -361,6 +362,20 @@ const DocsPage = () => {
                 <code className="block bg-gray-900 text-green-400 px-4 py-3 rounded-lg font-mono text-sm">
                   /decision
                 </code>
+                <p className="text-gray-600">A modal will appear: "🧠 Add to Team Memory"</p>
+                
+                {/* Slack Modal Screenshot */}
+                <div className="flex flex-col items-center">
+                  <img 
+                    src={slackModalScreenshot} 
+                    alt="The Corteza decision logging modal in Slack" 
+                    className="max-w-[600px] w-full rounded-lg shadow-md border border-gray-200"
+                  />
+                  <p className="text-sm text-gray-500 mt-3 italic">
+                    The Corteza decision logging modal in Slack
+                  </p>
+                </div>
+
                 <div className="bg-[#F8F9FA] rounded-xl p-6 border border-gray-200">
                   <p className="font-medium text-gray-900 mb-3">Fill in the form:</p>
                   <ul className="space-y-2 text-gray-700">
