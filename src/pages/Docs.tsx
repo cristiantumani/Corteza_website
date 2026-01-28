@@ -316,6 +316,51 @@ const DocsPage = () => {
               Follow these 5 steps to start building your team's knowledge base
             </p>
 
+            {/* Video Tutorial */}
+            <div className="mb-10">
+              <div 
+                className="bg-white rounded-[10px] p-6 shadow-sm"
+                style={{ border: '1px solid #E1E4E8' }}
+              >
+                <div className="flex justify-center mb-4">
+                  <span className="bg-[#4A154B] text-white px-4 py-1 text-sm font-medium rounded-full">
+                    Quick Start
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
+                  🎬 Quick Setup — 3 Minutes
+                </h3>
+                <p className="text-gray-600 text-center mb-6">
+                  Everything you need to know to get started
+                </p>
+                <div className="flex justify-center">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/p2Rn6F3036o"
+                    title="Corteza Quick Setup Guide"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="rounded-lg max-w-full"
+                    style={{ maxWidth: '560px' }}
+                  />
+                </div>
+              </div>
+              
+              {/* Video reference note */}
+              <div 
+                className="mt-4 py-3 px-4 rounded-r-lg text-sm italic text-gray-600"
+                style={{ 
+                  backgroundColor: '#F8F9FA', 
+                  borderLeft: '3px solid #4A154B',
+                  fontSize: '14px'
+                }}
+              >
+                Prefer to watch? See the 3-minute setup guide above ↑
+              </div>
+            </div>
+
             {/* Step 1 */}
             <div id="install-slack" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
