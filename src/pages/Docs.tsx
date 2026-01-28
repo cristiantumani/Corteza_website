@@ -320,8 +320,11 @@ const DocsPage = () => {
             {/* Video Tutorial */}
             <div className="mb-10">
               <div 
-                className="bg-white rounded-[10px] p-6 shadow-sm"
-                style={{ border: '1px solid #E1E4E8' }}
+                className="bg-white rounded-[10px] p-6"
+                style={{ 
+                  border: '1px solid #E1E4E8',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                }}
               >
                 <div className="flex justify-center mb-4">
                   <span className="bg-[#4A154B] text-white px-4 py-1 text-sm font-medium rounded-full">
@@ -335,17 +338,18 @@ const DocsPage = () => {
                   Everything you need to know to get started
                 </p>
                 <div className="flex justify-center">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/p2Rn6F3036o"
-                    title="Corteza Quick Setup Guide"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="rounded-lg max-w-full"
-                    style={{ maxWidth: '560px' }}
-                  />
+                  <div className="w-full max-w-[560px]" style={{ aspectRatio: '16/9' }}>
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/p2Rn6F3036o"
+                      title="Corteza Quick Setup Guide"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      style={{ borderRadius: '8px' }}
+                    />
+                  </div>
                 </div>
               </div>
               
@@ -627,21 +631,25 @@ Action items:
             </p>
 
             <div 
-              className="bg-white rounded-[10px] p-6 shadow-sm"
-              style={{ border: '1px solid #E1E4E8' }}
+              className="bg-white rounded-[10px] p-6"
+              style={{ 
+                border: '1px solid #E1E4E8',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+              }}
             >
               <div className="flex justify-center">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/xqzO0j1-SQ8"
-                  title="Corteza Full Video Tutorial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="rounded-lg max-w-full"
-                  style={{ maxWidth: '560px' }}
-                />
+                <div className="w-full max-w-[560px]" style={{ aspectRatio: '16/9' }}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/xqzO0j1-SQ8"
+                    title="Corteza Full Video Tutorial"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{ borderRadius: '8px' }}
+                  />
+                </div>
               </div>
             </div>
             
