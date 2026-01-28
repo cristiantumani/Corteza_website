@@ -55,6 +55,7 @@ const DocsPage = () => {
         { id: "upload-transcript", title: "Upload Transcript" },
       ],
     },
+    { id: "video-tutorial", title: "Full Video Tutorial", icon: Target },
     { id: "commands", title: "Available Commands", icon: Target },
     { id: "permissions", title: "Understanding Permissions", icon: Lock },
     { id: "jira-integration", title: "Jira Integration", icon: Link2 },
@@ -612,6 +613,48 @@ Action items:
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Section: Full Video Tutorial */}
+          <section id="video-tutorial" className="mb-16 scroll-mt-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
+              <Target className="w-7 h-7 text-[#4A154B]" />
+              📹 Full Video Tutorial
+            </h2>
+            <p className="text-gray-600 mt-4 mb-8">
+              Want a complete walkthrough? This 6-minute video covers everything — from installation to advanced features like transcript uploads and AI search.
+            </p>
+
+            <div 
+              className="bg-white rounded-[10px] p-6 shadow-sm"
+              style={{ border: '1px solid #E1E4E8' }}
+            >
+              <div className="flex justify-center">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/xqzO0j1-SQ8"
+                  title="Corteza Full Video Tutorial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="rounded-lg max-w-full"
+                  style={{ maxWidth: '560px' }}
+                />
+              </div>
+            </div>
+            
+            {/* Video note */}
+            <div 
+              className="mt-4 py-3 px-4 rounded-r-lg text-sm italic text-gray-600"
+              style={{ 
+                backgroundColor: '#F8F9FA', 
+                borderLeft: '3px solid #4A154B',
+                fontSize: '14px'
+              }}
+            >
+              This video also covers transcript uploads and Jira integration
             </div>
           </section>
 
