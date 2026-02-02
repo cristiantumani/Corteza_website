@@ -6,9 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
-              <span className="text-white font-bold text-sm">C</span>
-            </div>
+            <img src="/favicon-96x96.png" alt="Corteza logo" className="w-8 h-8 rounded-lg" />
             <span className="font-semibold text-lg text-foreground">corteza.app</span>
           </div>
 
