@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="animate-fade-in-up delay-200">
             <Link to="/early-access">
               <Button 
-                className="group bg-[#4A154B] hover:bg-[#4A154B]/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
+                className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
               >
                 Join early access
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

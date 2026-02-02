@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const FinalCTA = () => {
   return (
-    <section className="py-[120px] bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#4c1d95] relative overflow-hidden">
+    <section className="py-[120px] bg-gradient-to-br from-black via-[#1a1a1a] to-[#2D2D2D] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-[1200px]">
@@ -28,7 +28,7 @@ const FinalCTA = () => {
             <Link to="/early-access">
               <Button
                 size="xl"
-                className="group bg-white text-[#1e1b4b] hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 font-semibold text-lg px-10 py-6 h-auto"
+                className="group bg-white text-black hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 font-semibold text-lg px-10 py-6 h-auto"
               >
                 Add to Slack - It's Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
