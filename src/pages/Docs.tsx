@@ -146,9 +146,7 @@ const DocsPage = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
         <nav className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#4A154B] flex items-center justify-center">
-              <span className="text-white font-bold text-sm">C</span>
-            </div>
+            <img src="/favicon-96x96.png" alt="Corteza logo" className="w-8 h-8 rounded-lg" />
             <span className="font-semibold text-lg text-gray-900">corteza.app</span>
           </Link>
 
@@ -196,7 +194,7 @@ const DocsPage = () => {
                     onClick={() => scrollToSection(item.id)}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       activeSection === item.id
-                        ? "bg-[#4A154B]/10 text-[#4A154B]"
+                        ? "bg-black/10 text-black"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
@@ -257,7 +255,7 @@ const DocsPage = () => {
                     onClick={() => scrollToSection(item.id)}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
                       activeSection === item.id
-                        ? "bg-[#4A154B]/10 text-[#4A154B]"
+                        ? "bg-black/10 text-black"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
@@ -270,7 +268,7 @@ const DocsPage = () => {
                         <button
                           key={sub.id}
                           onClick={() => scrollToSection(sub.id)}
-                          className="w-full text-left px-3 py-1.5 rounded text-xs text-gray-500 hover:text-[#4A154B] hover:bg-gray-50 transition-colors"
+                          className="w-full text-left px-3 py-1.5 rounded text-xs text-gray-500 hover:text-black hover:bg-gray-50 transition-colors"
                         >
                           {sub.title}
                         </button>
@@ -294,12 +292,12 @@ const DocsPage = () => {
               Everything you need to get started with your AI-powered team memory
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4A154B]/10 text-[#4A154B] text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/10 text-black text-sm font-medium">
                 <Clock className="w-4 h-4" />
                 10 minutes to get started
               </span>
               <a href="https://app.corteza.app/slack/install" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#4A154B] hover:bg-[#4A154B]/90 text-white gap-2">
+                <Button className="bg-black hover:bg-[#2D2D2D] text-white gap-2">
                   Install to Slack
                   <ExternalLink className="w-4 h-4" />
                 </Button>
@@ -310,7 +308,7 @@ const DocsPage = () => {
           {/* Section 1: Quick Start */}
           <section id="quick-start" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Zap className="w-7 h-7 text-[#4A154B]" />
+              <Zap className="w-7 h-7 text-black" />
               Quick Start
             </h2>
             <p className="text-gray-600 mt-4 mb-8">
@@ -327,7 +325,7 @@ const DocsPage = () => {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <span className="bg-[#4A154B] text-white px-4 py-1 text-sm font-medium rounded-full">
+                  <span className="bg-black text-white px-4 py-1 text-sm font-medium rounded-full">
                     Quick Start
                   </span>
                 </div>
@@ -358,7 +356,7 @@ const DocsPage = () => {
                 className="mt-4 py-3 px-4 rounded-r-lg text-sm italic text-gray-600"
                 style={{ 
                   backgroundColor: '#F8F9FA', 
-                  borderLeft: '3px solid #4A154B',
+                  borderLeft: '3px solid #000000',
                   fontSize: '14px'
                 }}
               >
@@ -369,7 +367,7 @@ const DocsPage = () => {
             {/* Step 1 */}
             <div id="install-slack" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#4A154B] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold flex-shrink-0">
                   1
                 </div>
                 <div>
@@ -383,21 +381,21 @@ const DocsPage = () => {
                 <div className="bg-[#F8F9FA] rounded-xl p-6 border border-gray-200">
                   <ol className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
-                      <span className="font-medium text-[#4A154B]">1.</span>
+                      <span className="font-medium text-black">1.</span>
                       Click the button below to start installation
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-medium text-[#4A154B]">2.</span>
+                      <span className="font-medium text-black">2.</span>
                       Select your Slack workspace
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-medium text-[#4A154B]">3.</span>
+                      <span className="font-medium text-black">3.</span>
                       Review permissions and click "Allow"
                     </li>
                   </ol>
                 </div>
                 <a href="https://app.corteza.app/slack/install" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-[#4A154B] hover:bg-[#4A154B]/90 text-white gap-2">
+                  <Button size="lg" className="bg-black hover:bg-[#2D2D2D] text-white gap-2">
                     Install Corteza to Slack
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -420,7 +418,7 @@ const DocsPage = () => {
             {/* Step 2 */}
             <div id="first-decision" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#4A154B] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold flex-shrink-0">
                   2
                 </div>
                 <div>
@@ -441,7 +439,7 @@ const DocsPage = () => {
                 <div className="flex flex-col items-center">
                   <button 
                     onClick={() => setLightboxImage(slackModalScreenshot)}
-                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-lg"
                   >
                     <img 
                       src={slackModalScreenshot} 
@@ -486,7 +484,7 @@ const DocsPage = () => {
             {/* Step 3 */}
             <div id="access-dashboard" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#4A154B] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold flex-shrink-0">
                   3
                 </div>
                 <div>
@@ -520,7 +518,7 @@ const DocsPage = () => {
             {/* Step 4 */}
             <div id="ai-search" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#4A154B] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold flex-shrink-0">
                   4
                 </div>
                 <div>
@@ -549,7 +547,7 @@ const DocsPage = () => {
                 <div className="flex flex-col items-center mt-6">
                   <button 
                     onClick={() => setLightboxImage(dashboardChatScreenshot)}
-                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-lg"
                   >
                     <img 
                       src={dashboardChatScreenshot} 
@@ -572,7 +570,7 @@ const DocsPage = () => {
             {/* Step 5 */}
             <div id="upload-transcript" className="mb-10 scroll-mt-24">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#4A154B] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold flex-shrink-0">
                   5
                 </div>
                 <div>
@@ -584,7 +582,7 @@ const DocsPage = () => {
               </div>
               <div className="ml-12 space-y-4">
                 <Collapsible>
-                  <CollapsibleTrigger className="flex items-center gap-2 text-[#4A154B] font-medium hover:underline">
+                  <CollapsibleTrigger className="flex items-center gap-2 text-black font-medium hover:underline">
                     <ChevronRight className="w-4 h-4" />
                     View sample meeting notes
                   </CollapsibleTrigger>
@@ -623,7 +621,7 @@ Action items:
           {/* Section: Full Video Tutorial */}
           <section id="video-tutorial" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Target className="w-7 h-7 text-[#4A154B]" />
+              <Target className="w-7 h-7 text-black" />
               📹 Full Video Tutorial
             </h2>
             <p className="text-gray-600 mt-4 mb-8">
@@ -658,7 +656,7 @@ Action items:
               className="mt-4 py-3 px-4 rounded-r-lg text-sm italic text-gray-600"
               style={{ 
                 backgroundColor: '#F8F9FA', 
-                borderLeft: '3px solid #4A154B',
+                borderLeft: '3px solid #000000',
                 fontSize: '14px'
               }}
             >
@@ -669,7 +667,7 @@ Action items:
           {/* Section 2: Commands */}
           <section id="commands" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Target className="w-7 h-7 text-[#4A154B]" />
+              <Target className="w-7 h-7 text-black" />
               Available Commands
             </h2>
 
@@ -743,14 +741,14 @@ Action items:
           {/* Section 3: Permissions */}
           <section id="permissions" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Lock className="w-7 h-7 text-[#4A154B]" />
+              <Lock className="w-7 h-7 text-black" />
               Understanding Permissions
             </h2>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#4A154B]/5 rounded-xl p-6 border border-[#4A154B]/20">
+              <div className="bg-black/5 rounded-xl p-6 border border-black/20">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Lock className="w-5 h-5 text-[#4A154B]" />
+                  <Lock className="w-5 h-5 text-black" />
                   Admins
                 </h3>
                 <ul className="space-y-2">
@@ -771,7 +769,7 @@ Action items:
                     Revoke admin access
                   </li>
                 </ul>
-                <div className="mt-4 pt-4 border-t border-[#4A154B]/20">
+                <div className="mt-4 pt-4 border-t border-black/20">
                   <p className="text-sm text-gray-600">
                     <span className="font-medium">Who are admins?</span>
                     <br />
@@ -822,7 +820,7 @@ Action items:
           {/* Section 4: Jira Integration */}
           <section id="jira-integration" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Link2 className="w-7 h-7 text-[#4A154B]" />
+              <Link2 className="w-7 h-7 text-black" />
               Optional: Configure Jira Integration
             </h2>
 
@@ -843,13 +841,13 @@ Action items:
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#4A154B] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                  <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
                   <div>
                     <p className="text-gray-700">Type <code className="bg-gray-100 px-2 py-1 rounded">/settings</code> in Slack</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#4A154B] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                  <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
                   <div className="flex-1">
                     <p className="text-gray-700 mb-2">Fill in Jira configuration:</p>
                     <div className="bg-[#F8F9FA] rounded-lg p-4 border border-gray-200 space-y-2 text-sm">
@@ -857,7 +855,7 @@ Action items:
                       <p><span className="font-medium">Jira Email:</span> <span className="text-gray-500">your@email.com</span></p>
                       <p>
                         <span className="font-medium">API Token:</span>{" "}
-                        <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener noreferrer" className="text-[#4A154B] hover:underline">
+                        <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
                           Generate here <ExternalLink className="w-3 h-3 inline" />
                         </a>
                       </p>
@@ -865,7 +863,7 @@ Action items:
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#4A154B] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                  <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
                   <p className="text-gray-700">Click "Save & Test"</p>
                 </div>
                 <div className="flex items-start gap-4">
@@ -887,7 +885,7 @@ Action items:
           {/* Section 5: Dashboard */}
           <section id="dashboard" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <BarChart3 className="w-7 h-7 text-[#4A154B]" />
+              <BarChart3 className="w-7 h-7 text-black" />
               Using the Dashboard
             </h2>
 
@@ -930,7 +928,7 @@ Action items:
                 <div className="flex flex-col items-center mt-6">
                   <button 
                     onClick={() => setLightboxImage(dashboardChatScreenshot)}
-                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#4A154B] focus:ring-offset-2 rounded-lg"
+                    className="cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-lg"
                   >
                     <img 
                       src={dashboardChatScreenshot} 
@@ -957,12 +955,12 @@ Action items:
           {/* Section 6: Best Practices */}
           <section id="best-practices" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Lightbulb className="w-7 h-7 text-[#4A154B]" />
+              <Lightbulb className="w-7 h-7 text-black" />
               Best Practices
             </h2>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#4A154B]/5 rounded-xl p-6 border border-[#4A154B]/20">
+              <div className="bg-black/5 rounded-xl p-6 border border-black/20">
                 <h3 className="font-semibold text-gray-900 mb-3">📌 Decision</h3>
                 <p className="text-sm text-gray-500 mb-4">Choices and commitments</p>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -981,7 +979,7 @@ Action items:
                 </ul>
               </div>
 
-              <div className="bg-[#36C5F0]/5 rounded-xl p-6 border border-[#36C5F0]/20">
+              <div className="bg-gray-100 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-semibold text-gray-900 mb-3">💡 Explanation</h3>
                 <p className="text-sm text-gray-500 mb-4">How things work</p>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -1072,7 +1070,7 @@ Action items:
           {/* Section 7: Troubleshooting */}
           <section id="troubleshooting" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <Bug className="w-7 h-7 text-[#4A154B]" />
+              <Bug className="w-7 h-7 text-black" />
               Troubleshooting
             </h2>
 
@@ -1144,7 +1142,7 @@ Action items:
                     <ol className="space-y-1 text-gray-600">
                       {issue.solutions.map((solution, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="text-[#4A154B] font-medium">{i + 1}.</span>
+                          <span className="text-black font-medium">{i + 1}.</span>
                           {solution}
                         </li>
                       ))}
@@ -1158,7 +1156,7 @@ Action items:
           {/* Section 8: Feedback & Support */}
           <section id="feedback" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 pb-4 border-b border-gray-200 flex items-center gap-3">
-              <MessageSquare className="w-7 h-7 text-[#4A154B]" />
+              <MessageSquare className="w-7 h-7 text-black" />
               Feedback & Support
             </h2>
 
@@ -1175,12 +1173,12 @@ Action items:
                 </ul>
                 <div className="space-y-2 text-sm">
                   <p className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#4A154B]" />
-                    <a href="mailto:cristiantumani@gmail.com" className="text-[#4A154B] hover:underline">cristiantumani@gmail.com</a>
+                    <Mail className="w-4 h-4 text-black" />
+                    <a href="mailto:cristiantumani@gmail.com" className="text-black hover:underline">cristiantumani@gmail.com</a>
                   </p>
                   <p className="flex items-center gap-2">
-                    <Github className="w-4 h-4 text-[#4A154B]" />
-                    <a href="https://github.com/cristiantumani/corteza.app/issues" target="_blank" rel="noopener noreferrer" className="text-[#4A154B] hover:underline">
+                    <Github className="w-4 h-4 text-black" />
+                    <a href="https://github.com/cristiantumani/corteza.app/issues" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
                       GitHub Issues <ExternalLink className="w-3 h-3 inline" />
                     </a>
                   </p>
@@ -1201,13 +1199,13 @@ Action items:
               </div>
             </div>
 
-            <div className="mt-8 bg-[#4A154B]/5 rounded-xl p-6 border border-[#4A154B]/20 text-center">
+            <div className="mt-8 bg-black/5 rounded-xl p-6 border border-black/20 text-center">
               <p className="text-lg font-medium text-gray-900 mb-4">
                 Your feedback shapes Corteza! 🙏
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="mailto:cristiantumani@gmail.com">
-                  <Button className="bg-[#4A154B] hover:bg-[#4A154B]/90 text-white gap-2">
+                  <Button className="bg-black hover:bg-[#2D2D2D] text-white gap-2">
                     <Mail className="w-4 h-4" />
                     Email Feedback
                   </Button>
@@ -1226,20 +1224,20 @@ Action items:
         {/* Right Sidebar - Help Card */}
         <aside className="hidden xl:block w-64 flex-shrink-0">
           <div className="fixed top-24 w-56">
-            <div className="bg-[#4A154B]/5 rounded-xl p-5 border border-[#4A154B]/20">
+            <div className="bg-black/5 rounded-xl p-5 border border-black/20">
               <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <Headphones className="w-5 h-5 text-[#4A154B]" />
+                <Headphones className="w-5 h-5 text-black" />
                 Need Help?
               </h3>
               <p className="text-sm text-gray-600 mb-4">
                 We're here to help you get the most out of Corteza.
               </p>
               <div className="space-y-3 text-sm">
-                <a href="mailto:cristiantumani@gmail.com" className="flex items-center gap-2 text-[#4A154B] hover:underline">
+                <a href="mailto:cristiantumani@gmail.com" className="flex items-center gap-2 text-black hover:underline">
                   <Mail className="w-4 h-4" />
                   Email Support
                 </a>
-                <a href="https://github.com/cristiantumani/corteza.app/issues" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#4A154B] hover:underline">
+                <a href="https://github.com/cristiantumani/corteza.app/issues" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:underline">
                   <Github className="w-4 h-4" />
                   GitHub Issues
                 </a>
@@ -1252,7 +1250,7 @@ Action items:
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[#4A154B] text-white rounded-full shadow-lg hover:bg-[#4A154B]/90 transition-colors flex items-center justify-center z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-black text-white rounded-full shadow-lg hover:bg-[#2D2D2D] transition-colors flex items-center justify-center z-40"
         aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5" />
@@ -1263,11 +1261,11 @@ Action items:
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-6 text-sm text-gray-600">
-              <Link to="/" className="hover:text-[#4A154B] transition-colors">Home</Link>
-              <Link to="/privacy" className="hover:text-[#4A154B] transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-[#4A154B] transition-colors">Terms</Link>
-              <a href="https://github.com/cristiantumani/corteza.app" target="_blank" rel="noopener noreferrer" className="hover:text-[#4A154B] transition-colors">GitHub</a>
-              <a href="mailto:cristiantumani@gmail.com" className="hover:text-[#4A154B] transition-colors">Contact</a>
+              <Link to="/" className="hover:text-black transition-colors">Home</Link>
+              <Link to="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-black transition-colors">Terms</Link>
+              <a href="https://github.com/cristiantumani/corteza.app" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">GitHub</a>
+              <a href="mailto:cristiantumani@gmail.com" className="hover:text-black transition-colors">Contact</a>
             </div>
             <p className="text-sm text-gray-500">
               © 2026 Corteza. All rights reserved.
