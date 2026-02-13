@@ -17,8 +17,8 @@ const Footer = () => {
             <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
               Terms
             </Link>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
-              Contact
+            <a href="https://www.linkedin.com/company/111306406" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
+              LinkedIn
             </a>
           </div>
 
