@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import HeroVisual from "./HeroVisual";
 
 const Hero = () => {
   return (
@@ -11,43 +12,53 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/3 rounded-full blur-3xl animate-pulse-subtle delay-500" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-[800px]">
-        <div className="text-center">
-          {/* Headline */}
-          <h1 className="text-4xl md:text-[48px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.15] tracking-tight">
-            Your team's institutional memory, powered by AI
-          </h1>
+      <div className="container mx-auto px-6 relative z-10 max-w-[1200px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-          {/* Subheadline */}
-          <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
-            Stop losing decisions in Slack threads. Corteza remembers everything—and explains why.
-          </p>
+          {/* ── Left column: text ───────────────────────────────── */}
+          <div className="flex flex-col items-start text-left">
+            {/* Headline */}
+            <h1 className="text-4xl md:text-[48px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.15] tracking-tight">
+              Your team's institutional memory, powered by AI
+            </h1>
 
-          {/* CTA Button */}
-          <div className="animate-fade-in-up delay-200 flex flex-col items-center gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <Link to="/early-access">
-                <Button 
-                  className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
-                >
-                  Join early access
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  variant="outline"
-                  className="py-5 px-10 text-base rounded-xl font-semibold"
-                >
-                  Try Demo
-                </Button>
-              </a>
-            </div>
-            
-            <p className="text-sm text-muted-foreground">
-              No credit card required • 2-minute setup
+            {/* Subheadline */}
+            <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
+              Stop losing decisions in Slack threads. Corteza remembers everything—and explains why.
             </p>
+
+            {/* CTA buttons */}
+            <div className="animate-fade-in-up delay-200 flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row items-start gap-3">
+                <Link to="/early-access">
+                  <Button
+                    className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
+                  >
+                    Join early access
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    className="py-5 px-10 text-base rounded-xl font-semibold"
+                  >
+                    Try Demo
+                  </Button>
+                </a>
+              </div>
+
+              <p className="text-sm text-muted-foreground">
+                No credit card required · 2-minute setup
+              </p>
+            </div>
           </div>
+
+          {/* ── Right column: animated product visual ───────────── */}
+          <div className="animate-fade-in delay-300 w-full">
+            <HeroVisual />
+          </div>
+
         </div>
       </div>
     </section>
