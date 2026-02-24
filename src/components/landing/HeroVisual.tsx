@@ -20,7 +20,7 @@ const SLACK_MESSAGE =
 const SEARCH_QUERY = "Why did we pick PostgreSQL?";
 
 const AI_ANSWER = {
-  summary: "2 decisions found for "payments"",
+  summary: "2 decisions found for \u201cpayments\u201d",
   items: [
     {
       title: "Use PostgreSQL for payments service",
