@@ -15,13 +15,13 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Solution
           </a>
-          <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             How it works
           </a>
-          <a href="#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="/#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Integrations
           </a>
           <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -61,13 +61,13 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
-            <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+            <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               Solution
             </a>
-            <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+            <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               How it works
             </a>
-            <a href="#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+            <a href="/#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               Integrations
             </a>
             <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
