@@ -35,6 +35,11 @@ const Header = () => {
               Sign in
             </Button>
           </a>
+          <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="sm">
+              Try Demo
+            </Button>
+          </a>
           <Link to="/early-access">
             <Button variant="hero" size="sm">
               Join early access
@@ -69,6 +74,11 @@ const Header = () => {
               <a href="https://app.corteza.app" target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="sm">
                   Sign in
+                </Button>
+              </a>
+              <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="w-full">
+                  Try Demo
                 </Button>
               </a>
               <Link to="/early-access">

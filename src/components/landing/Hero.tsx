@@ -24,18 +24,27 @@ const Hero = () => {
           </p>
 
           {/* CTA Button */}
-          <div className="animate-fade-in-up delay-200">
-            <Link to="/early-access">
-              <Button 
-                className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
-              >
-                Join early access
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+          <div className="animate-fade-in-up delay-200 flex flex-col items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <Link to="/early-access">
+                <Button 
+                  className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
+                >
+                  Join early access
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="outline"
+                  className="py-5 px-10 text-base rounded-xl font-semibold"
+                >
+                  Try Demo
+                </Button>
+              </a>
+            </div>
             
-            {/* Small text below button */}
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               No credit card required • 2-minute setup
             </p>
           </div>
