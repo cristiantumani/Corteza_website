@@ -24,16 +24,24 @@ const FinalCTA = () => {
           </p>
 
           {/* Large CTA Button */}
-          <div className="mb-8">
+          <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/early-access">
               <Button
                 size="xl"
                 className="group bg-white text-black hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 font-semibold text-lg px-10 py-6 h-auto"
               >
-                Add to Slack - It's Free
+                Join Early Access
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+            <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="xl"
+                className="group border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 font-semibold text-lg px-10 py-6 h-auto"
+              >
+                Try Demo
+              </Button>
+            </a>
           </div>
 
           {/* Trust badges */}
