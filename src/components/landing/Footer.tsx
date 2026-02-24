@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2024 corteza.app. All rights reserved.
+            © 2025 corteza.app. All rights reserved.
           </p>
         </div>
       </div>
