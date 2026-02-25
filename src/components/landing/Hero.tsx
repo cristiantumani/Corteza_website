@@ -24,7 +24,7 @@ const Hero = () => {
 
             {/* Subheadline */}
             <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
-              Stop losing decisions in Slack threads. Corteza remembers everything—and explains why.
+              Decisions get lost in meetings, Slack, docs, and Miro boards. Corteza captures them anywhere—and makes them searchable in seconds.
             </p>
 
             {/* CTA buttons */}

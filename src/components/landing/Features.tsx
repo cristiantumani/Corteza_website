@@ -3,8 +3,8 @@ import { Check, MessageSquare, Search, Link2 } from "lucide-react";
 const features = [
   {
     title: "Capture decisions instantly",
-    description: "Log decisions right where they happen—in Slack. Include context, alternatives, and reasoning.",
-    badge: "2-second setup",
+    description: "Log decisions right where they happen — Slack, the web dashboard, or the browser extension. Include context, alternatives, and reasoning.",
+    badge: "2-second capture",
     imagePosition: "left" as const,
     visual: "slack-decision",
   },

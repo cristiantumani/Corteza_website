@@ -9,17 +9,17 @@ const faqs = [
   {
     question: "What is Corteza?",
     answer:
-      "Corteza is a team memory tool for product teams. It captures your team's decisions, context, and explanations — right inside Slack — and makes them searchable with AI. Instead of digging through threads or re-litigating old debates, anyone on your team can ask a question and get an instant answer with full context.",
+      "Corteza is a team memory tool for product teams. It captures your team's decisions, context, and reasoning — from Slack, meetings, docs, and more — and makes them searchable with AI. Instead of digging through threads or re-litigating old debates, anyone on your team can ask a question and get an instant answer with full context.",
   },
   {
     question: "How is Corteza different from Notion or Confluence?",
     answer:
-      "Notion and Confluence are great for documentation you intentionally write. Corteza is for capturing decisions as they happen, in the flow of work, without switching to another tool. You don't fill in a template — you type /decision in Slack and Corteza does the rest. Search is also fundamentally different: Corteza uses AI to understand what you're asking, not just match keywords.",
+      "Notion and Confluence are great for documentation you intentionally write. Corteza is for capturing decisions as they happen, in the flow of work, without switching to another tool. You can log from Slack, the web dashboard, or a browser extension — wherever the decision is being made. Search is also fundamentally different: Corteza uses AI to understand what you're asking, not just match keywords.",
   },
   {
     question: "Does Corteza work without Slack?",
     answer:
-      "The current version captures decisions primarily through Slack, since that's where most team conversations happen. A browser extension and other entry points are on the roadmap. You can try the product today without a Slack login at app.corteza.app/demo — the demo shows the full experience with real sample data.",
+      "Yes. You can log decisions directly from the Corteza web dashboard or the browser extension — no Slack required. Slack is one of the capture methods we support, but it's not a dependency. You can try the product today without any login at app.corteza.app/demo.",
   },
   {
     question: "How does the AI search work?",
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "How long does setup take?",
     answer:
-      "Under two minutes. Add Corteza to your Slack workspace, point it at a channel (like #decisions or #product), and your team can start logging immediately. There's no data migration, no onboarding call required, and no credit card needed during the beta.",
+      "Under two minutes. Sign up, and your team can start logging decisions immediately — from the dashboard, the browser extension, or Slack. There's no data migration, no onboarding call required, and no credit card needed during the beta.",
   },
   {
     question: "Can I try it before adding it to Slack?",

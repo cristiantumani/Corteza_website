@@ -6,8 +6,8 @@ const steps = [
     number: "01",
     title: "Log decisions where work happens",
     description:
-      "Type /decision in Slack and fill in what was decided, why, and what alternatives were considered. Takes under 30 seconds.",
-    detail: "Works from any Slack channel — no context-switching, no separate tool to open.",
+      "Capture decisions from Slack, the web dashboard, or the browser extension — wherever your team works. Include what was decided, why, and what alternatives were considered.",
+    detail: "No context-switching, no separate tool to open. Works in meetings, async threads, docs reviews — anywhere.",
   },
   {
     icon: Search,
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             How Corteza works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From a quick Slack command to a searchable team memory — in three steps.
+            From any tool your team already uses to a searchable team memory — in three steps.
           </p>
         </div>
 

@@ -2,14 +2,14 @@ import { X, Check, Sparkles, Frown } from "lucide-react";
 
 const BeforeAfter = () => {
   const beforePoints = [
-    { question: '"Why did we choose PostgreSQL?"', answer: "→ 30 minutes digging through Slack" },
-    { question: "Team decisions lost in 1000+ messages", answer: "" },
+    { question: '"Why did we choose PostgreSQL?"', answer: "→ 30 minutes digging through Slack, Notion, and meeting notes" },
+    { question: "Decisions buried in threads, docs, and Miro boards", answer: "" },
     { question: "New hires have zero context on past decisions", answer: "" },
   ];
 
   const afterPoints = [
     { question: 'Ask "Why did we choose PostgreSQL?"', answer: "→ Instant answer with full context" },
-    { question: "Every decision captured automatically", answer: "" },
+    { question: "Decisions captured from Slack, meetings, docs — anywhere", answer: "" },
     { question: "AI teammate that remembers everything", answer: "" },
   ];
 
