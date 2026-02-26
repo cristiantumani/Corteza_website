@@ -2,22 +2,22 @@ import { Check, MessageSquare, Search, Link2 } from "lucide-react";
 
 const features = [
   {
-    title: "Capture decisions instantly",
-    description: "Log decisions right where they happen — Slack, the web dashboard, or the browser extension. Include context, alternatives, and reasoning.",
+    title: "Stop re-explaining context",
+    description: "Log decisions in seconds from Slack, the dashboard, or the browser extension. New teammates get the full picture — what was decided, why, and what alternatives were considered — without having to ask.",
     badge: "2-second capture",
     imagePosition: "left" as const,
     visual: "slack-decision",
   },
   {
-    title: "Ask questions naturally",
-    description: "Your AI teammate understands 'latest', 'recent', semantic meaning. No keyword searches, just conversation.",
+    title: "Find any decision in seconds",
+    description: "Ask in plain English. Corteza understands context and meaning — not just keywords. Get the decision, the reasoning, and who made it — instantly.",
     badge: "95% accuracy",
     imagePosition: "right" as const,
     visual: "ai-response",
   },
   {
-    title: "Connect to your workflow",
-    description: "Link decisions to Jira tickets. See why features were built, not just what was built.",
+    title: "See why things were built, not just what",
+    description: "Link decisions to Jira tickets. Every feature, every change — full context behind it, always one click away. No more guessing what the original intent was.",
     badge: "One-click sync",
     imagePosition: "left" as const,
     visual: "jira-integration",
@@ -213,10 +213,10 @@ const Features = () => {
       <div className="container mx-auto px-6 max-w-[1200px]">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything you need to preserve team knowledge
+            Everything you need to decide with confidence
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From capturing decisions to connecting them with your existing tools.
+            Stop re-debating. Stop searching. Start moving faster.
           </p>
         </div>
 

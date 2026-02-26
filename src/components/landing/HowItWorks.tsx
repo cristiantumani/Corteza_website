@@ -4,26 +4,26 @@ const steps = [
   {
     icon: MessageSquare,
     number: "01",
-    title: "Log decisions where work happens",
+    title: "Capture in seconds, wherever work happens",
     description:
-      "Capture decisions from Slack, the web dashboard, or the browser extension — wherever your team works. Include what was decided, why, and what alternatives were considered.",
-    detail: "No context-switching, no separate tool to open. Works in meetings, async threads, docs reviews — anywhere.",
+      "Log a decision from Slack, the dashboard, or the browser extension — include the why, the alternatives, the context. Zero workflow changes needed.",
+    detail: "No extra tab to open. Works mid-meeting, in async threads, during code reviews — anywhere.",
   },
   {
     icon: Search,
     number: "02",
-    title: "Ask anything, get instant answers",
+    title: "Get answers instantly, not hours later",
     description:
-      'Ask "Why did we pick Stripe over Braintree?" or "What did we decide about guest checkout?" — in plain English.',
-    detail: "Corteza searches semantically, not by keyword. It finds the decision even if you don't remember the exact words.",
+      'Ask "Why did we pick Stripe?" or "What did we decide about guest checkout?" in plain English. Get the full context back in seconds.',
+    detail: "Semantic search finds the right decision even if you don't remember the exact words used.",
   },
   {
     icon: Brain,
     number: "03",
-    title: "Your team's memory compounds over time",
+    title: "Your team compounds its own knowledge",
     description:
-      "New hires onboard faster. Sprint reviews have context. Stakeholders stop asking questions that were answered months ago.",
-    detail: "Every decision logged makes the next search more valuable. Institutional knowledge that actually stays.",
+      "New hires get up to speed in days. Stakeholders stop asking questions already answered. Repeat debates become a thing of the past.",
+    detail: "Every decision logged makes the next one faster. The longer you use Corteza, the more valuable it gets.",
   },
 ];
 
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             How Corteza works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From any tool your team already uses to a searchable team memory — in three steps.
+            From scattered context to confident decisions — in three steps.
           </p>
         </div>
 

@@ -19,12 +19,12 @@ const Hero = () => {
           <div className="flex flex-col items-start text-left">
             {/* Headline */}
             <h1 className="text-4xl md:text-[48px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.15] tracking-tight">
-              Your team's institutional memory, powered by AI
+              Make better decisions, faster
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
-              Decisions get lost in meetings, Slack, docs, and Miro boards. Corteza captures them anywhere—and makes them searchable in seconds.
+              Stop losing hours to context your team already has. Corteza captures decisions anywhere they happen — and surfaces the full reasoning in seconds.
             </p>
 
             {/* CTA buttons */}
