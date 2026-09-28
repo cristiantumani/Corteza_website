@@ -8,7 +8,7 @@ const points = [
 ];
 
 const Trust = () => (
-  <section id="trust" className="py-24">
+  <section id="trust" className="py-24 bg-secondary/30">
     <div className="container mx-auto px-6 max-w-[1200px]">
       <div className="text-center max-w-3xl mx-auto mb-14">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Built to be trusted</h2>
