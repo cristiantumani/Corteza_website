@@ -5,18 +5,22 @@ const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000;
 const MAX_PAYLOAD_BYTES = 10240; // 10KB
 
-const ALLOWED_ORIGINS = [
-  'https://decision-well.lovable.app',
-  'https://corteza.app',
-  'http://localhost:5173',
-  'http://localhost:8080',
-];
+// Sites allowed to trigger the signup webhook: corteza.app and any subdomain (www.corteza.app),
+// Lovable previews, and local development. Compared on the parsed hostname, never as a substring.
+const ALLOWED_DOMAINS = ['corteza.app', 'lovable.app'];
 
 function isValidOrigin(origin: string | null): boolean {
   if (!origin) return false;
-  return ALLOWED_ORIGINS.includes(origin) || 
-         origin.includes('.lovable.app') ||
-         origin.includes('localhost');
+  let url: URL;
+  try {
+    url = new URL(origin);
+  } catch {
+    return false;
+  }
+  const host = url.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') return true;
+  if (url.protocol !== 'https:') return false;
+  return ALLOWED_DOMAINS.some(domain => host === domain || host.endsWith(`.${domain}`));
 }
 
 function getCorsHeaders(req: Request): Record<string, string> {
