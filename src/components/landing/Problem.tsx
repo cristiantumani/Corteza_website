@@ -1,4 +1,4 @@
-import { RotateCcw, GraduationCap, Hourglass } from "lucide-react";
+import { RotateCcw, GraduationCap, Brain, Hourglass } from "lucide-react";
 
 const problems = [
   {
@@ -10,6 +10,11 @@ const problems = [
     icon: GraduationCap,
     title: "Nobody learns",
     text: "Meetings run long, drift off-topic and end without owners, and nobody gets the feedback to fix it.",
+  },
+  {
+    icon: Brain,
+    title: "Nobody remembers",
+    text: "What was discussed and decided in the meeting is forgotten, lost in threads, and hard to find afterwards.",
   },
   {
     icon: Hourglass,
@@ -30,7 +35,7 @@ const Problem = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {problems.map(({ icon: Icon, title, text }) => (
           <div key={title} className="bg-card rounded-2xl border border-border p-8 shadow-sm">
             <div className="w-11 h-11 rounded-xl bg-destructive/10 flex items-center justify-center mb-5">
