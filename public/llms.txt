@@ -2,7 +2,7 @@
 
 > Meetings that close the loop. Corteza makes sure every meeting ends in action: decisions stick, commitments get done, and each meeting runs better than the last.
 
-After a meeting, Corteza follows every decision and commitment until it's done. Before a recurring meeting, it briefs attendees on what was decided and what's still open. And it gives the organizer private feedback on how the meeting went and what to improve. No bots join your meetings and nobody takes notes. Corteza is in private beta.
+After a meeting, Corteza follows every decision and commitment until it's done. Before a recurring meeting, it briefs attendees on what was decided and what's still open. It gives the organizer private feedback on how the meeting went and what to improve. And everything the team decides stays in one place: ask in plain language and get the decision, the reasoning and the meeting it came from, which also helps new team members get up to speed. No bots join your meetings and nobody takes notes. Corteza is in private beta.
 
 ## Pages
 
