@@ -16,17 +16,17 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-8">
           <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Solution
+            Problem
           </a>
           <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             How it works
           </a>
-          <a href="/#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Integrations
+          <a href="/#outcomes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Why Corteza
           </a>
-          <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Setup Guide
-          </Link>
+          <a href="/#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            FAQ
+          </a>
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Blog
           </Link>
@@ -38,14 +38,9 @@ const Header = () => {
               Sign in
             </Button>
           </a>
-          <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm">
-              Try Demo
-            </Button>
-          </a>
           <Link to="/early-access">
             <Button variant="hero" size="sm">
-              Join early access
+              Request early access
             </Button>
           </Link>
         </div>
@@ -62,17 +57,17 @@ const Header = () => {
         <div className="md:hidden bg-background border-b border-border">
           <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
             <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
-              Solution
+              Problem
             </a>
             <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               How it works
             </a>
-            <a href="/#integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
-              Integrations
+            <a href="/#outcomes" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+              Why Corteza
             </a>
-            <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
-              Setup Guide
-            </Link>
+            <a href="/#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+              FAQ
+            </a>
             <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
               Blog
             </Link>
@@ -82,14 +77,9 @@ const Header = () => {
                   Sign in
                 </Button>
               </a>
-              <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="w-full">
-                  Try Demo
-                </Button>
-              </a>
               <Link to="/early-access">
                 <Button variant="hero" size="sm">
-                  Join early access
+                  Request early access
                 </Button>
               </Link>
             </div>

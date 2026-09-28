@@ -1,11 +1,9 @@
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import BeforeAfter from "@/components/landing/BeforeAfter";
-import HowItWorks from "@/components/landing/HowItWorks";
-import Features from "@/components/landing/Features";
-import Testimonials from "@/components/landing/Testimonials";
-import AITrust from "@/components/landing/AITrust";
-import Integrations from "@/components/landing/Integrations";
+import Problem from "@/components/landing/Problem";
+import Pillars from "@/components/landing/Pillars";
+import Outcomes from "@/components/landing/Outcomes";
+import Trust from "@/components/landing/Trust";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
@@ -26,20 +24,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Corteza — AI Team Memory for Product Teams"
-        description="Stop losing decisions in meetings, Slack, and docs. Corteza captures what your team decides and why — then makes it searchable in seconds with AI."
+        title="Corteza — Meetings that close the loop"
+        description="Corteza makes sure every meeting ends in action: decisions stick, commitments get done, and each meeting runs better than the last. Less meeting waste, more work that moves forward."
         path="/"
         jsonLd={faqSchema}
       />
       <Header />
       <main>
         <Hero />
-        <BeforeAfter />
-        <HowItWorks />
-        <Features />
-        <Testimonials />
-        <AITrust />
-        <Integrations />
+        <Problem />
+        <Pillars />
+        <Outcomes />
+        <Trust />
         <FAQ />
         <FinalCTA />
       </main>

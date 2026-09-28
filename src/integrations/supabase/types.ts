@@ -16,25 +16,37 @@ export type Database = {
     Tables: {
       early_access_signups: {
         Row: {
+          company: string | null
           created_at: string
           email: string
           first_name: string
           id: string
           last_name: string
+          meeting_problem: string | null
+          meeting_tool: string | null
+          team_size: string | null
         }
         Insert: {
+          company?: string | null
           created_at?: string
           email: string
           first_name: string
           id?: string
           last_name: string
+          meeting_problem?: string | null
+          meeting_tool?: string | null
+          team_size?: string | null
         }
         Update: {
+          company?: string | null
           created_at?: string
           email?: string
           first_name?: string
           id?: string
           last_name?: string
+          meeting_problem?: string | null
+          meeting_tool?: string | null
+          team_size?: string | null
         }
         Relationships: []
       }

@@ -9,37 +9,37 @@ export const faqs = [
   {
     question: "What is Corteza?",
     answer:
-      "Corteza is a team memory tool for product teams. It captures your team's decisions, context, and reasoning — from Slack, meetings, docs, and more — and makes them searchable with AI. Instead of digging through threads or re-litigating old debates, anyone on your team can ask a question and get an instant answer with full context.",
+      "Corteza makes your team's meetings pay off. It closes the loop on every meeting: decisions stick, commitments get done, and the organizer gets feedback to make the next meeting shorter and better.",
   },
   {
-    question: "How is Corteza different from Notion or Confluence?",
+    question: "Is Corteza a note-taker?",
     answer:
-      "Notion and Confluence are great for documentation you intentionally write. Corteza is for capturing decisions as they happen, in the flow of work, without switching to another tool. You can log from Slack, the web dashboard, or a browser extension — wherever the decision is being made. Search is also fundamentally different: Corteza uses AI to understand what you're asking, not just match keywords.",
+      "No. Note-takers stop at a summary nobody reads again. Corteza starts there: it follows every decision and commitment until it's done, prepares people for the next meeting, and tells the organizer how the meeting went and what to improve.",
   },
   {
-    question: "Does Corteza work without Slack?",
+    question: "Does a bot join my meetings?",
     answer:
-      "Yes. You can log decisions directly from the Corteza web dashboard or the browser extension — no Slack required. Slack is one of the capture methods we support, but it's not a dependency. You can try the product today without any login at app.corteza.app/demo.",
+      "No. There's nothing to invite and nothing to fill in. Corteza works from what your meeting tools already produce, so your meetings stay exactly as they are.",
   },
   {
-    question: "How does the AI search work?",
+    question: "Which meeting tools does it work with?",
     answer:
-      "When you ask a question, Corteza uses semantic search to find the most relevant decisions — even if you don't use the exact words from when the decision was logged. Then a language model synthesises a conversational answer, citing the specific decisions it drew from. It works like asking a knowledgeable teammate, not querying a database.",
+      "We're starting the private beta with a small set of tools. Tell us what your team uses when you request early access, and we'll let you know if you're a fit for this first group.",
   },
   {
-    question: "How long does setup take?",
+    question: "Who sees the meeting feedback?",
     answer:
-      "Under two minutes. Sign up, and your team can start logging decisions immediately — from the dashboard, the browser extension, or Slack. There's no data migration, no onboarding call required, and no credit card needed during the beta.",
-  },
-  {
-    question: "Can I try it before adding it to Slack?",
-    answer:
-      "Yes — the demo at app.corteza.app/demo lets you explore a fully-loaded team memory with 25 real decisions from a fictional company. You can search, ask questions, and see exactly how the AI responds. No login required.",
+      "Only the meeting organizer. The feedback is there to help people run better meetings, not to evaluate them.",
   },
   {
     question: "Is my team's data private?",
     answer:
-      "Yes. Your workspace's decisions are only accessible to members of your Slack workspace. Corteza uses workspace-level isolation — no data is shared between organisations. We use industry-standard encryption in transit and at rest, and we do not train AI models on your team's data.",
+      "Yes. Each company's data is isolated, encrypted in transit and at rest, and only visible to its own team. We don't store your recordings or transcripts, and we don't train AI models on your data.",
+  },
+  {
+    question: "What happens after I request early access?",
+    answer:
+      "We'll reach out within a few days for a short call to understand how your team meets and decides. If it's a fit, we set you up for the beta. It's free while we're in beta.",
   },
 ];
 
@@ -52,7 +52,7 @@ const FAQ = () => {
             Frequently asked questions
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Everything you need to know about Corteza.
+            The short version of what Corteza is, and isn't.
           </p>
         </div>
 
