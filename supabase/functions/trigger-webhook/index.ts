@@ -1,219 +1,228 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const TIMEOUT_MS = 30000;
-const MAX_RETRIES = 3;
-const RETRY_DELAY_MS = 1000;
-const MAX_PAYLOAD_BYTES = 10240; // 10KB
+/**
+ * Early access signup emails, sent directly with Resend (no n8n).
+ *
+ * Called by the early access form (src/pages/EarlyAccess.tsx) right after the signup row is
+ * saved. It sends:
+ *   1. a welcome email to the person who signed up
+ *   2. a notification to the team (SIGNUP_NOTIFY_EMAIL)
+ *
+ * Emails only go out for a real signup row, once: the row is claimed by setting
+ * welcome_sent_at, so the function can't be used to email arbitrary addresses or to resend.
+ * (Before that column exists, it falls back to rows created in the last 15 minutes.)
+ *
+ * Secrets: RESEND_API_KEY, SIGNUP_NOTIFY_EMAIL (comma separated), plus SUPABASE_URL and
+ * SUPABASE_SERVICE_ROLE_KEY, which Supabase provides to every edge function.
+ */
 
-const ALLOWED_ORIGINS = [
-  'https://decision-well.lovable.app',
-  'https://corteza.app',
-  'http://localhost:5173',
-  'http://localhost:8080',
-];
+const RESEND_API_URL = "https://api.resend.com/emails";
+const FROM = "Corteza <noreply@corteza.app>";
+const MAX_PAYLOAD_BYTES = 10240; // 10KB
+const FALLBACK_WINDOW_MS = 15 * 60 * 1000;
+
+// Sites allowed to call this function: corteza.app and any subdomain (www.corteza.app),
+// Lovable previews, and local development. Compared on the parsed hostname, never as a substring.
+const ALLOWED_DOMAINS = ["corteza.app", "lovable.app"];
 
 function isValidOrigin(origin: string | null): boolean {
   if (!origin) return false;
-  return ALLOWED_ORIGINS.includes(origin) || 
-         origin.includes('.lovable.app') ||
-         origin.includes('localhost');
+  let url: URL;
+  try {
+    url = new URL(origin);
+  } catch {
+    return false;
+  }
+  const host = url.hostname;
+  if (host === "localhost" || host === "127.0.0.1") return true;
+  if (url.protocol !== "https:") return false;
+  return ALLOWED_DOMAINS.some((domain) => host === domain || host.endsWith(`.${domain}`));
 }
 
 function getCorsHeaders(req: Request): Record<string, string> {
-  const origin = req.headers.get('origin');
+  const origin = req.headers.get("origin");
   return {
-    'Access-Control-Allow-Origin': isValidOrigin(origin) ? origin! : 'null',
-    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
+    "Access-Control-Allow-Origin": isValidOrigin(origin) ? origin! : "null",
+    "Access-Control-Allow-Headers":
+      "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
   };
 }
 
-function getWebhookUrl(): string {
-  const url = Deno.env.get('N8N_WEBHOOK_URL');
-  if (!url) {
-    throw new Error('N8N_WEBHOOK_URL environment variable is not configured');
-  }
-  return url;
+function requireEnv(name: string): string {
+  const value = Deno.env.get(name);
+  if (!value) throw new Error(`${name} is not configured`);
+  return value;
 }
 
-interface WebhookPayload {
-  firstName: string;
-  lastName: string;
+function escapeHtml(value: unknown): string {
+  return String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
+}
+
+type Signup = {
   email: string;
-  timestamp: string;
-  company?: string;
-  teamSize?: string;
-  meetingTool?: string;
-  meetingProblem?: string;
+  first_name: string;
+  last_name: string;
+  company?: string | null;
+  team_size?: string | null;
+  meeting_tool?: string | null;
+  meeting_problem?: string | null;
+  created_at?: string;
+};
+
+/** Supabase REST call with the service role key (bypasses RLS; never exposed to the browser) */
+async function rest(path: string, init: RequestInit = {}): Promise<Response> {
+  const url = requireEnv("SUPABASE_URL");
+  const key = requireEnv("SUPABASE_SERVICE_ROLE_KEY");
+  return fetch(`${url}/rest/v1/${path}`, {
+    ...init,
+    headers: { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json", ...(init.headers || {}) },
+  });
 }
 
-/** Optional qualifier fields: short strings, anything else is dropped */
-function optionalText(value: unknown, max: number): string | undefined {
-  return typeof value === 'string' && value.trim() ? value.trim().slice(0, max) : undefined;
+/**
+ * The signup to email, claimed so it's emailed only once; null when there's nothing to send
+ * (no such signup, or already emailed)
+ */
+async function claimSignup(email: string): Promise<Signup | null> {
+  const filter = `early_access_signups?email=eq.${encodeURIComponent(email)}`;
+  const claimed = await rest(`${filter}&welcome_sent_at=is.null`, {
+    method: "PATCH",
+    headers: { Prefer: "return=representation" },
+    body: JSON.stringify({ welcome_sent_at: new Date().toISOString() }),
+  });
+  if (claimed.ok) {
+    const rows = (await claimed.json()) as Signup[];
+    return rows[0] || null;
+  }
+
+  // Before the welcome_sent_at migration is applied: only a signup made in the last few minutes
+  const errorText = await claimed.text();
+  if (!/welcome_sent_at/.test(errorText)) throw new Error(`Could not read the signup: ${claimed.status} ${errorText}`);
+  const found = await rest(`${filter}&select=*`);
+  if (!found.ok) throw new Error(`Could not read the signup: ${found.status}`);
+  const [row] = (await found.json()) as Signup[];
+  if (!row || !row.created_at || Date.now() - Date.parse(row.created_at) > FALLBACK_WINDOW_MS) return null;
+  return row;
 }
 
-function validatePayload(data: unknown): WebhookPayload {
-  if (!data || typeof data !== 'object') {
-    throw new Error('Invalid payload: expected an object');
+/** Sends one email with Resend, retrying once on 429 / 5xx */
+async function sendEmail(message: { to: string[]; subject: string; html: string; reply_to?: string }): Promise<void> {
+  const apiKey = requireEnv("RESEND_API_KEY");
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const response = await fetch(RESEND_API_URL, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: FROM, ...message }),
+    });
+    if (response.ok) return;
+    const detail = await response.text();
+    if (attempt === 2 || (response.status < 500 && response.status !== 429)) {
+      throw new Error(`Resend ${response.status}: ${detail}`);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   }
+}
 
-  const obj = data as Record<string, unknown>;
-
-  if (typeof obj.firstName !== 'string' || obj.firstName.length === 0 || obj.firstName.length > 50) {
-    throw new Error('Invalid firstName: must be a string between 1 and 50 characters');
-  }
-  if (typeof obj.lastName !== 'string' || obj.lastName.length === 0 || obj.lastName.length > 50) {
-    throw new Error('Invalid lastName: must be a string between 1 and 50 characters');
-  }
-  if (typeof obj.email !== 'string' || obj.email.length === 0 || obj.email.length > 100) {
-    throw new Error('Invalid email: must be a string between 1 and 100 characters');
-  }
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(obj.email)) {
-    throw new Error('Invalid email format');
-  }
-  if (typeof obj.timestamp !== 'string') {
-    throw new Error('Invalid timestamp: must be a string');
-  }
-
+function welcomeEmail(signup: Signup) {
+  const firstName = escapeHtml(signup.first_name);
   return {
-    firstName: obj.firstName,
-    lastName: obj.lastName,
-    email: obj.email,
-    timestamp: obj.timestamp,
-    company: optionalText(obj.company, 100),
-    teamSize: optionalText(obj.teamSize, 20),
-    meetingTool: optionalText(obj.meetingTool, 50),
-    meetingProblem: optionalText(obj.meetingProblem, 1000),
+    subject: "Thanks for requesting early access to Corteza",
+    html: `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 24px; color: #111; line-height: 1.6;">
+        <img src="https://corteza.app/favicon-96x96.png" alt="Corteza" width="40" style="margin-bottom: 24px;" />
+        <h1 style="font-size: 22px; margin: 0 0 16px;">Thanks, ${firstName}!</h1>
+        <p style="font-size: 15px; margin: 0 0 16px;">
+          We got your request for early access to Corteza. We're opening a private beta for a small number of teams,
+          to make every meeting end in action: decisions that stick, commitments that get done, and meetings that get better over time.
+        </p>
+        <p style="font-size: 15px; margin: 0 0 16px;">
+          We'll reach out within a few days for a short call to learn how your team meets and decides, and see if you're a fit for this first group.
+        </p>
+        <p style="font-size: 15px; margin: 0 0 24px;">
+          Want to tell us more in the meantime? Just reply to this email.
+        </p>
+        <p style="font-size: 15px; margin: 0;">The Corteza team</p>
+      </div>`,
   };
 }
 
-async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number): Promise<Response> {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-  
-  try {
-    const response = await fetch(url, {
-      ...options,
-      signal: controller.signal,
-    });
-    return response;
-  } finally {
-    clearTimeout(timeoutId);
-  }
-}
-
-async function callWebhookWithRetry(payload: WebhookPayload & { triggered_at: string }, webhookUrl: string): Promise<{ success: boolean; attempt: number; error?: string; status?: number }> {
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    console.log(`[Webhook] Attempt ${attempt}/${MAX_RETRIES} - Calling n8n webhook`);
-    
-    try {
-      const response = await fetchWithTimeout(
-        webhookUrl,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        },
-        TIMEOUT_MS
-      );
-      
-      console.log(`[Webhook] Response status: ${response.status}`);
-      
-      if (response.ok) {
-        return { success: true, attempt, status: response.status };
-      }
-      
-      const errorText = await response.text();
-      console.error(`[Webhook] Non-OK response (${response.status}):`, errorText);
-      
-      if (response.status >= 400 && response.status < 500) {
-        return { success: false, attempt, error: `HTTP ${response.status}`, status: response.status };
-      }
-      
-      if (attempt < MAX_RETRIES) {
-        await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
-      }
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      console.error(`[Webhook] Attempt ${attempt} failed:`, errorMessage);
-      
-      if (attempt < MAX_RETRIES) {
-        await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
-      } else {
-        return { success: false, attempt, error: errorMessage };
-      }
-    }
-  }
-  
-  return { success: false, attempt: MAX_RETRIES, error: "Max retries exceeded" };
+function notificationEmail(signup: Signup) {
+  const rows: [string, unknown][] = [
+    ["Name", `${signup.first_name} ${signup.last_name}`],
+    ["Email", signup.email],
+    ["Company", signup.company],
+    ["Team size", signup.team_size],
+    ["Meets on", signup.meeting_tool],
+    ["Biggest meeting problem", signup.meeting_problem],
+  ];
+  return {
+    subject: `New early access request: ${signup.first_name} ${signup.last_name}${signup.company ? ` (${signup.company})` : ""}`,
+    html: `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 24px; color: #111;">
+        <h1 style="font-size: 18px; margin: 0 0 16px;">New early access request</h1>
+        <table style="border-collapse: collapse; font-size: 14px; width: 100%;">
+          ${rows
+            .map(([label, value]) => `<tr><td style="padding: 6px 12px 6px 0; color: #666; vertical-align: top; white-space: nowrap;">${label}</td><td style="padding: 6px 0;">${escapeHtml(value || "—")}</td></tr>`)
+            .join("")}
+        </table>
+      </div>`,
+  };
 }
 
 serve(async (req) => {
   const corsHeaders = getCorsHeaders(req);
+  const json = (body: unknown, status = 200) =>
+    new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
 
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const origin = req.headers.get('origin');
+    const origin = req.headers.get("origin");
     if (!isValidOrigin(origin)) {
-      console.error(`[Webhook] Rejected request from unauthorized origin: ${origin}`);
-      return new Response(
-        JSON.stringify({ error: 'Unauthorized' }),
-        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      console.error(`[Signup emails] Rejected request from unauthorized origin: ${origin}`);
+      return json({ error: "Unauthorized" }, 403);
     }
 
-    // Check payload size
-    const contentLength = req.headers.get('content-length');
+    const contentLength = req.headers.get("content-length");
     if (contentLength && parseInt(contentLength) > MAX_PAYLOAD_BYTES) {
-      return new Response(
-        JSON.stringify({ error: 'Payload too large' }),
-        { status: 413, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      return json({ error: "Payload too large" }, 413);
     }
 
-    const webhookUrl = getWebhookUrl();
-    
-    // Validate payload
-    let payload: WebhookPayload;
+    let email: string;
     try {
-      const rawPayload = await req.json();
-      payload = validatePayload(rawPayload);
-    } catch (validationError) {
-      console.error('[Webhook] Validation error:', validationError);
-      return new Response(
-        JSON.stringify({ error: 'Invalid request data' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      const body = await req.json();
+      email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 100) throw new Error("invalid email");
+    } catch {
+      return json({ error: "Invalid request data" }, 400);
     }
 
-    console.log(`[Webhook] Received valid request from origin: ${origin}`);
-    
-    const result = await callWebhookWithRetry({
-      ...payload,
-      triggered_at: new Date().toISOString(),
-    }, webhookUrl);
-    
-    if (result.success) {
-      return new Response(
-        JSON.stringify({ success: true }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    } else {
-      console.error(`[Webhook] All attempts failed:`, result.error);
-      return new Response(
-        JSON.stringify({ success: false, error: 'Webhook delivery failed' }),
-        { status: 502, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+    const signup = await claimSignup(email);
+    if (!signup) {
+      console.log(`[Signup emails] Nothing to send for ${email} (no recent signup, or already emailed)`);
+      return json({ success: true, sent: false });
     }
+
+    const notifyTo = (Deno.env.get("SIGNUP_NOTIFY_EMAIL") || "").split(",").map((e) => e.trim()).filter(Boolean);
+    const results = await Promise.allSettled([
+      sendEmail({ to: [signup.email], ...welcomeEmail(signup), ...(notifyTo[0] ? { reply_to: notifyTo[0] } : {}) }),
+      notifyTo.length ? sendEmail({ to: notifyTo, ...notificationEmail(signup) }) : Promise.resolve(),
+    ]);
+    results.forEach((result, index) => {
+      if (result.status === "rejected") {
+        console.error(`[Signup emails] ${index === 0 ? "Welcome" : "Notification"} email failed:`, result.reason);
+      }
+    });
+    if (!notifyTo.length) console.warn("[Signup emails] SIGNUP_NOTIFY_EMAIL is not set: no team notification sent");
+
+    const ok = results.every((result) => result.status === "fulfilled");
+    console.log(`[Signup emails] ${ok ? "Sent" : "Partly sent"} for ${email} (origin ${origin})`);
+    return json({ success: ok, sent: true }, ok ? 200 : 502);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    console.error('[Webhook] Error processing request:', errorMessage);
-    return new Response(
-      JSON.stringify({ error: 'An error occurred processing your request' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    const message = error instanceof Error ? error.message : String(error);
+    console.error("[Signup emails] Error:", message);
+    return json({ error: "An error occurred processing your request" }, 500);
   }
 });
