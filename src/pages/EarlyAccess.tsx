@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, Loader2, Sparkles, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
 
@@ -18,9 +18,12 @@ const selectClass =
   "flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
 const EarlyAccess = () => {
+  // The app sends people here when they sign in with Google but aren't in the beta yet
+  const [searchParams] = useSearchParams();
+  const fromSignIn = searchParams.get("from") === "signin";
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(() => (searchParams.get("email") || "").slice(0, 100));
   const [company, setCompany] = useState("");
   const [teamSize, setTeamSize] = useState("");
   const [meetingTool, setMeetingTool] = useState("");
@@ -106,7 +109,7 @@ const EarlyAccess = () => {
       if (error.code === "23505") {
         toast({
           title: "Already signed up",
-          description: "This email is already on our early access list.",
+          description: "This email is already on our early access list. We'll email you as soon as you're approved.",
           variant: "destructive",
         });
       } else {
@@ -198,6 +201,16 @@ const EarlyAccess = () => {
               <h1 className="text-4xl font-bold text-foreground mb-4">
                 Request early access
               </h1>
+
+              {fromSignIn && (
+                <div className="rounded-xl border border-border bg-card p-4 mb-6 text-sm text-foreground" role="status">
+                  <p className="font-semibold mb-1">You're not in the beta yet</p>
+                  <p className="text-muted-foreground">
+                    Corteza is invite-only for now. Request access below. If you already did, hang tight:
+                    we'll email you as soon as you're approved, and then you can sign in with Google.
+                  </p>
+                </div>
+              )}
 
               <p className="text-lg text-muted-foreground mb-8">
                 We're opening a private beta for a small number of teams. Tell us a bit about how

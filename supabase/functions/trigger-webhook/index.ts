@@ -12,14 +12,21 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
  * welcome_sent_at, so the function can't be used to email arbitrary addresses or to resend.
  * (Before that column exists, it falls back to rows created in the last 15 minutes.)
  *
- * Secrets: RESEND_API_KEY, SIGNUP_NOTIFY_EMAIL (comma separated), plus SUPABASE_URL and
- * SUPABASE_SERVICE_ROLE_KEY, which Supabase provides to every edge function.
+ * The team notification has an "Approve for the beta" link to the app (APP_URL/beta/approve),
+ * signed with BETA_APPROVAL_SECRET. The app checks the signature, adds them to the beta and
+ * sends them the welcome email that invites them to sign in with Google.
+ *
+ * Secrets: RESEND_API_KEY, SIGNUP_NOTIFY_EMAIL (comma separated), BETA_APPROVAL_SECRET (the same
+ * value as in the app; without it the email has no Approve link), APP_URL (optional, default
+ * https://app.corteza.app), plus SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, which Supabase
+ * provides to every edge function.
  */
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const FROM = "Corteza <noreply@corteza.app>";
 const MAX_PAYLOAD_BYTES = 10240; // 10KB
 const FALLBACK_WINDOW_MS = 15 * 60 * 1000;
+const APPROVAL_LINK_DAYS = 30;
 
 // Sites allowed to call this function: corteza.app and any subdomain (www.corteza.app),
 // Lovable previews, and local development. Compared on the parsed hostname, never as a substring.
@@ -146,7 +153,34 @@ function welcomeEmail(signup: Signup) {
   };
 }
 
-function notificationEmail(signup: Signup) {
+function base64url(bytes: Uint8Array): string {
+  let binary = "";
+  bytes.forEach((byte) => (binary += String.fromCharCode(byte)));
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+/**
+ * Link that approves this person for the beta in the app. The token is the signup, base64url JSON,
+ * plus an HMAC-SHA256 of "beta-approve:" + that JSON (verified by the app's core/beta/beta-access.js).
+ * Null when BETA_APPROVAL_SECRET isn't set.
+ */
+async function approvalLink(signup: Signup): Promise<string | null> {
+  const secret = Deno.env.get("BETA_APPROVAL_SECRET");
+  if (!secret) return null;
+  const appUrl = (Deno.env.get("APP_URL") || "https://app.corteza.app").replace(/\/$/, "");
+  const encoder = new TextEncoder();
+  const payload = base64url(encoder.encode(JSON.stringify({
+    email: signup.email,
+    name: signup.first_name,
+    company: signup.company || null,
+    exp: Date.now() + APPROVAL_LINK_DAYS * 24 * 60 * 60 * 1000,
+  })));
+  const key = await crypto.subtle.importKey("raw", encoder.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const signature = base64url(new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(`beta-approve:${payload}`))));
+  return `${appUrl}/beta/approve?t=${payload}.${signature}`;
+}
+
+function notificationEmail(signup: Signup, approveUrl: string | null) {
   const rows: [string, unknown][] = [
     ["Name", `${signup.first_name} ${signup.last_name}`],
     ["Email", signup.email],
@@ -165,6 +199,10 @@ function notificationEmail(signup: Signup) {
             .map(([label, value]) => `<tr><td style="padding: 6px 12px 6px 0; color: #666; vertical-align: top; white-space: nowrap;">${label}</td><td style="padding: 6px 0;">${escapeHtml(value || "—")}</td></tr>`)
             .join("")}
         </table>
+        ${approveUrl
+          ? `<a href="${escapeHtml(approveUrl)}" style="display: inline-block; margin-top: 24px; background: #000; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 24px; border-radius: 10px;">Approve for the beta →</a>
+             <p style="font-size: 13px; color: #666; margin: 12px 0 0;">Approving sends ${escapeHtml(signup.first_name)} a welcome email inviting them to sign in with Google. The link works for ${APPROVAL_LINK_DAYS} days.</p>`
+          : `<p style="font-size: 13px; color: #666; margin: 24px 0 0;">No Approve link: BETA_APPROVAL_SECRET isn't set. Approve with <code>node scripts/beta-approve.js ${escapeHtml(signup.email)} --welcome</code>.</p>`}
       </div>`,
   };
 }
@@ -208,7 +246,9 @@ serve(async (req) => {
     const notifyTo = (Deno.env.get("SIGNUP_NOTIFY_EMAIL") || "").split(",").map((e) => e.trim()).filter(Boolean);
     const results = await Promise.allSettled([
       sendEmail({ to: [signup.email], ...welcomeEmail(signup), ...(notifyTo[0] ? { reply_to: notifyTo[0] } : {}) }),
-      notifyTo.length ? sendEmail({ to: notifyTo, ...notificationEmail(signup) }) : Promise.resolve(),
+      notifyTo.length
+        ? approvalLink(signup).then((approveUrl) => sendEmail({ to: notifyTo, reply_to: signup.email, ...notificationEmail(signup, approveUrl) }))
+        : Promise.resolve(),
     ]);
     results.forEach((result, index) => {
       if (result.status === "rejected") {
