@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import HeroVisual from "./HeroVisual";
+import LoopVisual from "./LoopVisual";
 
 const Hero = () => {
   return (
@@ -14,51 +14,32 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10 max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-          {/* ── Left column: text ───────────────────────────────── */}
           <div className="flex flex-col items-start text-left">
-            {/* Headline */}
-            <h1 className="text-4xl md:text-[48px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.15] tracking-tight">
-              Make better decisions, faster
+            <h1 className="text-4xl md:text-[52px] font-bold text-foreground mb-6 animate-fade-in-up leading-[1.1] tracking-tight">
+              Meetings that close the loop.
             </h1>
 
-            {/* Subheadline */}
             <p className="text-xl text-muted-foreground mb-10 animate-fade-in-up delay-100 leading-relaxed">
-              Your team already made that decision. Find it in seconds with AI-powered search — get the full context, reasoning, and alternatives without asking around.
+              Corteza makes sure every meeting ends in action: decisions stick, commitments get done,
+              and each meeting runs better than the last.
             </p>
 
-            {/* CTA buttons */}
             <div className="animate-fade-in-up delay-200 flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-row items-start gap-3">
-                <Link to="/early-access">
-                  <Button
-                    className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl"
-                  >
-                    Join early access
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="outline"
-                    className="py-5 px-10 text-base rounded-xl font-semibold"
-                  >
-                    Try Demo
-                  </Button>
-                </a>
-              </div>
-
+              <Link to="/early-access">
+                <Button className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl">
+                  Request early access
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
               <p className="text-sm text-muted-foreground">
-                No credit card required · 2-minute setup
+                Private beta · Limited spots · Free while in beta
               </p>
             </div>
           </div>
 
-          {/* ── Right column: animated product visual ───────────── */}
           <div className="animate-fade-in delay-300 w-full">
-            <HeroVisual />
+            <LoopVisual />
           </div>
-
         </div>
       </div>
     </section>

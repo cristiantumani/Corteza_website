@@ -2,19 +2,32 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, Loader2, Sparkles, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
 
+type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
+
+const TEAM_SIZES = ["1–10", "11–50", "51–200", "201–1000", "1000+"];
+const MEETING_TOOLS = ["Google Meet", "Zoom", "Microsoft Teams", "Other"];
+
+const selectClass =
+  "flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
+
 const EarlyAccess = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [teamSize, setTeamSize] = useState("");
+  const [meetingTool, setMeetingTool] = useState("");
+  const [meetingProblem, setMeetingProblem] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errors, setErrors] = useState<{ firstName?: string; lastName?: string; email?: string }>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const { toast } = useToast();
 
 
@@ -24,7 +37,7 @@ const EarlyAccess = () => {
   };
 
   const validateForm = () => {
-    const newErrors: { firstName?: string; lastName?: string; email?: string } = {};
+    const newErrors: FormErrors = {};
 
     if (!firstName.trim()) {
       newErrors.firstName = "First name is required";
@@ -46,6 +59,14 @@ const EarlyAccess = () => {
       newErrors.email = "Email must be less than 100 characters";
     }
 
+    if (!company.trim()) {
+      newErrors.company = "Company is required";
+    } else if (company.trim().length > 100) {
+      newErrors.company = "Company must be less than 100 characters";
+    }
+    if (!teamSize) newErrors.teamSize = "Pick your team size";
+    if (!meetingTool) newErrors.meetingTool = "Pick the tool you meet on most";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -59,13 +80,23 @@ const EarlyAccess = () => {
 
     setIsLoading(true);
 
-    const { error } = await supabase
-      .from("early_access_signups")
-      .insert({
-        first_name: firstName.trim(),
-        last_name: lastName.trim(),
-        email: email.trim().toLowerCase(),
-      });
+    const base = {
+      first_name: firstName.trim(),
+      last_name: lastName.trim(),
+      email: email.trim().toLowerCase(),
+    };
+    const qualifiers = {
+      company: company.trim(),
+      team_size: teamSize,
+      meeting_tool: meetingTool,
+      meeting_problem: meetingProblem.trim().slice(0, 1000) || null,
+    };
+
+    let { error } = await supabase.from("early_access_signups").insert({ ...base, ...qualifiers });
+    // Until the migration adding the qualifier columns is applied, keep signups working without them
+    if (error && (error.code === "PGRST204" || /column/i.test(error.message || ""))) {
+      ({ error } = await supabase.from("early_access_signups").insert(base));
+    }
 
     if (error) {
       setIsLoading(false);
@@ -92,6 +123,10 @@ const EarlyAccess = () => {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: email.trim().toLowerCase(),
+          company: qualifiers.company,
+          teamSize: qualifiers.team_size,
+          meetingTool: qualifiers.meeting_tool,
+          meetingProblem: qualifiers.meeting_problem,
           timestamp: new Date().toISOString(),
         },
       });
@@ -110,16 +145,16 @@ const EarlyAccess = () => {
     setIsSubmitted(true);
 
     toast({
-      title: "You're on the list!",
-      description: "We'll be in touch soon with early access details.",
+      title: "Thanks! We got your request.",
+      description: "We'll reach out within a few days.",
     });
   };
 
   const benefits = [
-    "Be among the first to experience corteza.app",
-    "Shape the product with your feedback",
-    "Free access during the early access period",
-    "Priority support from our team",
+    "Meetings that end in action, and stay that way",
+    "Private feedback to run shorter, better meetings",
+    "Shape the product with the team building it",
+    "Free while in beta",
   ];
 
   if (isSubmitted) {
@@ -130,10 +165,11 @@ const EarlyAccess = () => {
             <CheckCircle2 className="w-10 h-10 text-accent" />
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-4">
-            You're on the list!
+            Thanks, {firstName}!
           </h1>
           <p className="text-muted-foreground mb-8">
-            Thanks for signing up, {firstName}! We'll be in touch soon with early access details.
+            We got your request. We'll reach out within a few days to learn how your team meets
+            and see if you're a fit for the private beta.
           </p>
           <Link to="/">
             <Button variant="hero" size="lg">
@@ -148,8 +184,8 @@ const EarlyAccess = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Join Early Access — Corteza"
-        description="Sign up for early access to Corteza, the AI team memory that captures and surfaces your team's decisions."
+        title="Request Early Access — Corteza"
+        description="Request a spot in Corteza's private beta: meetings that close the loop, with decisions that stick and commitments that get done."
         path="/early-access"
       />
       {/* Header */}
@@ -172,12 +208,12 @@ const EarlyAccess = () => {
               </div>
 
               <h1 className="text-4xl font-bold text-foreground mb-4">
-                Join the waitlist
+                Request early access
               </h1>
 
               <p className="text-lg text-muted-foreground mb-8">
-                Be among the first to experience corteza.app — the decision system of record 
-                for modern teams.
+                We're opening a private beta for a small number of teams. Tell us a bit about how
+                your team meets and we'll reach out to see if it's a fit.
               </p>
 
               <div className="space-y-4">
@@ -193,7 +229,7 @@ const EarlyAccess = () => {
             {/* Right side - Form */}
             <div className="bg-card border border-border rounded-2xl p-8 shadow-elegant">
               <h2 className="text-xl font-semibold text-foreground mb-6">
-                Request early access
+                About you and your team
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -253,6 +289,72 @@ const EarlyAccess = () => {
                   )}
                 </div>
 
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company</Label>
+                  <Input
+                    id="company"
+                    type="text"
+                    placeholder="Acme Inc."
+                    value={company}
+                    onChange={(e) => {
+                      setCompany(e.target.value);
+                      if (errors.company) setErrors({ ...errors, company: undefined });
+                    }}
+                    className="bg-background border-border"
+                  />
+                  {errors.company && <p className="text-destructive text-sm">{errors.company}</p>}
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="teamSize">Team size</Label>
+                    <select
+                      id="teamSize"
+                      value={teamSize}
+                      onChange={(e) => {
+                        setTeamSize(e.target.value);
+                        if (errors.teamSize) setErrors({ ...errors, teamSize: undefined });
+                      }}
+                      className={selectClass}
+                    >
+                      <option value="">Select…</option>
+                      {TEAM_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
+                    </select>
+                    {errors.teamSize && <p className="text-destructive text-sm">{errors.teamSize}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="meetingTool">You meet mostly on</Label>
+                    <select
+                      id="meetingTool"
+                      value={meetingTool}
+                      onChange={(e) => {
+                        setMeetingTool(e.target.value);
+                        if (errors.meetingTool) setErrors({ ...errors, meetingTool: undefined });
+                      }}
+                      className={selectClass}
+                    >
+                      <option value="">Select…</option>
+                      {MEETING_TOOLS.map((tool) => <option key={tool} value={tool}>{tool}</option>)}
+                    </select>
+                    {errors.meetingTool && <p className="text-destructive text-sm">{errors.meetingTool}</p>}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="meetingProblem">
+                    What's your biggest meeting problem? <span className="text-muted-foreground font-normal">(optional)</span>
+                  </Label>
+                  <Textarea
+                    id="meetingProblem"
+                    rows={3}
+                    maxLength={1000}
+                    placeholder="e.g. We keep re-discussing the same topics and nobody follows up."
+                    value={meetingProblem}
+                    onChange={(e) => setMeetingProblem(e.target.value)}
+                    className="bg-background border-border"
+                  />
+                </div>
+
                 <Button
                   type="submit"
                   variant="hero"
@@ -264,7 +366,7 @@ const EarlyAccess = () => {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      Join early access
+                      Request early access
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}

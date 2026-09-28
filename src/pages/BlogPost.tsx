@@ -72,14 +72,9 @@ const renderSection = (section: BlogSection, index: number) => {
             {section.text}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="lg">
-                Try Demo — no login required
-              </Button>
-            </a>
             <Link to="/early-access">
-              <Button variant="outline" size="lg">
-                Join early access
+              <Button variant="hero" size="lg">
+                Request early access
               </Button>
             </Link>
           </div>

@@ -1,14 +1,13 @@
 # Corteza
 
-> AI-powered team memory for product teams. Capture decisions from Slack, meetings, and docs — then find them in seconds with natural-language search.
+> Meetings that close the loop. Corteza makes sure every meeting ends in action: decisions stick, commitments get done, and each meeting runs better than the last.
 
-Corteza removes the friction of documenting team decisions. Log what was decided and why from anywhere your team already works, then ask questions in plain English to get instant answers with full context.
+After a meeting, Corteza follows every decision and commitment until it's done. Before a recurring meeting, it briefs attendees on what was decided and what's still open. And it gives the organizer private feedback on how the meeting went and what to improve. No bots join your meetings and nobody takes notes. Corteza is in private beta.
 
 ## Pages
 
-- [Home](/): Product overview, how it works, integrations, and FAQ.
-- [Setup Guide](/docs): Step-by-step instructions to install Corteza, connect Slack, and start logging decisions.
-- [Early Access](/early-access): Join the early access program and get onboarded.
+- [Home](/): The problem, how Corteza closes the loop before, during and after meetings, and FAQ.
+- [Early Access](/early-access): Request a spot in the private beta.
 - [Blog](/blog): Articles on team memory, decision culture, and reducing repeated work.
 
 ## Blog

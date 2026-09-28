@@ -40,6 +40,15 @@ interface WebhookPayload {
   lastName: string;
   email: string;
   timestamp: string;
+  company?: string;
+  teamSize?: string;
+  meetingTool?: string;
+  meetingProblem?: string;
+}
+
+/** Optional qualifier fields: short strings, anything else is dropped */
+function optionalText(value: unknown, max: number): string | undefined {
+  return typeof value === 'string' && value.trim() ? value.trim().slice(0, max) : undefined;
 }
 
 function validatePayload(data: unknown): WebhookPayload {
@@ -71,6 +80,10 @@ function validatePayload(data: unknown): WebhookPayload {
     lastName: obj.lastName,
     email: obj.email,
     timestamp: obj.timestamp,
+    company: optionalText(obj.company, 100),
+    teamSize: optionalText(obj.teamSize, 20),
+    meetingTool: optionalText(obj.meetingTool, 50),
+    meetingProblem: optionalText(obj.meetingProblem, 1000),
   };
 }
 

@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2025 corteza.app. All rights reserved.
+            © {new Date().getFullYear()} corteza.app. All rights reserved.
           </p>
         </div>
       </div>
