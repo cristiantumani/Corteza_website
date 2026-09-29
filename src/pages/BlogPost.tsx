@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Tag, Calendar } from "lucide-react";
 import { getPostBySlug, BlogSection } from "@/data/blog";
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
