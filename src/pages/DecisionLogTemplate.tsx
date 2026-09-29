@@ -132,7 +132,7 @@ const DecisionLogTemplate = () => {
 {TEMPLATE_MARKDOWN}
               </pre>
             </div>
-            <p className="text-sm text-muted-foreground -mt-8 mb-10">
+            <p className="text-sm text-muted-foreground mt-4 mb-10">
               New entries go at the top, oldest at the bottom. Keep the log in a
               shared location everyone can reach, and link it from your team's main
               Notion page or Slack channel description.
