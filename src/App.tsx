@@ -9,6 +9,7 @@ import TermsOfService from "./pages/TermsOfService";
 import EarlyAccess from "./pages/EarlyAccess";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import DecisionLogTemplate from "./pages/DecisionLogTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/docs" element={<Navigate to="/" replace />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/decision-log-template" element={<DecisionLogTemplate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

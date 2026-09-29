@@ -15,6 +15,7 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 - [Why Your Team Keeps Re-Making the Same Decisions](/blog/why-your-team-keeps-remaking-the-same-decisions): How institutional knowledge disappears and what to do about it.
 - [How to Document Team Decisions Without Slowing Down](/blog/how-to-document-team-decisions-without-slowing-down): A lightweight framework and template for decision logs.
 - [The Hidden Cost of Lost Context When Engineers Join Your Team](/blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team): The real onboarding tax and how to fix it.
+- [Decision Log Template](/decision-log-template): A free decision log template — downloadable Excel file plus a copyable template for Notion, Google Docs or Confluence.
 
 ## Optional
 
