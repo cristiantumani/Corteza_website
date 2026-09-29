@@ -10,10 +10,12 @@ export interface BlogPost {
 }
 
 export interface BlogSection {
-  type: "h2" | "h3" | "p" | "ul" | "ol" | "callout" | "cta";
+  type: "h2" | "h3" | "p" | "ul" | "ol" | "callout" | "cta" | "link";
   text?: string;
   items?: string[];
   label?: string;
+  href?: string;
+  linkLabel?: string;
 }
 
 export const posts: BlogPost[] = [
@@ -322,6 +324,12 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Add new entries at the top, oldest at the bottom. Keep it in a shared location everyone has access to. Link it from your team's main Notion page or Slack channel description.",
+      },
+      {
+        type: "link",
+        text: "Want the ready-made version? We put together a free decision log template: a formatted Excel file with status dropdowns and a how-to-use guide, plus a template you can copy straight into Notion, Google Docs or Confluence.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template",
       },
       {
         type: "h2",

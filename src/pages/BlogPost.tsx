@@ -62,6 +62,19 @@ const renderSection = (section: BlogSection, index: number) => {
           </p>
         </div>
       );
+    case "link":
+      return (
+        <Link
+          key={index}
+          to={section.href || "/"}
+          className="group block bg-card border border-primary/20 rounded-2xl p-6 my-7 hover:border-primary/40 hover:shadow-md transition-all"
+        >
+          <p className="text-muted-foreground leading-relaxed mb-4">{section.text}</p>
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+            {section.linkLabel || "Learn more"} <ArrowRight size={15} />
+          </span>
+        </Link>
+      );
     case "cta":
       return (
         <div
