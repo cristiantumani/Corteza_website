@@ -124,6 +124,7 @@ const EarlyAccess = () => {
           variant: "destructive",
         });
       } else {
+        track("early_access_signup_error", { code: error.code });
         toast({
           title: "Something went wrong",
           description: "Please try again later.",
@@ -145,6 +146,7 @@ const EarlyAccess = () => {
 
     setIsLoading(false);
     setIsSubmitted(true);
+    track("early_access_signup_success", { team_size: teamSize, meeting_tool: meetingTool });
 
     toast({
       title: "Thanks! We got your request.",
