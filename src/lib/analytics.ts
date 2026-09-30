@@ -13,7 +13,9 @@ export function initAnalytics() {
     autocapture: true,
     capture_pageview: true,
     capture_pageleave: true,
+    debug: import.meta.env.DEV,
   });
+  (window as unknown as { posthog?: typeof posthog }).posthog = posthog;
   initialized = true;
 }
 
