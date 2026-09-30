@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import LoopVisual from "./LoopVisual";
+import { track } from "@/lib/analytics";
 
 const Hero = () => {
   return (
@@ -25,7 +26,7 @@ const Hero = () => {
             </p>
 
             <div className="animate-fade-in-up delay-200 flex flex-col gap-4">
-              <Link to="/early-access">
+              <Link to="/early-access" onClick={() => track("cta_click", { cta: "request_early_access", location: "hero" })}>
                 <Button className="group bg-black hover:bg-[#2D2D2D] text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 py-5 px-10 text-base rounded-xl">
                   Request early access
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
