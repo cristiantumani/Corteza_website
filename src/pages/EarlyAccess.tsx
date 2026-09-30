@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
+import { track } from "@/lib/analytics";
 
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
 
@@ -32,6 +33,13 @@ const EarlyAccess = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const { toast } = useToast();
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    track("early_access_form_started", { from_signin: fromSignIn });
+  };
 
 
   const validateEmail = (email: string) => {
