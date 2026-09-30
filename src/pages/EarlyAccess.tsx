@@ -86,10 +86,12 @@ const EarlyAccess = () => {
     e.preventDefault();
 
     if (!validateForm()) {
+      track("early_access_form_validation_failed", { fields: Object.keys(errors) });
       return;
     }
 
     setIsLoading(true);
+    track("early_access_form_submitted", { team_size: teamSize, meeting_tool: meetingTool });
 
     const base = {
       first_name: firstName.trim(),
@@ -115,6 +117,7 @@ const EarlyAccess = () => {
     if (error) {
       setIsLoading(false);
       if (error.code === "23505") {
+        track("early_access_signup_duplicate");
         toast({
           title: "Already signed up",
           description: "This email is already on our early access list. We'll email you as soon as you're approved.",
