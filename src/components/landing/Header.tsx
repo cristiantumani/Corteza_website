@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { track } from "@/lib/analytics";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ const Header = () => {
               Sign in
             </Button>
           </a>
-          <Link to="/early-access">
+          <Link to="/early-access" onClick={() => track("cta_click", { cta: "request_early_access", location: "header" })}>
             <Button variant="hero" size="sm">
               Request early access
             </Button>
@@ -83,7 +84,7 @@ const Header = () => {
                   Sign in
                 </Button>
               </a>
-              <Link to="/early-access">
+              <Link to="/early-access" onClick={() => track("cta_click", { cta: "request_early_access", location: "header_mobile" })}>
                 <Button variant="hero" size="sm">
                   Request early access
                 </Button>
