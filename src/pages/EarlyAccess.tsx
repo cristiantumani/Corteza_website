@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
+import { track } from "@/lib/analytics";
 
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
 
@@ -32,6 +33,13 @@ const EarlyAccess = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const { toast } = useToast();
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    track("early_access_form_started", { from_signin: fromSignIn });
+  };
 
 
   const validateEmail = (email: string) => {
@@ -78,10 +86,12 @@ const EarlyAccess = () => {
     e.preventDefault();
 
     if (!validateForm()) {
+      track("early_access_form_validation_failed", { fields: Object.keys(errors) });
       return;
     }
 
     setIsLoading(true);
+    track("early_access_form_submitted", { team_size: teamSize, meeting_tool: meetingTool });
 
     const base = {
       first_name: firstName.trim(),
@@ -107,12 +117,14 @@ const EarlyAccess = () => {
     if (error) {
       setIsLoading(false);
       if (error.code === "23505") {
+        track("early_access_signup_duplicate");
         toast({
           title: "Already signed up",
           description: "This email is already on our early access list. We'll email you as soon as you're approved.",
           variant: "destructive",
         });
       } else {
+        track("early_access_signup_error", { code: error.code });
         toast({
           title: "Something went wrong",
           description: "Please try again later.",
@@ -134,6 +146,7 @@ const EarlyAccess = () => {
 
     setIsLoading(false);
     setIsSubmitted(true);
+    track("early_access_signup_success", { team_size: teamSize, meeting_tool: meetingTool });
 
     toast({
       title: "Thanks! We got your request.",
@@ -233,7 +246,7 @@ const EarlyAccess = () => {
                 About you and your team
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First name</Label>

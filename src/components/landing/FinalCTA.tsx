@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { track } from "@/lib/analytics";
 
 const FinalCTA = () => {
   return (
@@ -20,7 +21,7 @@ const FinalCTA = () => {
           </p>
 
           <div className="mb-8 flex justify-center">
-            <Link to="/early-access">
+            <Link to="/early-access" onClick={() => track("cta_click", { cta: "request_early_access", location: "final_cta" })}>
               <Button
                 size="xl"
                 className="group bg-white text-black hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 font-semibold text-lg px-10 py-6 h-auto"
