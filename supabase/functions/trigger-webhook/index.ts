@@ -16,6 +16,9 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
  * signed with BETA_APPROVAL_SECRET. The app checks the signature, adds them to the beta and
  * sends them the welcome email that invites them to sign in with Google.
  *
+ * The requester's confirmation is sent from Cristian (cristian@corteza.app, or the BETA_FROM secret)
+ * so they can just reply; the team notification comes from noreply@corteza.app.
+ *
  * Secrets: RESEND_API_KEY, SIGNUP_NOTIFY_EMAIL (comma separated), BETA_APPROVAL_SECRET (the same
  * value as in the app; without it the email has no Approve link), APP_URL (optional, default
  * https://app.corteza.app), plus SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, which Supabase
@@ -24,6 +27,8 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const FROM = "Corteza <noreply@corteza.app>";
+/** The requester's confirmation comes from a person, so a reply reaches Cristian (forwarded to his inbox) */
+const PERSONAL_FROM = Deno.env.get("BETA_FROM")?.trim() || "Cristian from Corteza <cristian@corteza.app>";
 const MAX_PAYLOAD_BYTES = 10240; // 10KB
 const FALLBACK_WINDOW_MS = 15 * 60 * 1000;
 const APPROVAL_LINK_DAYS = 30;
@@ -113,13 +118,13 @@ async function claimSignup(email: string): Promise<Signup | null> {
 }
 
 /** Sends one email with Resend, retrying once on 429 / 5xx */
-async function sendEmail(message: { to: string[]; subject: string; html: string; reply_to?: string }): Promise<void> {
+async function sendEmail(message: { to: string[]; subject: string; html: string; reply_to?: string; from?: string }): Promise<void> {
   const apiKey = requireEnv("RESEND_API_KEY");
   for (let attempt = 1; attempt <= 2; attempt++) {
     const response = await fetch(RESEND_API_URL, {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from: FROM, ...message }),
+      body: JSON.stringify({ from: FROM, ...message }), // message.from, when given, replaces FROM
     });
     if (response.ok) return;
     const detail = await response.text();
@@ -245,7 +250,7 @@ serve(async (req) => {
 
     const notifyTo = (Deno.env.get("SIGNUP_NOTIFY_EMAIL") || "").split(",").map((e) => e.trim()).filter(Boolean);
     const results = await Promise.allSettled([
-      sendEmail({ to: [signup.email], ...welcomeEmail(signup), ...(notifyTo[0] ? { reply_to: notifyTo[0] } : {}) }),
+      sendEmail({ to: [signup.email], from: PERSONAL_FROM, ...welcomeEmail(signup) }),
       notifyTo.length
         ? approvalLink(signup).then((approveUrl) => sendEmail({ to: notifyTo, reply_to: signup.email, ...notificationEmail(signup, approveUrl) }))
         : Promise.resolve(),
