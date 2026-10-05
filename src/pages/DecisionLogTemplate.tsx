@@ -228,11 +228,6 @@ Owner: Priya · Status: Live · Revisit: 2026-05-24`}
                   <ArrowRight size={16} className="ml-2" />
                 </Button>
               </Link>
-              <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg">
-                  Try the demo
-                </Button>
-              </a>
             </div>
           </div>
 

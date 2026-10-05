@@ -4,13 +4,12 @@ import { faqs } from "../../../data/faq";
 export const getProductInfoTool = defineTool({
   name: "get_product_info",
   title: "Get Corteza product info",
-  description: "Get an overview of Corteza, its FAQ, and links to the demo and early access.",
+  description: "Get an overview of Corteza, its FAQ, and the link to request early access.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const text = [
       "Corteza is your AI team memory: log relevant team decisions wherever you are, and search what was decided and why.",
-      "Try the demo: https://app.corteza.app/demo",
       "Request early access: https://corteza.app/early-access",
       "",
       ...faqs.map((f) => `Q: ${f.question}\nA: ${f.answer}`),

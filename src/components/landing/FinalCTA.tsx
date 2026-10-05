@@ -19,9 +19,6 @@ const FinalCTA = () => (
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Link>
-        <a href="https://app.corteza.app/demo" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-ink-foreground underline underline-offset-4 hover:text-signal">
-          or try the demo →
-        </a>
       </div>
       <div className="flex flex-wrap gap-x-6 gap-y-2 text-ink-foreground/70 text-sm">
         {["Free during beta", "No bots in your meetings", "Nothing new to learn"].map((item) => (
