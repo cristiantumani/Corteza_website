@@ -15,7 +15,7 @@
       {
         "name": "get_product_info",
         "title": "Get Corteza product info",
-        "description": "Get an overview of Corteza, its FAQ, and links to the demo and early access.",
+        "description": "Get an overview of Corteza, its FAQ, and the link to request early access.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
