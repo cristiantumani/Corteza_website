@@ -34,9 +34,9 @@ const Index = () => {
       <main>
         <Hero />
         <Problem />
+        <Outcomes />
         <Pillars />
         <TeamMemory />
-        <Outcomes />
         <Trust />
         <FAQ />
         <FinalCTA />
