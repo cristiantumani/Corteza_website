@@ -1,129 +1,70 @@
-import { CheckCircle2, Circle, AlertTriangle, TrendingUp, CalendarCheck, Lock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useReveal } from "@/hooks/use-reveal";
 
-/** Example cards: illustrations of each pillar, not product screenshots */
-const LoopExample = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant p-5 space-y-3">
-    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Launch plan · follow-up</p>
-    {[
-      { done: true, text: "Pricing page updated", who: "Ana", when: "Done" },
-      { done: false, text: "Send the beta invite to 20 customers", who: "Martín", when: "Due Friday" },
-      { done: false, overdue: true, text: "Confirm the payments provider", who: "Sofía", when: "2 days overdue" },
-    ].map(item => (
-      <div key={item.text} className="flex items-start gap-3">
-        {item.done
-          ? <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-          : item.overdue
-            ? <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-            : <Circle className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />}
-        <div className="flex-1">
-          <p className={`text-sm ${item.done ? "text-muted-foreground line-through" : "text-foreground"}`}>{item.text}</p>
-          <p className={`text-xs ${item.overdue ? "text-destructive" : "text-muted-foreground"}`}>{item.who} · {item.when}</p>
-        </div>
-      </div>
-    ))}
-    <p className="text-xs text-muted-foreground border-t border-border pt-3">
-      Reminder sent to Sofía · Decision on pricing reconfirmed in Tuesday's meeting
-    </p>
-  </div>
-);
-
-const FeedbackExample = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant p-5">
-    <div className="flex items-center justify-between mb-4">
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Weekly ops · your feedback</p>
-      <span className="flex items-center gap-1 text-xs text-muted-foreground"><Lock className="w-3 h-3" /> Only you</span>
-    </div>
-    <div className="grid grid-cols-3 gap-3 mb-4">
-      {[["3", "decisions"], ["5", "action items"], ["2", "had no owner"]].map(([n, label]) => (
-        <div key={label} className="rounded-lg bg-secondary/60 p-3 text-center">
-          <p className="text-xl font-bold text-foreground">{n}</p>
-          <p className="text-xs text-muted-foreground">{label}</p>
-        </div>
-      ))}
-    </div>
-    <p className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-      <TrendingUp className="w-4 h-4 text-accent" /> Next time
-    </p>
-    <ul className="space-y-1.5 text-sm text-muted-foreground">
-      <li>• "Q4 hiring" came up for the 3rd week in a row. Decide it or take it offline.</li>
-      <li>• 20 minutes went to a topic decided two weeks ago.</li>
-      <li>• 2 of 5 next steps ended without a date.</li>
-    </ul>
-  </div>
-);
-
-const BriefExample = () => (
-  <div className="bg-card rounded-xl border border-border shadow-elegant p-5">
-    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3 flex items-center gap-2">
-      <CalendarCheck className="w-4 h-4 text-accent" /> Before today's product sync
-    </p>
-    <div className="space-y-3 text-sm">
-      <div>
-        <p className="font-semibold text-foreground">Decided last time</p>
-        <p className="text-muted-foreground">Launch moves to October 22.</p>
-      </div>
-      <div>
-        <p className="font-semibold text-foreground">Still open</p>
-        <p className="text-muted-foreground">Who approves discounts above 30%?</p>
-      </div>
-      <div>
-        <p className="font-semibold text-foreground">Who owes what</p>
-        <p className="text-muted-foreground">Martín: beta invites (due Friday) · Sofía: payments provider (overdue)</p>
-      </div>
-    </div>
-  </div>
-);
-
-const pillars = [
-  {
-    badge: "After the meeting",
-    title: "Close the loop",
-    text: "Every decision, owner and deadline is tracked until it's done. Corteza follows up with the people responsible, flags what's overdue, and notices when a later meeting moves something forward or reverses it.",
-    visual: <LoopExample />,
-  },
-  {
-    badge: "For the organizer",
-    title: "Know how every meeting went",
-    text: "After each meeting, the organizer gets a private scorecard: did it end with clear decisions and owners, how much time went to topics already decided, and what to change next time. Coaching, not surveillance.",
-    visual: <FeedbackExample />,
-  },
-  {
-    badge: "Before the meeting",
-    title: "Walk in prepared",
-    text: "Before a recurring meeting, everyone gets a short brief: what was decided last time, what's still open and who owes what. Meetings start where the last one ended.",
-    visual: <BriefExample />,
-  },
+const loop = [
+  { k: "Meet", d: "Run your Google Meet as usual. No bot joins the call." },
+  { k: "Capture", d: "Corteza picks out what actually matters." },
+  { k: "Understand", d: "Decisions, actions, questions and risks — with sources." },
+  { k: "Act", d: "Owners get nudged until the work is done." },
+  { k: "Remember", d: "Everything joins your team's searchable memory." },
 ];
 
-const Pillars = () => (
-  <section id="how-it-works" className="py-24">
-    <div className="container mx-auto px-6 max-w-[1200px]">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Before, during and after every meeting
-        </h2>
-        <p className="text-lg text-muted-foreground">
-          Corteza doesn't take notes. It makes your meetings pay off.
-        </p>
-      </div>
+const steps = [
+  ["Connect Google Meet", "Takes a minute. Corteza works with the meetings you already have."],
+  ["Corteza finds the outcomes", "Decisions, action items, open questions and risks, each linked to the moment it was said."],
+  ["Follow through", "See what needs your attention and what's still open — before the next meeting."],
+];
 
-      <div className="space-y-20">
-        {pillars.map((pillar, index) => (
-          <div key={pillar.title} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-              <span className="inline-block text-xs font-semibold uppercase tracking-wide text-accent bg-accent/10 rounded-full px-3 py-1 mb-4">
-                {pillar.badge}
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{pillar.title}</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">{pillar.text}</p>
-            </div>
-            <div className={index % 2 === 1 ? "lg:order-1" : ""}>{pillar.visual}</div>
-          </div>
-        ))}
+const Pillars = () => {
+  const { ref, visible } = useReveal();
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (!visible) return;
+    const id = setInterval(() => setActive((a) => (a + 1) % loop.length), 1800);
+    return () => clearInterval(id);
+  }, [visible]);
+
+  return (
+    <section id="how-it-works" className="py-28 bg-ink text-ink-foreground overflow-hidden">
+      <div ref={ref} className={`container mx-auto px-6 max-w-[1200px] reveal ${visible ? "is-visible" : ""}`}>
+        <p className="text-sm font-semibold uppercase tracking-widest text-signal mb-4">The Corteza loop</p>
+        <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] max-w-3xl mb-16">
+          Every meeting goes all the way around.
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 mb-24">
+          {loop.map((s, i) => (
+            <button
+              key={s.k}
+              onMouseEnter={() => setActive(i)}
+              className={`text-left rounded-2xl p-6 border transition-all duration-500 ${
+                active === i ? "bg-signal border-signal text-signal-foreground md:-translate-y-2" : "border-ink-foreground/15 text-ink-foreground"
+              }`}
+            >
+              <span className="text-sm font-mono opacity-70">0{i + 1}</span>
+              <p className="text-2xl font-semibold mt-6 mb-2">{s.k}</p>
+              <p className={`text-sm leading-relaxed ${active === i ? "opacity-90" : "opacity-60"}`}>{s.d}</p>
+            </button>
+          ))}
+        </div>
+
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12">
+          <h3 className="text-3xl font-semibold">How it works.<span className="block text-ink-foreground/50 font-serif italic font-normal">Three steps, that's it.</span></h3>
+          <ol className="divide-y divide-ink-foreground/15 border-y border-ink-foreground/15">
+            {steps.map(([t, d], i) => (
+              <li key={t} className="py-6 grid grid-cols-[3rem_1fr] gap-4">
+                <span className="text-3xl font-serif italic text-signal">{i + 1}</span>
+                <div>
+                  <p className="text-xl font-semibold mb-1">{t}</p>
+                  <p className="text-base text-ink-foreground/65">{d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
-      <p className="text-center text-xs text-muted-foreground mt-16">Examples are illustrative.</p>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Pillars;
