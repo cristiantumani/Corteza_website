@@ -266,7 +266,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Tools built specifically for decision logging — like Corteza — integrate directly into Slack, capture entries with a single command, and make them searchable with natural language. The tradeoff is that it's another tool to adopt, though the best ones are designed to require almost no behaviour change.",
+        text: "Tools built specifically for decision logging — like Corteza — read the transcripts and notes your meetings already produce, capture decisions without anyone taking notes, and make them searchable with natural language. The tradeoff is that it's another tool to adopt, though the best ones are designed to require almost no behaviour change.",
       },
       {
         type: "h2",
@@ -345,7 +345,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "cta",
-        text: "Skip the manual process — Corteza captures decisions automatically from Slack and makes them searchable for your whole team.",
+        text: "Skip the manual process — Corteza captures decisions automatically from your Google Meet meetings and makes them searchable.",
       },
     ],
   },

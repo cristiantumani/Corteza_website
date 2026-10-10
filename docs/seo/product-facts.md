@@ -16,19 +16,29 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - **Outcomes:** decisions, action items, open questions and risks, each with the meeting it came from,
   a short quote as evidence, owner and due date when stated.
 - **Review:** AI-captured outcomes can be confirmed or dismissed; dismissals teach the extraction.
-- **Action items:** owners, due dates, done/cancelled; "Does this also resolve…?" when one is done.
-- **Topic threads:** a question, its risks, decisions and next steps about one subject stay together,
-  even across meetings; a new decision suggests closing the earlier items it resolves.
+- **Action items:** owners, due dates, done/cancelled; an Active and a Resolved tab; the text, the why
+  and the owners can be edited; "Does this also resolve…?" when one is done.
+- **Open questions and risks:** who raised them; a question is marked answered (with the answer), a risk
+  mitigated (with how), and either can be reopened.
+- **Topic threads:** a question, its risks, decisions and next steps about one subject stay together.
+  Linking a new meeting's outcomes to earlier meetings (and suggesting to close the earlier items a new
+  decision resolves) is being turned on workspace by workspace, so don't present it as available to
+  everyone yet.
 - **Decide and close:** type "We decided not to pursue X" and Corteza finds the open questions, risks and
   action items it settles, and closes them when you confirm.
 - **Morning summary email:** your due and overdue items, and prep for today's meetings with what is
-  still open from each meeting's earlier sessions (with the optional calendar permission).
+  still open from each meeting's earlier sessions (with the optional calendar permission). Written by a
+  "morning partner" with a personality (The Sergeant, The Sarcastic Colleague), or plain, as each person
+  picks in Settings.
 - **Home:** "Prepare your day" with today's meetings and their open items; mark items done in place.
 - **Search:** ask questions in plain language ("What did we decide about pricing?", "What's pending
-  from Ana?") and get an answer with its sources.
+  from Ana?", "What's pending from the growth weekly?") and get an answer with its sources.
+- **Context for the AI:** a company description, a glossary and documents (uploaded, or picked from
+  Google Drive by an admin) help the AI capture what matters and spell names right.
 - **Sensitive topics:** people matters (performance, leaving, pay, health…) stay visible only to the
   person whose meeting it was.
-- **Languages:** English and Spanish.
+- **Languages:** English and Spanish (the app and the emails).
+- **Works on a phone** in the browser (no mobile app).
 - **Other inputs:** Chrome extension, manual entry, transcript upload, Slack `/decision`.
 
 ## Privacy and security (safe to say)
@@ -42,5 +52,7 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 
 - Support for Zoom, Microsoft Teams or other meeting tools (Google Meet only).
 - Certifications (SOC 2, ISO 27001, HIPAA…) or Google verification status.
+- Meeting feedback or a scorecard for the organizer: it's on the roadmap, not built.
+- A mobile app.
 - Prices, plans, customer names, customer counts, or statistics we don't have a source for.
 - Integrations other than Google Meet/Calendar/Drive, Slack (input only), Jira linking, and the Chrome extension.
