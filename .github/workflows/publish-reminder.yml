@@ -1,0 +1,42 @@
+# Lovable doesn't publish on its own when GitHub changes: someone has to click Publish.
+# Every push to main that didn't come from Lovable (a merged PR, e.g. the weekly blog post)
+# emails a reminder through Resend.
+#
+# Setup (repo Settings → Secrets and variables → Actions):
+#   secret   RESEND_API_KEY          a Resend API key that can send from corteza.app
+#   variable PUBLISH_REMINDER_EMAIL  who gets the reminder (default cristian@corteza.app)
+name: Remind to publish in Lovable
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  remind:
+    # Lovable's own commits are published from Lovable already
+    if: ${{ !contains(github.event.head_commit.author.name, 'gpt-engineer') && !contains(github.event.head_commit.author.name, 'lovable') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send the reminder
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TO: ${{ vars.PUBLISH_REMINDER_EMAIL || 'cristian@corteza.app' }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          COMPARE: ${{ github.event.compare }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ]; then
+            echo "RESEND_API_KEY is not set: no reminder sent"
+            exit 0
+          fi
+          # A merged PR's message is "Merge pull request #N …" then its title
+          TITLE=$(printf '%s\n' "$MESSAGE" | sed '/^Merge pull request/d;/^$/d' | head -1)
+          [ -n "$TITLE" ] || TITLE=$(printf '%s\n' "$MESSAGE" | head -1)
+          jq -n --arg to "$TO" --arg title "$TITLE" --arg compare "$COMPARE" '{
+            from: "Corteza <cristian@corteza.app>",
+            to: [$to],
+            subject: ("Publish in Lovable: " + $title),
+            text: ("A change reached main on the corteza.app website:\n\n  " + $title + "\n\nIt is not live yet. Open the project in Lovable (https://lovable.dev/projects) and click Publish.\n\nChanges: " + $compare + "\n")
+          }' | curl -sS --fail-with-body https://api.resend.com/emails \
+                 -H "Authorization: Bearer $RESEND_API_KEY" \
+                 -H "Content-Type: application/json" \
+                 --data @-
