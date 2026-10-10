@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { PRIVACY_URL, TERMS_URL } from "@/lib/legal";
 
 const Footer = () => {
   return (
@@ -11,12 +11,12 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-8">
-            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
+            <a href={PRIVACY_URL} className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
               Privacy
-            </Link>
-            <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
+            </a>
+            <a href={TERMS_URL} className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
               Terms
-            </Link>
+            </a>
             <a href="https://www.linkedin.com/company/111306406" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors">
               LinkedIn
             </a>

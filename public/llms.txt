@@ -19,5 +19,5 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Optional
 
-- [Privacy](/privacy): Privacy policy.
-- [Terms](/terms): Terms of service.
+- [Privacy](https://app.corteza.app/privacy): Privacy policy (English and Spanish).
+- [Terms](https://app.corteza.app/terms): Terms of service (English and Spanish).

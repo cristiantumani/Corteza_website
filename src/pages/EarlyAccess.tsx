@@ -9,6 +9,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
 import { track } from "@/lib/analytics";
+import { PRIVACY_URL, TERMS_URL } from "@/lib/legal";
 
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
 
@@ -388,13 +389,13 @@ const EarlyAccess = () => {
 
                 <p className="text-xs text-muted-foreground text-center">
                   By signing up, you agree to our{" "}
-                  <Link to="/terms" className="underline hover:text-foreground">
+                  <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
                     Terms of Service
-                  </Link>{" "}
+                  </a>{" "}
                   and{" "}
-                  <Link to="/privacy" className="underline hover:text-foreground">
+                  <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
                     Privacy Policy
-                  </Link>
+                  </a>
                 </p>
               </form>
             </div>
