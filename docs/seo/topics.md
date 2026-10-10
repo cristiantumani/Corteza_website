@@ -9,7 +9,7 @@ Google Workspace, with many recurring internal meetings.
 
 Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 
-- [ ] google meet decision log — How to keep a decision log of what's decided in Google Meet, manually and automatically (informational/commercial) · /decision-log-template, /blog/how-to-document-team-decisions-without-slowing-down
+- [x] google meet decision log — How to keep a decision log of what's decided in Google Meet, manually and automatically (informational/commercial) · /decision-log-template, /blog/how-to-document-team-decisions-without-slowing-down → /blog/google-meet-decision-log (2026-10-10)
 - [ ] gemini take notes for me — What Gemini's "Take notes for me" captures, what it misses, and how to turn notes into follow-through (informational) · /early-access
 - [ ] meeting action items not getting done — Why action items from meetings get forgotten and a simple system to close them (informational) · /blog/why-your-team-keeps-remaking-the-same-decisions
 - [ ] decision log template — Decision log template for product teams: fields, examples and how to keep it alive (commercial) · /decision-log-template
@@ -25,3 +25,4 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [ ] ai meeting assistant follow-through — AI note-takers vs follow-through: what happens after the meeting ends (commercial; describe categories, not competitors' features)
 - [ ] google workspace meeting productivity — Getting more out of Google Meet, Calendar and Gemini for team follow-through (informational)
 - [ ] onboarding new team members context — Giving new hires the context behind past decisions (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team
+- [ ] gemini meeting notes decisions section — Google Meet's new Decisions section (Aligned / Needs further discussion / Disagreed / Shelved): how to use it and how to carry those statuses across meetings (informational; new feature since April 2026, little in-depth content yet) · /blog/google-meet-decision-log

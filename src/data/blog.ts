@@ -20,6 +20,200 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "google-meet-decision-log",
+    title: "Google Meet Decision Log: Keep Every Decision Findable",
+    description:
+      "How to keep a Google Meet decision log: what Gemini notes capture, the fields each entry needs, a 10-minute manual routine, and when to automate it.",
+    date: "2026-10-10",
+    readTime: "7 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Your team decided to delay the pricing change three weeks ago. You're sure of it. It was in the Tuesday product sync, or maybe the leadership call after it. Both happened in Google Meet, both had notes switched on, and now you're opening Drive, searching \"pricing\", and finding eleven \"Notes by Gemini\" documents that each mention it. A Google Meet decision log exists to make that search take ten seconds instead of fifteen minutes.",
+      },
+      {
+        type: "p",
+        text: "This guide covers what Google Meet already captures on its own, what it leaves out, the fields a useful decision log needs, a manual routine that takes about ten minutes a week, and what to look for if you'd rather automate it.",
+      },
+      {
+        type: "h2",
+        text: "What a Google Meet decision log is (and what it isn't)",
+      },
+      {
+        type: "p",
+        text: "A decision log is a single, running list of what your team has decided, why, and who is accountable for it. One row per decision, kept across all your meetings, so anyone can answer \"what did we decide about X?\" without having attended the meeting.",
+      },
+      {
+        type: "p",
+        text: "It is not the same as meeting notes. Notes are organised by meeting: one document per call, in the order things were said. A log is organised by decision. The difference sounds small until you need to find something. Notes answer \"what happened on the 14th?\". A log answers \"where do we stand on pricing?\", which is the question people actually ask.",
+      },
+      {
+        type: "h2",
+        text: "What Google Meet already gives you",
+      },
+      {
+        type: "p",
+        text: "If your Workspace plan includes Gemini, \"Take notes for me\" does a good share of the work. Once someone turns it on during a call, it writes a Google Doc with a summary, suggested next steps and the details of the discussion. The document is saved to the organiser's Drive and attached to the Calendar event, and the organiser gets an email with a link after the meeting.",
+      },
+      {
+        type: "p",
+        text: "Since April 2026 the notes can also include a Decisions section. Google's announcement describes it as capturing outcomes with a status: Aligned, Needs further discussion, Disagreed or Shelved. You can switch individual sections on or off during a call, and at launch the Decisions section was available in English only.",
+      },
+      {
+        type: "link",
+        text: "Google's own announcement of the Decisions section and the section toggles in \"Take notes for me\".",
+        href: "https://workspaceupdates.googleblog.com/2026/04/new-ways-to-customize-ai-generated-meeting-notes.html",
+        linkLabel: "Google Workspace Updates: New ways to customize AI-generated meeting notes",
+      },
+      {
+        type: "p",
+        text: "That's genuinely useful. But it's still one document per meeting, and that leaves a few gaps:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decisions are scattered. Each meeting's decisions live in that meeting's doc, in the organiser's Drive. Different organisers, different Drives, different sharing settings.",
+          "Nothing connects one meeting to the next. If Tuesday's sync marks a pricing question \"Needs further discussion\" and Thursday's leadership call settles it, no document records that the first item is now closed.",
+          "Notes only start when someone starts them. Whatever was said before \"Take notes for me\" was switched on, or in a call where nobody turned it on, isn't there.",
+          "Nobody owns the follow-up. A next step in a doc doesn't remind anyone, and doesn't know when it's done.",
+          "The AI can be wrong. A tentative \"let's probably do X\" can read like a decision. Somebody needs to confirm it.",
+        ],
+      },
+      {
+        type: "p",
+        text: "So the Gemini doc is a good source. The log is the place where those sources come together.",
+      },
+      {
+        type: "h2",
+        text: "What each decision log entry needs",
+      },
+      {
+        type: "p",
+        text: "Keep the fields few. Every extra column is a reason to skip the update. These are the ones that earn their place:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decision: one sentence, stated as an outcome. \"We'll delay the pricing change to Q1\", not \"Discussed pricing\".",
+          "Why: one or two lines on the main reason. This is what saves you six months from now.",
+          "Alternatives rejected: what else was on the table. Optional, but it stops the same debate from restarting.",
+          "Owner: one person accountable for acting on it. A team is not an owner.",
+          "Date and meeting: when it was decided and which call, with a link to that meeting's notes doc as evidence.",
+          "Status: open, decided, revisited or superseded. If a later decision replaces it, say which one.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Open questions and risks deserve a home too. Many \"decisions\" in meetings are really \"we'll decide next week once we have the numbers\". If you only log the final answer, you lose track of the questions still waiting for one, which are usually the ones that slip.",
+      },
+      {
+        type: "link",
+        text: "Don't want to build the columns yourself? Our free decision log template has these fields ready, as an Excel file or a version you can paste into Google Docs or Sheets.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template",
+      },
+      {
+        type: "h2",
+        text: "How to keep a Google Meet decision log manually",
+      },
+      {
+        type: "p",
+        text: "A Google Sheet shared with the team is enough. Here's a routine that works for a team with a handful of recurring meetings:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Make notes the default. Agree that whoever organises a recurring meeting turns on \"Take notes for me\" at the start, and keep the Decisions section on.",
+          "Close each meeting with a 60-second read-back. The organiser says out loud what was decided and who owns it. This catches the \"I thought we agreed…\" moments while everyone's still in the room, and gives the notes a clean sentence to capture.",
+          "Copy decisions into the log the same day. The organiser opens the notes doc, checks the Decisions and Next steps sections against their memory, and adds a row per real decision, with the link to the doc. Five minutes, while it's fresh.",
+          "Close what got settled. When you add a new decision, look for older rows it resolves: an open question, a risk, a \"needs further discussion\". Mark them closed and point to the new row.",
+          "Review open items once a week. Start one recurring meeting, usually the weekly team sync, by filtering the log for open items and overdue owners. Ten minutes, and nothing quietly ages out.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Gemini notes record what was said in one meeting. A decision log tracks what's still true across all of them. Use the notes as evidence, keep the log as the single place where decisions, owners and open questions live, and close old items when new decisions settle them.",
+      },
+      {
+        type: "h3",
+        text: "What makes the manual version break",
+      },
+      {
+        type: "p",
+        text: "The routine is simple. The failure mode is also simple: it depends on one person doing step three after every meeting, and step three is the first thing to go in a busy week. A few habits help:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Give the log one owner per team, not \"everyone\". Shared responsibility tends to mean nobody's.",
+          "Don't log everything. Choosing a meeting room isn't a decision worth a row. A rough test: would someone outside the meeting need to know this to do their job?",
+          "Keep the language plain. \"Decided: mobile app ships without offline mode\" beats a project codename nobody will remember in March.",
+          "Link, don't copy. Paste the link to the notes doc rather than pasting paragraphs. The log stays readable, and the evidence is one click away.",
+        ],
+      },
+      {
+        type: "p",
+        text: "If you want more on keeping documentation light enough that people actually do it, we wrote about that separately.",
+      },
+      {
+        type: "link",
+        text: "A lightweight framework for recording decisions that doesn't turn into a second job.",
+        href: "/blog/how-to-document-team-decisions-without-slowing-down",
+        linkLabel: "How to document team decisions without slowing down",
+      },
+      {
+        type: "h2",
+        text: "When to automate your Google Meet decision log",
+      },
+      {
+        type: "p",
+        text: "The manual routine is fine for one team with two or three recurring meetings. It starts to strain when you have many organisers, several meetings a day, or decisions that build on each other over weeks. At that point the copying, and especially the closing of old items, is where things slip.",
+      },
+      {
+        type: "p",
+        text: "If you look at tools for this, a few questions separate a log you'll trust from another pile of summaries:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does it need a bot in the call? Some tools join as a visible participant. Others work from the transcript and notes Google Meet already produces.",
+          "Does it show evidence? Every captured decision should point to the meeting it came from, ideally with a short quote, so you can check it in seconds.",
+          "Can you confirm or dismiss what it captured? AI extraction will get some things wrong. Review should be one click, not an edit session.",
+          "Does it connect meetings? The hard part isn't capturing Tuesday's decision. It's noticing that it settles the question from two weeks ago.",
+          "What does it keep? Check whether it stores full transcripts or only the outcomes, and who in your company can see what.",
+        ],
+      },
+      {
+        type: "p",
+        text: "This is the problem we built Corteza around. It reads Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found. When you record a new decision, it suggests closing the earlier questions and action items it resolves.",
+      },
+      {
+        type: "h2",
+        text: "Common mistakes with meeting decision logs",
+      },
+      {
+        type: "ul",
+        items: [
+          "Treating the notes folder as the log. A folder of docs is an archive. You can't filter it by owner or status.",
+          "Logging only final decisions. The open questions and risks are what get dropped between meetings.",
+          "Never closing anything. A log where nothing is marked superseded slowly fills with decisions that are no longer true, and people stop trusting it.",
+          "Starting with a backfill. Don't try to log the last two years. Start with this week's meetings and build the habit first.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A decision log doesn't need to be clever. It needs to be the one place your team checks before reopening a debate. Google Meet now does a decent job of writing down what happened in each call. Keeping track of what it all adds up to is still on you, whether you do it with a spreadsheet and ten minutes a week or hand the busywork to a tool.",
+      },
+      {
+        type: "cta",
+        text: "Corteza turns your Google Meet transcripts and Gemini notes into a decision log your team can search, with owners, evidence and follow-through. It's in private beta and free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "why-your-team-keeps-remaking-the-same-decisions",
     title: "Why Your Team Keeps Re-Making the Same Decisions",
     description:
