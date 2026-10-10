@@ -12,6 +12,7 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Blog
 
+- [Google Meet Decision Log: Keep Every Decision Findable](/blog/google-meet-decision-log): What Gemini meeting notes capture, the fields a decision log needs, a manual routine and when to automate it.
 - [Why Your Team Keeps Re-Making the Same Decisions](/blog/why-your-team-keeps-remaking-the-same-decisions): How institutional knowledge disappears and what to do about it.
 - [How to Document Team Decisions Without Slowing Down](/blog/how-to-document-team-decisions-without-slowing-down): A lightweight framework and template for decision logs.
 - [The Hidden Cost of Lost Context When Engineers Join Your Team](/blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team): The real onboarding tax and how to fix it.
