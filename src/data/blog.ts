@@ -20,6 +20,203 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "gemini-take-notes-for-me",
+    title: "Gemini Take Notes for Me: What It Captures and What It Misses",
+    description:
+      "What Gemini's Take notes for me in Google Meet captures, where it falls short, and a simple routine to turn its notes into action items that get done.",
+    date: "2026-10-12",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Gemini's \"Take notes for me\" in Google Meet solves a real problem: nobody has to be the person typing while everyone else talks. Turn it on, have the meeting, and a Google Doc with a summary and next steps shows up afterwards. For many teams it's the first time every meeting has notes at all.",
+      },
+      {
+        type: "p",
+        text: "And yet, a month in, a familiar pattern appears. The notes exist. The action items in them don't get done any more often than before. This guide covers what \"Take notes for me\" actually captures, what it leaves out, and a lightweight routine for turning the notes into follow-through, whether or not you add any other tool.",
+      },
+      {
+        type: "h2",
+        text: "How Gemini's Take notes for me works",
+      },
+      {
+        type: "p",
+        text: "Someone in the meeting, usually the organiser, turns note-taking on from the Meet toolbar, or ahead of time from the Calendar event. Participants see that notes are being taken. No extra participant joins the call: Gemini works inside Meet itself.",
+      },
+      {
+        type: "p",
+        text: "When the meeting ends, Gemini writes a Google Doc. It's saved to the organiser's Drive and attached to the Calendar event, and the organiser gets an email with a link. Depending on how you set it up, the doc can include:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Summary: the main topics, in a few paragraphs.",
+          "Decisions: what the meeting settled, with a status such as Aligned, Needs further discussion, Disagreed or Shelved. Google added this section in April 2026, starting in English.",
+          "Next steps: suggested action items, often with a name attached.",
+          "Details: a longer, topic-by-topic account of the discussion.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Whether you can use it depends on the organiser's Google Workspace plan and on your admin having it enabled. If the option is missing in your toolbar, that's the first place to check, rather than your browser.",
+      },
+      {
+        type: "link",
+        text: "Google's help page lists the current requirements, supported languages and how to share the notes.",
+        href: "https://support.google.com/meet/answer/14754931",
+        linkLabel: "Google Meet Help: Take notes for me in Google Meet",
+      },
+      {
+        type: "h2",
+        text: "What the notes capture well",
+      },
+      {
+        type: "p",
+        text: "Credit where it's due. For a typical 30-minute internal meeting, the notes are good at:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The gist. If you missed the meeting, the summary tells you what was discussed in two minutes of reading.",
+          "Explicit statements. \"Marta will send the revised plan by Friday\" usually lands in Next steps with Marta's name on it.",
+          "A record that exists. The doc is attached to the Calendar event, so you can find it from the meeting itself weeks later.",
+          "Consistency. Every meeting gets the same structure, regardless of who organised it or how tired they were.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What Take notes for me misses",
+      },
+      {
+        type: "p",
+        text: "The gaps are less about the AI and more about what a per-meeting document is. A few show up in almost every team:",
+      },
+      {
+        type: "h3",
+        text: "1. Implied commitments",
+      },
+      {
+        type: "p",
+        text: "Meetings rarely produce tidy sentences. \"I can probably look into that\" or \"let's circle back once we have the numbers\" are commitments in practice, but they often don't read as action items, so they're missing or vague in the notes. Those are exactly the ones that get forgotten.",
+      },
+      {
+        type: "h3",
+        text: "2. Owners and due dates",
+      },
+      {
+        type: "p",
+        text: "A next step without an owner is a wish. Notes can only record an owner or date if someone said one out loud. In many meetings nobody does, so the doc lists \"Update the onboarding flow\" and everyone assumes someone else has it.",
+      },
+      {
+        type: "h3",
+        text: "3. Anything before notes were on",
+      },
+      {
+        type: "p",
+        text: "Notes start when someone starts them. The first five minutes, a meeting where nobody remembered, or a quick call that turned into an important one: none of it is in a doc.",
+      },
+      {
+        type: "h3",
+        text: "4. What happens after",
+      },
+      {
+        type: "p",
+        text: "This is the big one. The doc is a snapshot of one meeting. It doesn't remind the owner, doesn't know when an item is done, and doesn't show up in next week's meeting to ask. Each recurring meeting produces a new doc, and last week's open items stay in last week's doc.",
+      },
+      {
+        type: "h3",
+        text: "5. The thread across meetings",
+      },
+      {
+        type: "p",
+        text: "A question raised on Monday and answered on Thursday lives in two different documents, often in two different people's Drives. Nothing marks Monday's question as answered. If you want to know where a topic stands, you're reading docs in date order.",
+      },
+      {
+        type: "link",
+        text: "When decisions and open questions get lost between meetings, teams end up having the same discussion twice.",
+        href: "/blog/why-your-team-keeps-remaking-the-same-decisions",
+        linkLabel: "Why your team keeps re-making the same decisions",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Take notes for me solves note-taking, not follow-through. The notes tell you what was said. Whether anything happens next depends on a small routine after the meeting: confirm each action item has an owner and a date, put it somewhere people already look, and check it in the next meeting.",
+      },
+      {
+        type: "h2",
+        text: "Turning Gemini notes into follow-through",
+      },
+      {
+        type: "p",
+        text: "You don't need a new process. You need about five minutes per meeting and one habit in the next one. Here's a routine that works for most teams:",
+      },
+      {
+        type: "ol",
+        items: [
+          "End the meeting with a 60-second recap. The organiser reads out each action item with its owner and date. This turns \"I'll probably look into it\" into something the notes can capture, and it's the cheapest fix for the owner problem.",
+          "Read the notes the same day. Open the doc, check Next steps against what you remember, add the owners and dates nobody said aloud, and delete anything that wasn't really agreed. The notes are a draft, not a verdict.",
+          "Move action items to where work is tracked. A Google Doc is not a task list. Copy each item to your team's tracker, a shared Sheet, or Google Tasks, with a link back to the notes as evidence.",
+          "Share the cleaned-up notes. Send the link in the meeting's chat thread or channel, so people who weren't there see the same version.",
+          "Start the next meeting with last meeting's open items. Two minutes at the top of the agenda: what's done, what's blocked, what's no longer needed. This is the step that makes the others matter.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Step five is where most teams quietly improve. When people know the item will come up in front of the group next week, it tends to get done, or at least explicitly dropped, which is almost as useful.",
+      },
+      {
+        type: "p",
+        text: "Decisions deserve a similar treatment, but they need a longer memory than action items. We covered how to keep them in one running list, using the Gemini Decisions section as a source.",
+      },
+      {
+        type: "link",
+        text: "How to keep a running log of what's decided across your Google Meet meetings, manually or automatically.",
+        href: "/blog/google-meet-decision-log",
+        linkLabel: "Google Meet decision log: keep every decision findable",
+      },
+      {
+        type: "h2",
+        text: "Tips to get better notes from Gemini",
+      },
+      {
+        type: "p",
+        text: "A few small changes in how you run the meeting improve the notes more than any setting:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Say decisions as decisions. \"So we're going with option B\" is easy to capture. A round of nodding isn't.",
+          "Use names, not pronouns. \"Diego owns the rollout\" beats \"you take that one\".",
+          "State dates. \"By Thursday\" gives the notes a due date. \"Soon\" gives them nothing.",
+          "Turn notes on at the start. Set them from the Calendar event for recurring meetings so it doesn't depend on someone remembering.",
+          "Keep one language per meeting where you can. Mixed-language conversations are harder to summarise accurately.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "When the manual routine stops scaling",
+      },
+      {
+        type: "p",
+        text: "The routine above works well for a team lead with a few recurring meetings. It strains when you're in six meetings a day and each one produces a doc to clean up, or when items from one meeting depend on another. That's usually when the copying step gets skipped, and the system quietly reverts to \"it's in the notes somewhere\".",
+      },
+      {
+        type: "p",
+        text: "That's the gap Corteza is built for. It reads your Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found, and a morning email lists your due and overdue items, plus what's still open from earlier sessions of today's meetings.",
+      },
+      {
+        type: "p",
+        text: "Whatever you use, the principle is the same. Notes are the input. What makes meetings worth having is that the things agreed in them actually happen, and that people can see whether they did.",
+      },
+      {
+        type: "cta",
+        text: "Gemini takes the notes. Corteza makes sure decisions stick. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "google-meet-decision-log",
     title: "Google Meet Decision Log: Keep Every Decision Findable",
     description:
