@@ -1,6 +1,6 @@
 # Weekly blog post agent
 
-Runs every Monday at 9:00 (Chile) as a scheduled Claude Code routine. Goal: one SEO-optimized,
+Runs every Monday at 9:00 (Spain time, Europe/Madrid) as a scheduled Claude Code routine. Goal: one SEO-optimized,
 genuinely useful English article per week on corteza.app/blog. **For now every post goes through a
 pull request that Cristian approves** (merge = publish). Don't merge it yourself.
 
