@@ -23,3 +23,4 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 - [Privacy](https://app.corteza.app/privacy): Privacy policy (English and Spanish).
 - [Terms](https://app.corteza.app/terms): Terms of service (English and Spanish).
+- [Security](https://app.corteza.app/security): How Corteza protects meeting data: encryption per workspace, who sees what, providers, backups (English and Spanish).
