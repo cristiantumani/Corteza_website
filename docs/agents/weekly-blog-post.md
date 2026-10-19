@@ -38,6 +38,13 @@ pull request that Cristian approves** (merge = publish). Don't merge it yourself
    lockfiles or `supabase/functions/mcp/index.ts` (the build regenerates it).
 10. Commit, push, and open a PR titled `Blog: <post title>` with: the keyword and intent, a 3-line
     summary of the post, the sources used, and anything the reviewer should double-check.
+    **Always end the PR description with the full post text**, so Cristian can read it on GitHub
+    (also on his phone) before merging. Put it in a collapsed section,
+    `<details><summary><b>Read the full post</b></summary>` … `</details>`, converted from the
+    `content` array to Markdown: `h2`/`h3` as `##`/`###`, lists as lists, the `callout` as a quote
+    with its label in bold, each `link` as its text followed by a Markdown link (absolute
+    `https://corteza.app/...` URLs), and the `cta` as `**[CTA]** <text>`. Generate it from the
+    committed post so the two never differ, and regenerate it if a later commit changes the text.
 11. If anything blocks you (build fails, no suitable topic), open no PR with a broken post: report what
     happened in the session's final message.
 
