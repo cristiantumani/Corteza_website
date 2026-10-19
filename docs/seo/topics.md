@@ -11,7 +11,7 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 
 - [x] google meet decision log — How to keep a decision log of what's decided in Google Meet, manually and automatically (informational/commercial) · /decision-log-template, /blog/how-to-document-team-decisions-without-slowing-down → /blog/google-meet-decision-log (2026-10-10)
 - [x] gemini take notes for me — What Gemini's "Take notes for me" captures, what it misses, and how to turn notes into follow-through (informational) · /early-access → /blog/gemini-take-notes-for-me (2026-10-12)
-- [ ] meeting action items not getting done — Why action items from meetings get forgotten and a simple system to close them (informational) · /blog/why-your-team-keeps-remaking-the-same-decisions
+- [x] meeting action items not getting done — Why action items from meetings get forgotten and a simple system to close them (informational) · /blog/why-your-team-keeps-remaking-the-same-decisions → /blog/meeting-action-items-not-getting-done (2026-10-19)
 - [ ] decision log template — Decision log template for product teams: fields, examples and how to keep it alive (commercial) · /decision-log-template
 - [ ] meeting minutes vs decision log — The difference, and why minutes alone don't keep decisions alive (informational) · /decision-log-template
 - [ ] how to prepare for a 1:1 meeting — A 5-minute 1:1 prep routine based on what's still open between you (informational)
