@@ -581,7 +581,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "This is the problem we built Corteza around. It reads Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found. When you record a new decision, it suggests closing the earlier questions and action items it resolves.",
+        text: "This is the problem we built Corteza around. It reads Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found. And when you type a decision, like \"We decided not to pursue X\", it finds the open questions, risks and action items that decision settles, and closes them when you confirm.",
       },
       {
         type: "h2",
