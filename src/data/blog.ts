@@ -203,7 +203,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "That's the part Corteza handles for teams on Google Meet. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures action items with their owner and due date when they were said, plus the quote they came from. Each person gets a morning email with their due and overdue items, and, with calendar access, prep for today's meetings with what's still open from earlier sessions of each one, so the review at the start of the meeting is already done.",
+        text: "That's the part Corteza handles for teams on Google Meet. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures action items with their owner and due date when they were said, plus the quote they came from. Each person gets a morning email with their due and overdue items, and, with calendar access, prep for today's meetings with what's still open from earlier sessions of each one, so the review at the start of each meeting begins from a ready list.",
       },
       {
         type: "p",
@@ -211,7 +211,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "cta",
-        text: "Corteza captures action items from your Google Meet meetings and reminds the right people before they slip. Request early access to the private beta, free during the beta.",
+        text: "Corteza captures action items from your Google Meet meetings and puts each person's due and overdue items in front of them every morning. Request early access to the private beta, free during the beta.",
       },
     ],
   },
