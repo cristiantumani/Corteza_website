@@ -21,6 +21,9 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - **Open questions and risks:** who raised them; a question is marked answered (with the answer), a risk
   mitigated (with how), and either can be reopened.
 - **Topic threads:** a question, its risks, decisions and next steps about one subject stay together.
+  Each open question or risk shows how long it has been open and its next step (or "No next step"),
+  the whole thread has its own view, a decision in the thread can be used as the answer, and an item
+  can be marked "Not related" to take it out.
   Linking a new meeting's outcomes to earlier meetings (and suggesting to close the earlier items a new
   decision resolves) is being turned on workspace by workspace, so don't present it as available to
   everyone yet.
@@ -31,6 +34,8 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
   "morning partner" with a personality (The Sergeant, The Sarcastic Colleague), or plain, as each person
   picks in Settings.
 - **Home:** "Prepare your day" with today's meetings and their open items; mark items done in place.
+  A Meetings tab lists each of your meetings (last 90 days) with what came out of it; a skipped or
+  failed meeting can be captured again from there.
 - **Search:** ask questions in plain language ("What did we decide about pricing?", "What's pending
   from Ana?", "What's pending from the growth weekly?") and get an answer with its sources.
 - **Context for the AI:** a company description, a glossary and documents (uploaded, or picked from
@@ -47,11 +52,17 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - Meeting content is **encrypted with a key per workspace**.
 - Colleagues never see each other's personal space.
 - Google user data is not used to train AI models (Google API Services Limited Use).
+- The database is in the EU (MongoDB Atlas on AWS, Paris), and error monitoring (Sentry) is in the EU.
+- Encrypted nightly backups, kept for 30 days; errors and failed captures raise alerts.
+- A public security page: <https://app.corteza.app/security> (English and Spanish).
 
 ## Never claim
 
 - Support for Zoom, Microsoft Teams or other meeting tools (Google Meet only).
-- Certifications (SOC 2, ISO 27001, HIPAA…) or Google verification status.
+- Certifications (SOC 2, ISO 27001, HIPAA…), a pentest, or Google verification status (they're on
+  the roadmap, not done).
+- That all data stays in the EU: hosting's region isn't confirmed yet, and AI providers may process
+  data in the US.
 - Meeting feedback or a scorecard for the organizer: it's on the roadmap, not built.
 - A mobile app.
 - Prices, plans, customer names, customer counts, or statistics we don't have a source for.
