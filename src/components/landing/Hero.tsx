@@ -48,7 +48,7 @@ const Hero = () => {
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-10 animate-fade-in-up delay-100">
             The meeting ends. The work doesn't. Corteza turns every conversation into decisions,
-            owners and follow-ups — and remembers all of it.
+            owners and follow-ups — and remembers all of it. Ask about it from Claude or ChatGPT.
           </p>
           <div className="flex flex-wrap items-center gap-6 animate-fade-in-up delay-200">
             <Link to="/early-access" onClick={() => track("cta_click", { cta: "request_early_access", location: "hero" })}>
@@ -57,6 +57,14 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+            <a
+              href="#assistants"
+              onClick={() => track("cta_click", { cta: "ai_assistants", location: "hero" })}
+              className="group inline-flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Works with Claude and ChatGPT
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 

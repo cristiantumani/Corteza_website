@@ -14,7 +14,8 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - **Automatic capture from Google Meet:** reads Meet transcripts and Gemini "Take notes for me" notes
   after each meeting. No bot joins the call. Past meetings can be imported.
 - **Outcomes:** decisions, action items, open questions and risks, each with the meeting it came from,
-  a short quote as evidence, owner and due date when stated.
+  a short quote as evidence, owner and due date when stated. Each one is a short headline (at most 15
+  words) with a one-line why; the quote shows when you open the outcome ("In the meeting").
 - **Review:** AI-captured outcomes can be confirmed or dismissed; dismissals teach the extraction.
 - **Action items:** owners, due dates, done/cancelled; an Active and a Resolved tab; the text, the why
   and the owners can be edited; "Does this also resolve…?" when one is done.
@@ -45,6 +46,15 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - **Languages:** English and Spanish (the app and the emails).
 - **Works on a phone** in the browser (no mobile app).
 - **Other inputs:** Chrome extension, manual entry, transcript upload, Slack `/decision`.
+- **Your AI assistant:** connect Corteza to Claude, ChatGPT or another assistant that supports MCP
+  connectors (Settings → AI assistants, sign in with Google). Ask it what was decided, what's pending
+  or to prepare your day; it sees only what you see, never sensitive topics. It can also propose
+  changes (record a decision, add or update an action item, close a question or risk): each is shown
+  first, made only when you confirm, marked "via" the assistant and can be undone for 24 hours.
+  Admins can limit assistants to reading or turn them off.
+- **Lost Google connection:** if Google stops letting Corteza read your meetings, you get an email
+  with a one-click Reconnect (and a reminder 3 days later); meetings held meanwhile are captured once
+  you reconnect.
 
 ## Privacy and security (safe to say)
 
@@ -66,4 +76,7 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - Meeting feedback or a scorecard for the organizer: it's on the roadmap, not built.
 - A mobile app.
 - Prices, plans, customer names, customer counts, or statistics we don't have a source for.
-- Integrations other than Google Meet/Calendar/Drive, Slack (input only), Jira linking, and the Chrome extension.
+- Integrations other than Google Meet/Calendar/Drive, Slack (input only), Jira linking, the Chrome
+  extension, and the connector for AI assistants (MCP).
+- That an AI assistant changes things in Corteza on its own: every change needs the person's
+  confirmation.
