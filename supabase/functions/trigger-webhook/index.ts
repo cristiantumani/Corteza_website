@@ -148,7 +148,7 @@ function welcomeEmail(signup: Signup) {
           to make every meeting end in action: decisions that stick, commitments that get done, and meetings that get better over time.
         </p>
         <p style="font-size: 15px; margin: 0 0 16px;">
-          We'll reach out within a few days for a short call to learn how your team meets and decides, and see if you're a fit for this first group.
+          We'll reply personally within 24 hours to set up a short call, learn how your team meets and decides, and see if you're a fit for this first group.
         </p>
         <p style="font-size: 15px; margin: 0 0 24px;">
           Want to tell us more in the meantime? Just reply to this email.
