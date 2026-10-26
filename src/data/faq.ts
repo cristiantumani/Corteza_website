@@ -15,6 +15,11 @@ export const faqs = [
       "Yes. Every decision, commitment, open question and risk is kept in one place. Ask in plain language, like \"why did we move the launch?\", and Corteza answers with the context behind it and links to the meetings it came from. It's also the fastest way for new team members to get up to speed.",
   },
   {
+    question: "Can I use Corteza from Claude or ChatGPT?",
+    answer:
+      "Yes. Connect Corteza to Claude, ChatGPT or any assistant that supports MCP connectors, signing in with Google. Ask what was decided, what's pending or to prepare your day, and the assistant answers from your meetings with the source of each item. It can also record a decision, add or update an action item or close a question: each change is shown first, made only when you confirm it, and can be undone for 24 hours. It sees only what you can see in Corteza, never sensitive topics.",
+  },
+  {
     question: "Does a bot join my meetings?",
     answer:
       "No. There's nothing to invite and nothing to fill in. Corteza works from what your meeting tools already produce, so your meetings stay exactly as they are.",

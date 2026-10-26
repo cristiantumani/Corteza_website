@@ -3,6 +3,7 @@ import Hero from "@/components/landing/Hero";
 import Problem from "@/components/landing/Problem";
 import Pillars from "@/components/landing/Pillars";
 import TeamMemory from "@/components/landing/TeamMemory";
+import Assistants from "@/components/landing/Assistants";
 import Outcomes from "@/components/landing/Outcomes";
 import Trust from "@/components/landing/Trust";
 import FAQ from "@/components/landing/FAQ";
@@ -37,6 +38,7 @@ const Index = () => {
         <Outcomes />
         <Pillars />
         <TeamMemory />
+        <Assistants />
         <Trust />
         <FAQ />
         <FinalCTA />
