@@ -14,7 +14,6 @@ import { PRIVACY_URL, TERMS_URL } from "@/lib/legal";
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
 
 const TEAM_SIZES = ["1–10", "11–50", "51–200", "201–1000", "1000+"];
-const MEETING_TOOLS = ["Google Meet", "Zoom", "Microsoft Teams", "Other"];
 
 const selectClass =
   "flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
@@ -28,7 +27,7 @@ const EarlyAccess = () => {
   const [email, setEmail] = useState(() => (searchParams.get("email") || "").slice(0, 100));
   const [company, setCompany] = useState("");
   const [teamSize, setTeamSize] = useState("");
-  const [meetingTool, setMeetingTool] = useState("");
+  const meetingTool = "Google Meet"; // Corteza only works with Google Meet
   const [meetingProblem, setMeetingProblem] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -71,13 +70,10 @@ const EarlyAccess = () => {
       newErrors.email = "Email must be less than 100 characters";
     }
 
-    if (!company.trim()) {
-      newErrors.company = "Company is required";
-    } else if (company.trim().length > 100) {
+    if (company.trim().length > 100) {
       newErrors.company = "Company must be less than 100 characters";
     }
     if (!teamSize) newErrors.teamSize = "Pick your team size";
-    if (!meetingTool) newErrors.meetingTool = "Pick the tool you meet on most";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
