@@ -14,7 +14,6 @@ import { PRIVACY_URL, TERMS_URL } from "@/lib/legal";
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
 
 const TEAM_SIZES = ["1–10", "11–50", "51–200", "201–1000", "1000+"];
-const MEETING_TOOLS = ["Google Meet", "Zoom", "Microsoft Teams", "Other"];
 
 const selectClass =
   "flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
@@ -28,7 +27,7 @@ const EarlyAccess = () => {
   const [email, setEmail] = useState(() => (searchParams.get("email") || "").slice(0, 100));
   const [company, setCompany] = useState("");
   const [teamSize, setTeamSize] = useState("");
-  const [meetingTool, setMeetingTool] = useState("");
+  const meetingTool = "Google Meet"; // Corteza only works with Google Meet
   const [meetingProblem, setMeetingProblem] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -71,13 +70,10 @@ const EarlyAccess = () => {
       newErrors.email = "Email must be less than 100 characters";
     }
 
-    if (!company.trim()) {
-      newErrors.company = "Company is required";
-    } else if (company.trim().length > 100) {
+    if (company.trim().length > 100) {
       newErrors.company = "Company must be less than 100 characters";
     }
     if (!teamSize) newErrors.teamSize = "Pick your team size";
-    if (!meetingTool) newErrors.meetingTool = "Pick the tool you meet on most";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -151,7 +147,7 @@ const EarlyAccess = () => {
 
     toast({
       title: "Thanks! We got your request.",
-      description: "We'll reach out within a few days.",
+      description: "We'll reply personally within 24 hours.",
     });
   };
 
@@ -173,7 +169,7 @@ const EarlyAccess = () => {
             Thanks, {firstName}!
           </h1>
           <p className="text-muted-foreground mb-8">
-            We got your request. We'll reach out within a few days to learn how your team meets
+            We got your request. We'll reply personally within 24 hours to learn how your team meets
             and see if you're a fit for the private beta.
           </p>
           <Link to="/">
@@ -226,10 +222,18 @@ const EarlyAccess = () => {
                 </div>
               )}
 
-              <p className="text-lg text-muted-foreground mb-8">
-                We're opening a private beta for a small number of teams. Tell us a bit about how
-                your team meets and we'll reach out to see if it's a fit.
+              <p className="text-lg text-muted-foreground mb-6">
+                We're opening a private beta for a small number of teams. Leave your details and
+                we'll reply personally within 24 hours.
               </p>
+
+              <div className="rounded-xl border border-border bg-card p-4 mb-8 text-sm">
+                <p className="font-semibold text-foreground mb-1">What you need</p>
+                <p className="text-muted-foreground">
+                  Google Meet, with Gemini "Take notes for me" or transcription turned on. Corteza reads
+                  them after each meeting.
+                </p>
+              </div>
 
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -305,7 +309,26 @@ const EarlyAccess = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company</Label>
+                  <Label htmlFor="teamSize">Team size</Label>
+                  <select
+                    id="teamSize"
+                    value={teamSize}
+                    onChange={(e) => {
+                      setTeamSize(e.target.value);
+                      if (errors.teamSize) setErrors({ ...errors, teamSize: undefined });
+                    }}
+                    className={selectClass}
+                  >
+                    <option value="">Select…</option>
+                    {TEAM_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
+                  </select>
+                  {errors.teamSize && <p className="text-destructive text-sm">{errors.teamSize}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="company">
+                    Company <span className="text-muted-foreground font-normal">(optional)</span>
+                  </Label>
                   <Input
                     id="company"
                     type="text"
@@ -318,41 +341,6 @@ const EarlyAccess = () => {
                     className="bg-background border-border"
                   />
                   {errors.company && <p className="text-destructive text-sm">{errors.company}</p>}
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="teamSize">Team size</Label>
-                    <select
-                      id="teamSize"
-                      value={teamSize}
-                      onChange={(e) => {
-                        setTeamSize(e.target.value);
-                        if (errors.teamSize) setErrors({ ...errors, teamSize: undefined });
-                      }}
-                      className={selectClass}
-                    >
-                      <option value="">Select…</option>
-                      {TEAM_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
-                    </select>
-                    {errors.teamSize && <p className="text-destructive text-sm">{errors.teamSize}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="meetingTool">You meet mostly on</Label>
-                    <select
-                      id="meetingTool"
-                      value={meetingTool}
-                      onChange={(e) => {
-                        setMeetingTool(e.target.value);
-                        if (errors.meetingTool) setErrors({ ...errors, meetingTool: undefined });
-                      }}
-                      className={selectClass}
-                    >
-                      <option value="">Select…</option>
-                      {MEETING_TOOLS.map((tool) => <option key={tool} value={tool}>{tool}</option>)}
-                    </select>
-                    {errors.meetingTool && <p className="text-destructive text-sm">{errors.meetingTool}</p>}
-                  </div>
                 </div>
 
                 <div className="space-y-2">
@@ -386,6 +374,12 @@ const EarlyAccess = () => {
                     </>
                   )}
                 </Button>
+
+                <ul className="text-sm text-muted-foreground space-y-1.5">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />No bot joins your calls</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />Meeting content encrypted, transcripts never stored</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />A real person replies within 24 hours. Free during beta.</li>
+                </ul>
 
                 <p className="text-xs text-muted-foreground text-center">
                   By signing up, you agree to our{" "}
