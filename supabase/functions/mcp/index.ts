@@ -12,6 +12,382 @@ import { z } from "npm:zod@^4.6.5";
 // src/data/blog.ts
 var posts = [
   {
+    slug: "meeting-minutes-vs-decision-log",
+    title: "Meeting Minutes vs Decision Log: Why You Need Both",
+    description: "Meeting minutes vs decision log: what each one is for, why minutes alone don't keep decisions alive, and how to run both without doing the work twice.",
+    date: "2026-10-26",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "The leadership team approves its minutes every month, carefully. And yet, in the November meeting, nobody can say for sure whether the price increase in March applied to existing customers too. The answer is in the minutes. Somewhere. The difference between meeting minutes vs a decision log is exactly this: one records what happened in a meeting, the other keeps track of what is still true."
+      },
+      {
+        type: "p",
+        text: "Both are useful, and they're often confused. This post explains what each one is for, why minutes on their own don't keep decisions alive, when you need which, and how to keep both without writing everything twice."
+      },
+      {
+        type: "h2",
+        text: "What meeting minutes are for"
+      },
+      {
+        type: "p",
+        text: "Minutes are the official record of a single meeting. They typically list who attended, the agenda, a summary of the discussion, the decisions or motions, and the actions agreed. In formal settings, such as boards, committees and some regulated teams, they're reviewed and approved at the next meeting, and they can carry real governance weight."
+      },
+      {
+        type: "p",
+        text: "Their defining feature is that they're fixed in time. Minutes from the 12th describe the 12th. Once approved, they shouldn't change, and that's correct: their job is to be a faithful record of what was said and agreed on that day."
+      },
+      {
+        type: "h2",
+        text: "What a decision log is for"
+      },
+      {
+        type: "p",
+        text: "A decision log is a running list of decisions across all your meetings: one entry per decision, with the reasoning, the owner, the date and where it came from. It's organised by decision, not by meeting, and it's meant to change. When a decision is revisited, reversed or replaced, its entry says so and points to the newer one."
+      },
+      {
+        type: "p",
+        text: 'Minutes answer "what happened on the 12th?". A decision log answers "where do we stand on pricing?", which is the question people actually ask a few months later.'
+      },
+      {
+        type: "h2",
+        text: "Meeting minutes vs decision log: the key differences"
+      },
+      {
+        type: "ul",
+        items: [
+          "Unit: minutes have one document per meeting; a decision log has one entry per decision.",
+          "Organised by: minutes by date; the log by subject and status.",
+          "Lifespan: minutes are frozen once approved; log entries are updated when a decision changes.",
+          "Contents: minutes cover the whole discussion; the log keeps only outcomes, with just enough context to understand them later.",
+          "Reader: minutes serve people checking what happened at a meeting; the log serves people who need to act on a decision, including people who weren't there.",
+          'Question it answers: "What did we discuss?" versus "What did we decide, and is it still true?"'
+        ]
+      },
+      {
+        type: "h3",
+        text: "The same decision, written both ways"
+      },
+      {
+        type: "p",
+        text: 'In the minutes of the March leadership meeting, the decision might read: "The team discussed the proposed price increase. Concerns were raised about churn among smaller accounts. After discussion, it was agreed to proceed with a 10% increase from April 1. Finance to update the price list."'
+      },
+      {
+        type: "p",
+        text: 'In the decision log, the same decision becomes one entry: "D-014 \xB7 Raise list prices 10% from April 1, new customers only. Why: costs up, win rate stable. Rejected: applying it to existing customers now (churn risk in small accounts). Owner: Laura (Finance). Status: superseded by D-031 in September. Source: leadership meeting, March 12."'
+      },
+      {
+        type: "p",
+        text: "Notice what the log adds: the scope (new customers only), the rejected option, one owner, and the fact that it's no longer current. The minutes can't carry that last part, and they shouldn't try."
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Minutes are a record of meetings. A decision log is a record of decisions. Minutes are supposed to stay as they were; decisions are supposed to evolve. That's why minutes alone can't tell you what's currently decided."
+      },
+      {
+        type: "h2",
+        text: "Why minutes alone don't keep decisions alive"
+      },
+      {
+        type: "p",
+        text: "Teams that rely only on minutes usually run into the same problems:"
+      },
+      {
+        type: "h3",
+        text: "Decisions are buried in narrative"
+      },
+      {
+        type: "p",
+        text: "In minutes, a decision is one sentence in a paragraph about a discussion. Finding it means remembering roughly when it happened and reading until you hit it. Across a year of weekly meetings, that's a lot of reading."
+      },
+      {
+        type: "h3",
+        text: "A decision's history is spread across dates"
+      },
+      {
+        type: "p",
+        text: "Real decisions rarely happen in one meeting. Pricing gets raised in March, debated in April, decided in May and adjusted in September. Minutes record each step in a different document. To know the current position, you have to find all four and read them in order."
+      },
+      {
+        type: "h3",
+        text: "Minutes never say a decision is outdated"
+      },
+      {
+        type: "p",
+        text: "This is by design, and it's the core problem. The March minutes will always say what was decided in March, even after September replaced it. Nothing in the old document warns the reader. A new team member searching the minutes can easily find the outdated answer first."
+      },
+      {
+        type: "h3",
+        text: "The reasoning gets summarised away"
+      },
+      {
+        type: "p",
+        text: "Minutes are written to be short and neutral, so the why behind a decision and the options that were rejected are often the first things cut. Those are precisely what someone needs six months later when they want to reopen the question."
+      },
+      {
+        type: "h2",
+        text: "When you need minutes, a log, or both"
+      },
+      {
+        type: "ul",
+        items: [
+          "Minutes only: formal bodies where a signed-off record is required and decisions are few, such as a board meeting a handful of times a year.",
+          "A decision log (plus informal notes): most internal team meetings. Product syncs, engineering reviews and ops meetings rarely need formal minutes, but they make many decisions that others depend on.",
+          "Both: leadership teams, steering committees and boards of fast-moving companies, where meetings need an official record and decisions build on each other week after week."
+        ]
+      },
+      {
+        type: "h2",
+        text: "How to keep both without doing the work twice"
+      },
+      {
+        type: "p",
+        text: "If you need both, the trick is to treat the log as an index into the minutes, not as a second write-up. Here's a routine that keeps the extra work to a few minutes per meeting:"
+      },
+      {
+        type: "ol",
+        items: [
+          'Mark decisions as you write the minutes. Start each one with "Decision:" so they stand out from the discussion.',
+          "Copy each marked decision into the log the same day, with a link to the minutes and a short ID (D-014).",
+          "Add the ID to the minutes too, next to the decision. Now each points to the other.",
+          "When a later meeting changes a decision, update the log, not the old minutes. Mark the entry as superseded and link the new one.",
+          "Start the next meeting with whatever is still open or proposed in the log. It takes two minutes and catches decisions that were never really closed."
+        ]
+      },
+      {
+        type: "link",
+        text: "Need the log itself? Our free template has the fields ready (ID, decision, why, alternatives, owner, status, source), as an Excel file or a version for Notion and Google Docs.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template"
+      },
+      {
+        type: "h2",
+        text: "Where AI meeting notes fit"
+      },
+      {
+        type: "p",
+        text: "AI note-takers, including Gemini's notes in Google Meet, produce something close to informal minutes: a summary per meeting, often with a list of decisions and next steps. They solve the writing. They don't solve the tracking, because each meeting still gets its own document and nothing updates last month's notes when a decision changes."
+      },
+      {
+        type: "link",
+        text: "How to build a running decision log from your Google Meet meetings, manually or automatically.",
+        href: "/blog/google-meet-decision-log",
+        linkLabel: "Google Meet decision log: keep every decision findable"
+      },
+      {
+        type: "p",
+        text: `That's the gap Corteza fills for teams on Google Workspace. It reads each Google Meet transcript or Gemini notes, with no bot in the call, and keeps the decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. A question, its risks and the decisions about one subject stay together in a thread, and you can ask in plain language, like "What did we decide about pricing?", to get the answer with its sources.`
+      },
+      {
+        type: "p",
+        text: "Whatever tools you use, keep the roles clear: let the minutes say what happened, and let the log say what's true now."
+      },
+      {
+        type: "cta",
+        text: "Corteza turns your Google Meet meetings into a decision log your team can search, with the evidence for every decision. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
+    slug: "meeting-action-items-not-getting-done",
+    title: "Why Meeting Action Items Don't Get Done (and How to Fix It)",
+    description: "Meeting action items not getting done? The seven reasons they get forgotten, what a good action item looks like, and a simple system to close them.",
+    date: "2026-10-19",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: `Monday ops review. Someone asks: "Did we send the vendor the revised SLA?" Silence. Three people remember the conversation two weeks ago. Nobody remembers agreeing to do it. If your meeting action items are not getting done, this scene is probably familiar, and it's rarely about laziness.`
+      },
+      {
+        type: "p",
+        text: "Most action items fail in the gap between the meeting and the work: they're said but never really assigned, or assigned but never seen again. This post covers the seven most common reasons, what a well-formed action item looks like, and a lightweight system to close them that works with whatever tools you already use."
+      },
+      {
+        type: "h2",
+        text: "Why meeting action items don't get done"
+      },
+      {
+        type: "p",
+        text: "When an item slips, look at how it was created before blaming the person who owned it. The causes tend to be the same ones, in roughly this order:"
+      },
+      {
+        type: "h3",
+        text: "1. It was never really agreed"
+      },
+      {
+        type: "p",
+        text: `"I can take a look at that" and "someone should check with legal" sound like commitments in the room. Afterwards they're easy to read as ideas. If nobody said "so that's yours, by Thursday", the item may not exist in anyone's head except the person who suggested it.`
+      },
+      {
+        type: "h3",
+        text: "2. It has a team instead of an owner"
+      },
+      {
+        type: "p",
+        text: '"Marketing will update the pricing page." Which person? Shared ownership feels inclusive and works like no ownership. Each member of the group reasonably assumes someone else has it.'
+      },
+      {
+        type: "h3",
+        text: "3. It has no date"
+      },
+      {
+        type: "p",
+        text: 'Without a date, an item competes with everything that does have one, and loses. "Soon" means after the planned work, which in most weeks means never.'
+      },
+      {
+        type: "h3",
+        text: "4. It lives in the wrong place"
+      },
+      {
+        type: "p",
+        text: `Action items written into meeting notes stay in meeting notes. People plan their week from their task list, their tracker or their inbox, not from a document titled "Notes: Ops review, Oct 6". If the item doesn't reach the place where work is planned, it isn't really in the plan.`
+      },
+      {
+        type: "h3",
+        text: "5. Nobody asks about it again"
+      },
+      {
+        type: "p",
+        text: "This is the big one. An item that nobody will ask about is optional, whatever the notes say. Most teams don't decide this on purpose; the next meeting simply starts with new topics and last week's list never comes up."
+      },
+      {
+        type: "h3",
+        text: "6. There's no way to drop it"
+      },
+      {
+        type: "p",
+        text: `Plans change. Half the items from a meeting a month ago may no longer matter. When there's no accepted way to say "we're not doing this anymore", those items linger as quiet guilt, the list fills with noise, and people stop trusting it, including the items that still matter.`
+      },
+      {
+        type: "h3",
+        text: "7. It lost to the owner's real priorities"
+      },
+      {
+        type: "p",
+        text: `Sometimes the item was clear, owned and dated, and the owner simply had three more important things. That's not a failure of the person; it's a missing conversation about trade-offs. The fix is making it normal to say "I can't do this by Thursday" early, not on the day it's due.`
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Action items rarely fail because people don't care. They fail because they were never clearly owned and dated, they ended up somewhere nobody looks, or nobody asked about them again. Fix those three and most of the problem goes away."
+      },
+      {
+        type: "h2",
+        text: "What a good action item looks like"
+      },
+      {
+        type: "p",
+        text: "A good action item can be understood by someone who wasn't in the meeting. It has five parts:"
+      },
+      {
+        type: "ul",
+        items: [
+          'A verb and a result: "Send the vendor the revised SLA", not "SLA".',
+          "One owner, by name. Others can help; one person answers for it.",
+          'A date, even a rough one. "By Friday" beats "next week" beats nothing.',
+          "A home: the place where the owner will actually see it during the week.",
+          "A line of context: why it matters or which decision it comes from, so it still makes sense in three weeks."
+        ]
+      },
+      {
+        type: "p",
+        text: `Compare "Follow up on onboarding" with "Diego: share the new onboarding checklist with the support team by Thursday, so they can answer setup questions from the October cohort". The second one takes ten more seconds to say, and it's the one that gets done.`
+      },
+      {
+        type: "h2",
+        text: "A simple system to close meeting action items"
+      },
+      {
+        type: "p",
+        text: "You don't need a new methodology. You need a few habits that make sure every item is created properly, lands somewhere visible, and gets asked about. Here's a version that works for most teams:"
+      },
+      {
+        type: "ol",
+        items: [
+          "Recap in the last two minutes. The person running the meeting reads each action item aloud with its owner and date. Anything without both gets them now, or gets dropped now.",
+          "Keep one list per team, not one per meeting. Action items from every meeting go into the same tracker, shared sheet or task list, with a link back to the meeting. One place to look beats ten documents.",
+          "Open the next meeting with the open items. Before new topics, go through last time's list: done, blocked or dropped. Two to five minutes, every time.",
+          `Make dropping legitimate. "We're not doing this anymore, because\u2026" is a valid status. Record why, and close the item. A shorter, honest list gets more done than a long, stale one.`,
+          "Renegotiate early. If an owner can't make a date, they say so before it passes, and the group decides: new date, new owner, or drop.",
+          "Do a weekly sweep. Once a week, someone looks at everything overdue across the team's meetings and nudges the owners. Ten minutes."
+        ]
+      },
+      {
+        type: "h3",
+        text: "Running the review without making it a status meeting"
+      },
+      {
+        type: "p",
+        text: "The review at the start of a meeting works best when it's quick and blameless. Only three answers are allowed: done, blocked (and what's needed), or dropped (and why). Anything that needs discussion goes on the agenda instead of turning the review into a debate. If an item has been blocked two meetings in a row, that's the signal to talk about it properly."
+      },
+      {
+        type: "p",
+        text: "If your meetings already have AI notes, they're a good source for the list, as long as someone checks them. We wrote about what Gemini's notes capture well and where they miss owners and dates."
+      },
+      {
+        type: "link",
+        text: "What Google Meet's AI notes capture, what they miss, and how to turn them into follow-through.",
+        href: "/blog/gemini-take-notes-for-me",
+        linkLabel: "Gemini Take notes for me: what it captures and what it misses"
+      },
+      {
+        type: "h2",
+        text: "Signs your follow-through is improving"
+      },
+      {
+        type: "p",
+        text: "You don't need a dashboard to tell whether this is working. After a month, look for:"
+      },
+      {
+        type: "ul",
+        items: [
+          'Fewer "who had that?" moments in meetings.',
+          "Items being dropped on purpose, with a reason, instead of fading away.",
+          "The overdue list getting shorter, or at least not longer.",
+          "The same topic not coming back as a new item because the first one quietly died.",
+          "Owners raising date problems before the date, not after."
+        ]
+      },
+      {
+        type: "p",
+        text: "That last-but-one point matters more than it looks. When an action item disappears, the underlying question usually comes back later as a fresh discussion, and teams end up re-deciding things they already settled."
+      },
+      {
+        type: "link",
+        text: "Why decisions and commitments disappear between meetings, and what it costs a team.",
+        href: "/blog/why-your-team-keeps-remaking-the-same-decisions",
+        linkLabel: "Why your team keeps re-making the same decisions"
+      },
+      {
+        type: "h2",
+        text: "Where a tool can take over the busywork"
+      },
+      {
+        type: "p",
+        text: "The system above is mostly habits, and habits are the part no tool can replace. What tools can take over is the copying and the remembering: getting items out of the meeting into one list, and putting the right ones in front of the right person at the right time."
+      },
+      {
+        type: "p",
+        text: "That's the part Corteza handles for teams on Google Meet. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures action items with their owner and due date when they were said, plus the quote they came from. Each person gets a morning email with their due and overdue items, and, with calendar access, prep for today's meetings with what's still open from earlier sessions of each one, so the review at the start of each meeting begins from a ready list."
+      },
+      {
+        type: "p",
+        text: "Whatever you use, the principle doesn't change: an action item is only real when it has an owner, a date, a place people look, and someone who will ask about it."
+      },
+      {
+        type: "cta",
+        text: "Corteza captures action items from your Google Meet meetings and puts each person's due and overdue items in front of them every morning. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
     slug: "gemini-take-notes-for-me",
     title: "Gemini Take Notes for Me: What It Captures and What It Misses",
     description: "What Gemini's Take notes for me in Google Meet captures, where it falls short, and a simple routine to turn its notes into action items that get done.",
@@ -375,7 +751,7 @@ var posts = [
       },
       {
         type: "p",
-        text: "This is the problem we built Corteza around. It reads Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found. When you record a new decision, it suggests closing the earlier questions and action items it resolves."
+        text: 'This is the problem we built Corteza around. It reads Google Meet transcripts and Gemini notes after each meeting, with no bot in the call, and pulls out decisions, action items, open questions and risks, each with the meeting it came from and a short quote as evidence. You confirm or dismiss what it found. And when you type a decision, like "We decided not to pursue X", it finds the open questions, risks and action items that decision settles, and closes them when you confirm.'
       },
       {
         type: "h2",
@@ -958,6 +1334,10 @@ var faqs = [
   {
     question: "Can I search everything my team has decided?",
     answer: `Yes. Every decision, commitment, open question and risk is kept in one place. Ask in plain language, like "why did we move the launch?", and Corteza answers with the context behind it and links to the meetings it came from. It's also the fastest way for new team members to get up to speed.`
+  },
+  {
+    question: "Can I use Corteza from Claude or ChatGPT?",
+    answer: "Yes. Connect Corteza to Claude, ChatGPT or any assistant that supports MCP connectors, signing in with Google. Ask what was decided, what's pending or to prepare your day, and the assistant answers from your meetings with the source of each item. It can also record a decision, add or update an action item or close a question: each change is shown first, made only when you confirm it, and can be undone for 24 hours. It sees only what you can see in Corteza, never sensitive topics."
   },
   {
     question: "Does a bot join my meetings?",
