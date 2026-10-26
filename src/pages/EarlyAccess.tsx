@@ -147,7 +147,7 @@ const EarlyAccess = () => {
 
     toast({
       title: "Thanks! We got your request.",
-      description: "We'll reach out within a few days.",
+      description: "We'll reply personally within 24 hours.",
     });
   };
 
@@ -222,10 +222,18 @@ const EarlyAccess = () => {
                 </div>
               )}
 
-              <p className="text-lg text-muted-foreground mb-8">
-                We're opening a private beta for a small number of teams. Tell us a bit about how
-                your team meets and we'll reach out to see if it's a fit.
+              <p className="text-lg text-muted-foreground mb-6">
+                We're opening a private beta for a small number of teams. Leave your details and
+                we'll reply personally within 24 hours.
               </p>
+
+              <div className="rounded-xl border border-border bg-card p-4 mb-8 text-sm">
+                <p className="font-semibold text-foreground mb-1">What you need</p>
+                <p className="text-muted-foreground">
+                  Google Meet, with Gemini "Take notes for me" or transcription turned on. Corteza reads
+                  them after each meeting.
+                </p>
+              </div>
 
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -301,7 +309,26 @@ const EarlyAccess = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company</Label>
+                  <Label htmlFor="teamSize">Team size</Label>
+                  <select
+                    id="teamSize"
+                    value={teamSize}
+                    onChange={(e) => {
+                      setTeamSize(e.target.value);
+                      if (errors.teamSize) setErrors({ ...errors, teamSize: undefined });
+                    }}
+                    className={selectClass}
+                  >
+                    <option value="">Select…</option>
+                    {TEAM_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
+                  </select>
+                  {errors.teamSize && <p className="text-destructive text-sm">{errors.teamSize}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="company">
+                    Company <span className="text-muted-foreground font-normal">(optional)</span>
+                  </Label>
                   <Input
                     id="company"
                     type="text"
@@ -314,41 +341,6 @@ const EarlyAccess = () => {
                     className="bg-background border-border"
                   />
                   {errors.company && <p className="text-destructive text-sm">{errors.company}</p>}
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="teamSize">Team size</Label>
-                    <select
-                      id="teamSize"
-                      value={teamSize}
-                      onChange={(e) => {
-                        setTeamSize(e.target.value);
-                        if (errors.teamSize) setErrors({ ...errors, teamSize: undefined });
-                      }}
-                      className={selectClass}
-                    >
-                      <option value="">Select…</option>
-                      {TEAM_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
-                    </select>
-                    {errors.teamSize && <p className="text-destructive text-sm">{errors.teamSize}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="meetingTool">You meet mostly on</Label>
-                    <select
-                      id="meetingTool"
-                      value={meetingTool}
-                      onChange={(e) => {
-                        setMeetingTool(e.target.value);
-                        if (errors.meetingTool) setErrors({ ...errors, meetingTool: undefined });
-                      }}
-                      className={selectClass}
-                    >
-                      <option value="">Select…</option>
-                      {MEETING_TOOLS.map((tool) => <option key={tool} value={tool}>{tool}</option>)}
-                    </select>
-                    {errors.meetingTool && <p className="text-destructive text-sm">{errors.meetingTool}</p>}
-                  </div>
                 </div>
 
                 <div className="space-y-2">
@@ -382,6 +374,12 @@ const EarlyAccess = () => {
                     </>
                   )}
                 </Button>
+
+                <ul className="text-sm text-muted-foreground space-y-1.5">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />No bot joins your calls</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />Meeting content encrypted, transcripts never stored</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />A real person replies within 24 hours. Free during beta.</li>
+                </ul>
 
                 <p className="text-xs text-muted-foreground text-center">
                   By signing up, you agree to our{" "}
