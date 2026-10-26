@@ -169,7 +169,7 @@ const EarlyAccess = () => {
             Thanks, {firstName}!
           </h1>
           <p className="text-muted-foreground mb-8">
-            We got your request. We'll reach out within a few days to learn how your team meets
+            We got your request. We'll reply personally within 24 hours to learn how your team meets
             and see if you're a fit for the private beta.
           </p>
           <Link to="/">
