@@ -42,6 +42,6 @@ export const faqs = [
   {
     question: "What happens after I request early access?",
     answer:
-      "We'll reach out within a few days for a short call to understand how your team meets and decides. If it's a fit, we set you up for the beta. It's free while we're in beta.",
+      "We'll reply personally within 24 hours to set up a short call to understand how your team meets and decides. If it's a fit, we set you up for the beta. It's free while we're in beta.",
   },
 ];
