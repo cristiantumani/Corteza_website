@@ -1,7 +1,7 @@
 # Blog topics (SEO backlog)
 
-The weekly blog agent (`docs/agents/weekly-blog-post.md`) takes the **first unchecked** topic, writes
-it, and marks it `[x]` with the post's slug and date. It may add new topics at the end (with a short
+The blog agent (`docs/agents/weekly-blog-post.md`, Mondays and Thursdays) takes the **first unchecked**
+topic, writes it, and marks it `[x]` with the post's slug and date. It may add new topics at the end (with a short
 reason) when its research finds a better opportunity. Cristian can reorder or add topics any time.
 
 Audience: founders, COOs, heads of product/engineering and team leads at 20–200 person companies on
