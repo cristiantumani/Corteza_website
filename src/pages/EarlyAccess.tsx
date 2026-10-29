@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
-import { track } from "@/lib/analytics";
+import { track, identifyEarlyAccess } from "@/lib/analytics";
 import { PRIVACY_URL, TERMS_URL } from "@/lib/legal";
 
 type FormErrors = { firstName?: string; lastName?: string; email?: string; company?: string; teamSize?: string; meetingTool?: string };
@@ -143,6 +143,7 @@ const EarlyAccess = () => {
 
     setIsLoading(false);
     setIsSubmitted(true);
+    identifyEarlyAccess(base.email);
     track("early_access_signup_success", { team_size: teamSize, meeting_tool: meetingTool });
 
     toast({

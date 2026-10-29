@@ -48,6 +48,17 @@ export function initAnalytics() {
   initialized = true;
 }
 
+/**
+ * Names the visitor once they request early access: their email (lowercased) is the id the app
+ * uses for beta_approved and joins with their Corteza user at first sign-in (same PostHog project),
+ * so one funnel runs from this site to an active team. Their earlier page views join them too.
+ */
+export function identifyEarlyAccess(email: string) {
+  if (!initialized) return;
+  const id = email.trim().toLowerCase();
+  if (id) posthog.identify(id);
+}
+
 export function track(event: string, properties?: Record<string, unknown>) {
   if (!initialized) return;
   posthog.capture(event, properties);
