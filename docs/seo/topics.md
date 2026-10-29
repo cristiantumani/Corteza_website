@@ -14,7 +14,7 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [x] meeting action items not getting done — Why action items from meetings get forgotten and a simple system to close them (informational) · /blog/why-your-team-keeps-remaking-the-same-decisions → /blog/meeting-action-items-not-getting-done (2026-10-19)
 - [x] decision log template — Decision log template for product teams: fields, examples and how to keep it alive (commercial) · /decision-log-template → skipped (2026-10-26): /decision-log-template already targets this keyword and intent; a post would compete with it
 - [x] meeting minutes vs decision log — The difference, and why minutes alone don't keep decisions alive (informational) · /decision-log-template → /blog/meeting-minutes-vs-decision-log (2026-10-26)
-- [ ] how to prepare for a 1:1 meeting — A 5-minute 1:1 prep routine based on what's still open between you (informational)
+- [x] how to prepare for a 1:1 meeting — A 5-minute 1:1 prep routine based on what's still open between you (informational) → /blog/how-to-prepare-for-a-1-1-meeting (2026-10-29)
 - [ ] architecture decision records — ADRs vs a team decision log: when to use each (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team
 - [ ] weekly team meeting agenda — A weekly meeting format that starts with what's still open from last week (informational)
 - [ ] tracking open questions and risks — How to track the open questions and risks a meeting leaves behind (informational)

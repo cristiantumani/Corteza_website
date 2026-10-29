@@ -20,6 +20,191 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-prepare-for-a-1-1-meeting",
+    title: "How to Prepare for a 1:1 Meeting in 5 Minutes",
+    description:
+      "How to prepare for a 1:1 meeting in five minutes: start from what's still open between you, bring one real topic, and leave with clear next steps.",
+    date: "2026-10-29",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "It's 1:58. Your 1:1 starts at 2:00. You open the shared doc, it says \"Oct 15\" at the top and nothing underneath, and the meeting begins with \"So, anything on your mind?\" Thirty minutes of status updates later, you both leave with nothing new. Knowing how to prepare for a 1:1 meeting doesn't take an hour of reflection. It takes five minutes, if you start from the right place.",
+      },
+      {
+        type: "p",
+        text: "Most advice on 1:1s is a list of questions to ask. Questions help, but they skip the most useful input you already have: what's still open between the two of you. This guide gives you a five-minute routine built around that, a simple shared doc format, and what to do in the two minutes after.",
+      },
+      {
+        type: "h2",
+        text: "Why most 1:1s turn into status updates",
+      },
+      {
+        type: "p",
+        text: "A 1:1 is one of the few meetings where two people can talk about what's actually in the way. It drifts into a status update for predictable reasons:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Nobody prepared, so the easiest topic, what you worked on this week, fills the time.",
+          "Last time's commitments aren't on the page, so neither person knows whether they were done.",
+          "Things you share outside the 1:1, a decision waiting on one of you or a question from another meeting, never come up because nobody remembers them in the moment.",
+          "The harder topic, a frustration, a career question, a worry about the project, needs a moment to be raised. A meeting with no structure rarely makes that moment.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How to prepare for a 1:1 meeting: the 5-minute routine",
+      },
+      {
+        type: "p",
+        text: "This works whether you're the manager or the direct report. Do it the morning of the 1:1, or the evening before. One minute per step:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Check last time's commitments. What did each of you say you'd do? Mark what's done, and note what isn't. This alone changes the tone of the meeting: it starts from follow-through, not from a blank page.",
+          "Check what's open between you elsewhere. Look beyond the 1:1 itself: action items from other meetings that one of you owns and the other is waiting on, open questions either of you has to answer, decisions that need the other's input. These are often the most important topics, and they're the ones that fall between meetings.",
+          "Write down one thing you need from them. A decision, feedback, an introduction, air cover with another team. If you can't think of one, ask yourself what's slowing you down this week.",
+          "Pick the one topic that matters most. Not five. If the meeting ran out of time after ten minutes, what would you want to have covered? That goes first.",
+          "Put it in the shared doc. Add your topics so the other person can see them before the meeting and come prepared too.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "What it looks like in practice",
+      },
+      {
+        type: "p",
+        text: "Marta, an engineering manager, has a 1:1 with Diego at 2:00. At 9:00 she spends five minutes on it. From last time: Diego was going to write up the on-call proposal (done, shared Tuesday), and Marta was going to ask product about moving the release date (not done). Elsewhere: Diego owns an open question from the architecture review about the queue migration, and a decision from the planning meeting is waiting on his estimate. What she needs from him: a yes or no on mentoring the new hire. Most important topic: the release date, because it changes his next two weeks.",
+      },
+      {
+        type: "p",
+        text: "She adds three lines to the shared doc. When the meeting starts, she opens with an apology for the release-date item and a date by which she'll have the answer. The conversation goes straight to what matters, and the status update takes two minutes at the end instead of thirty at the start.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "The best 1:1 prep isn't a list of clever questions. It's knowing what's still open between you: last time's commitments, what each of you is waiting on from the other, and the one topic that matters most this week.",
+      },
+      {
+        type: "h2",
+        text: "A simple shared 1:1 doc",
+      },
+      {
+        type: "p",
+        text: "Use one running document per 1:1, newest meeting at the top, so the history is always one scroll away. Each meeting gets four short sections:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Open from last time: the commitments from the previous 1:1, each marked done, in progress or dropped.",
+          "Topics: both people add before the meeting. Most important first.",
+          "Next steps: what each person will do, with a date. Written during the meeting, not after.",
+          "Parking lot: things worth discussing later, so they don't get lost or take over today.",
+        ],
+      },
+      {
+        type: "p",
+        text: "That's it. Resist adding sections for goals, feedback, wellbeing and career every week. Those deserve their own conversations every month or quarter, and a template full of empty headings turns into a form to fill in.",
+      },
+      {
+        type: "h3",
+        text: "If you're the manager",
+      },
+      {
+        type: "ul",
+        items: [
+          "Let them go first. It's their meeting more than yours. Your updates can wait until the end, or go in writing.",
+          "Track your own commitments as carefully as theirs. Nothing erodes a 1:1 faster than a manager who forgets what they promised.",
+          "Move it, don't cancel it. A cancelled 1:1 tells people where they rank.",
+          "Ask about blockers, not progress. \"What's slowing you down?\" gets you further than \"How's it going?\"",
+        ],
+      },
+      {
+        type: "h3",
+        text: "If you're the direct report",
+      },
+      {
+        type: "ul",
+        items: [
+          "Bring a proposal, not just a problem. \"I think we should do X, can you back me on it?\" is easier to act on than \"X is a mess\".",
+          "Mention your wins briefly. Your manager sees less of your work than you think.",
+          "Ask what's on their mind. Knowing your manager's priorities for the next month helps you choose your own.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Questions worth keeping in your pocket",
+      },
+      {
+        type: "p",
+        text: "You don't need a list of 70. A handful, used when the conversation stalls, is enough:",
+      },
+      {
+        type: "ul",
+        items: [
+          "What's the most important thing we should talk about today?",
+          "What's slowing you down right now?",
+          "Is there a decision you're waiting on from me, or from someone else?",
+          "What would you change about how we work together?",
+          "What's something you'd like to do more of in the next few months?",
+          "Is anything worrying you that we haven't talked about?",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The two minutes after the 1:1",
+      },
+      {
+        type: "p",
+        text: "Preparation is half of it. The other half is making sure next time's \"open from last time\" list exists. Before you both move on, check the Next steps section: each item has one owner and a date, and anything already done is marked. This is the same discipline that keeps action items from any meeting alive, just at a smaller scale.",
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Keep the sensitive parts private",
+      },
+      {
+        type: "p",
+        text: "1:1s are where performance, pay, health and \"I'm thinking about leaving\" come up. Keep those out of the shared doc unless both of you are comfortable with it, never paste them into team documents, and check who can see the notes before you write anything personal. A private note to yourself is often the right place.",
+      },
+      {
+        type: "h2",
+        text: "Making step two take ten seconds",
+      },
+      {
+        type: "p",
+        text: "Steps one, three, four and five only need your head and the shared doc. Step two is the hard one, because what's open between you is scattered across other meetings, other docs and other people's notes.",
+      },
+      {
+        type: "p",
+        text: "That's where Corteza helps teams on Google Meet. It captures the decisions, action items, open questions and risks from your meetings, each with the meeting it came from, so before a 1:1 with Ana you can ask \"What's pending from Ana?\" and get the answer with its sources. People matters (performance, leaving, pay, health) stay visible only to the person whose meeting it was.",
+      },
+      {
+        type: "p",
+        text: "Whatever you use, the principle is simple: a good 1:1 starts where the last one, and every other meeting you share, left off.",
+      },
+      {
+        type: "link",
+        text: "How to keep one running list of what's decided across your Google Meet meetings.",
+        href: "/blog/google-meet-decision-log",
+        linkLabel: "Google Meet decision log: keep every decision findable",
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps track of what's still open from your Google Meet meetings, so you walk into every 1:1 prepared. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "meeting-minutes-vs-decision-log",
     title: "Meeting Minutes vs Decision Log: Why You Need Both",
     description:

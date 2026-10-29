@@ -12,6 +12,7 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Blog
 
+- [How to Prepare for a 1:1 Meeting in 5 Minutes](/blog/how-to-prepare-for-a-1-1-meeting): A five-minute 1:1 prep routine that starts from what's still open between you, plus a simple shared doc format.
 - [Meeting Minutes vs Decision Log: Why You Need Both](/blog/meeting-minutes-vs-decision-log): What minutes and a decision log are each for, why minutes alone don't keep decisions alive, and how to keep both.
 - [Why Meeting Action Items Don't Get Done (and How to Fix It)](/blog/meeting-action-items-not-getting-done): Seven reasons action items get forgotten, what a good one looks like, and a simple system to close them.
 - [Gemini Take Notes for Me: What It Captures and What It Misses](/blog/gemini-take-notes-for-me): What Google Meet's AI notes capture, their gaps, and a routine to turn them into follow-through.
