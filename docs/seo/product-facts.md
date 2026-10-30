@@ -19,6 +19,9 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - **Review:** AI-captured outcomes can be confirmed or dismissed; dismissals teach the extraction.
 - **Action items:** owners, due dates, done/cancelled; an Active and a Resolved tab; the text, the why
   and the owners can be edited; "Does this also resolve…?" when one is done.
+- **Action items in Google Calendar (optional, off by default):** turn it on in Settings and your own
+  open action items with a due date go to a "Corteza" list in Google Tasks, so they show on your
+  Google Calendar. Completing a task or moving its date in Google updates Corteza ("via Google Tasks").
 - **Open questions and risks:** who raised them; a question is marked answered (with the answer), a risk
   mitigated (with how), and either can be reopened.
 - **Topic threads:** a question, its risks, decisions and next steps about one subject stay together.
@@ -76,7 +79,7 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
 - Meeting feedback or a scorecard for the organizer: it's on the roadmap, not built.
 - A mobile app.
 - Prices, plans, customer names, customer counts, or statistics we don't have a source for.
-- Integrations other than Google Meet/Calendar/Drive, Slack (input only), Jira linking, the Chrome
-  extension, and the connector for AI assistants (MCP).
+- Integrations other than Google Meet/Calendar/Drive/Tasks, Slack (input only), Jira linking, the
+  Chrome extension, and the connector for AI assistants (MCP).
 - That an AI assistant changes things in Corteza on its own: every change needs the person's
   confirmation.
