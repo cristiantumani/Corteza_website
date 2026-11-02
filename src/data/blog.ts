@@ -20,6 +20,185 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "architecture-decision-records",
+    title: "Architecture Decision Records vs a Team Decision Log",
+    description:
+      "Architecture decision records explained: what goes in an ADR, when to write one, and how ADRs and a team decision log work together without duplication.",
+    date: "2026-11-02",
+    readTime: "6 min read",
+    category: "Engineering Leadership",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "A new engineer asks why the billing service uses a message queue instead of direct calls. Someone links ADR-0012, and the question is answered in two minutes: the context, the options, the trade-offs, the date. Then the same engineer asks why the mobile launch moved to Q2, and nobody can find anything. Architecture decision records are excellent at the first kind of question. Most teams have nothing for the second.",
+      },
+      {
+        type: "p",
+        text: "This post covers what an ADR is, when it's worth writing one, how it differs from a team decision log, and how to use both without writing everything twice.",
+      },
+      {
+        type: "h2",
+        text: "What architecture decision records are",
+      },
+      {
+        type: "p",
+        text: "An architecture decision record (ADR) is a short document that captures one significant technical decision, why it was made and what follows from it. The format was popularised by Michael Nygard in 2011 and is still the one most teams start with. Each ADR is numbered and has a few sections:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title: a short phrase, like \"ADR-0012: Use a message queue between billing and invoicing\".",
+          "Status: proposed, accepted, deprecated or superseded (by which ADR).",
+          "Context: the forces at play: the problem, the constraints, what the team knew at the time.",
+          "Decision: what was decided, stated plainly, in the active voice.",
+          "Consequences: what becomes easier, what becomes harder, and what the team now has to live with.",
+        ],
+      },
+      {
+        type: "p",
+        text: "ADRs usually live in the code repository, in a folder like docs/adr, and go through the same pull request review as code. Once accepted, an ADR isn't edited to reflect a new reality: a new ADR supersedes it, and the old one says so. Some teams use richer templates, such as MADR, which add the options considered with their pros and cons.",
+      },
+      {
+        type: "link",
+        text: "The original post that introduced the format, and still the best short explanation of why it works.",
+        href: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+        linkLabel: "Michael Nygard: Documenting Architecture Decisions (2011)",
+      },
+      {
+        type: "h2",
+        text: "What a team decision log is",
+      },
+      {
+        type: "p",
+        text: "A team decision log is a running list of the decisions a team makes in its meetings and conversations: one entry per decision, with the reasoning, an owner, a date, a status and where it came from. Its scope is everything the team decides, not only architecture: priorities, scope cuts, release dates, process changes, hiring plans, vendor choices.",
+      },
+      {
+        type: "p",
+        text: "Where an ADR is a carefully reviewed document about one technical choice, a log entry is a few lines written the same day, so that \"what did we decide about the launch?\" has an answer in ten seconds.",
+      },
+      {
+        type: "h2",
+        text: "Architecture decision records vs a team decision log",
+      },
+      {
+        type: "ul",
+        items: [
+          "Scope: ADRs cover significant technical and architectural choices. A decision log covers any decision the team makes.",
+          "Depth: an ADR is a short document with context and consequences. A log entry is a few lines with a link to where the detail lives.",
+          "Where it lives: ADRs sit next to the code, in the repo. A decision log sits where the whole team can search it, engineers and non-engineers alike.",
+          "How it's written: ADRs are drafted, reviewed and accepted, often through a pull request. Log entries are captured right after the meeting where the decision happened.",
+          "Who reads it: ADRs serve engineers working on the system, now and in the future. A log serves anyone who needs to act on a decision, including product, design and leadership.",
+          "When it changes: both are superseded rather than rewritten, but log entries change status far more often, because most team decisions are revisited sooner than architecture.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "ADRs are the deep record of a few architectural decisions. A decision log is the broad record of everything the team decides. They don't compete: the log tells you a decision exists and where it came from, and the ADR explains the technical reasoning in full.",
+      },
+      {
+        type: "h2",
+        text: "When to write an ADR",
+      },
+      {
+        type: "p",
+        text: "Not every technical choice deserves an ADR. A good test: would a capable engineer joining in a year be surprised by this, or tempted to undo it? Write one when a decision:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Is expensive to reverse: a database, a framework, a service boundary, a data model.",
+          "Affects other teams or systems: an API contract, an event format, a shared library.",
+          "Goes against what people would assume, so someone will \"fix\" it later unless the reason is written down.",
+          "Took more than one meeting to settle, or had a strong argument on the losing side.",
+          "Accepts a known trade-off, like eventual consistency or a performance cost, that people should know about.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Skip it for choices that are cheap to change: a library you could swap in an afternoon, naming, code style. Those belong in a pull request description or a linter config. And keep ADRs short: if a decision took an hour of discussion, the record should take a fraction of that to write.",
+      },
+      {
+        type: "h2",
+        text: "When it belongs in the decision log instead",
+      },
+      {
+        type: "p",
+        text: "Engineering teams make plenty of decisions that aren't architectural, and they're just as easy to lose:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Scope and priority: \"We ship the importer without CSV support in v1.\"",
+          "Dates and sequencing: \"The mobile launch moves to Q2 so the API can stabilise first.\"",
+          "Process: \"On-call rotates weekly starting next sprint; incidents get a review within 48 hours.\"",
+          "People and ownership: \"Platform team owns the deploy pipeline from now on.\"",
+        ],
+      },
+      {
+        type: "p",
+        text: "None of these needs an ADR. All of them will be asked about again. A one-line entry in the decision log, with the meeting it came from, is enough.",
+      },
+      {
+        type: "h2",
+        text: "Using ADRs and a decision log together",
+      },
+      {
+        type: "p",
+        text: "The two work best when each one points at the other, instead of repeating it:",
+      },
+      {
+        type: "ol",
+        items: [
+          "When a meeting settles an architectural question, log the decision the same day and add an action item: \"Write ADR-0018\", with an owner and a date.",
+          "When the ADR is accepted, link it from the log entry. The log says what was decided and when; the ADR explains why, in depth.",
+          "Keep open questions in the log until they're decided. \"Do we split the billing database?\" can sit there for weeks with its risks; the ADR comes once there's an answer.",
+          "When an ADR is superseded, update the log entry too, so nobody follows a link to an outdated design.",
+          "Link both from onboarding. A new engineer should learn on day one where architecture decisions live and where everything else does.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Onboarding is where the payoff shows. A new engineer with both can understand not only how the system works, but why it looks the way it does and what the team has already ruled out.",
+      },
+      {
+        type: "link",
+        text: "What it really costs when engineers join a team and the context behind past decisions is missing.",
+        href: "/blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team",
+        linkLabel: "The hidden cost of lost context when engineers join your team",
+      },
+      {
+        type: "h2",
+        text: "Common ADR mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Writing them months later. By then the context is reconstructed, not recorded. Write it while the discussion is fresh.",
+          "Writing essays. An ADR nobody reads is no better than none. One page is plenty for most decisions.",
+          "Skipping consequences. The trade-offs you accepted are the part future readers most need.",
+          "Editing accepted ADRs. Supersede them instead, so the history stays honest.",
+          "Hiding them. ADRs that only their authors know about don't prevent anyone from re-opening the question.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most architecture decisions start in a meeting, though: a design review, a planning session, an incident follow-up. That's the part Corteza helps with for teams on Google Meet. It captures the decisions, open questions and risks from each meeting, each with the meeting it came from and a short quote as evidence, and keeps a question, its risks and the decisions about one subject together in a thread. When it's time to write the ADR, or someone asks \"What did we decide about the queue migration?\", the answer is one search away, with its sources.",
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both",
+      },
+      {
+        type: "cta",
+        text: "Corteza captures the decisions and open questions from your Google Meet meetings, so the context behind every ADR is already written down. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "how-to-prepare-for-a-1-1-meeting",
     title: "How to Prepare for a 1:1 Meeting in 5 Minutes",
     description:
