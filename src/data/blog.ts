@@ -20,6 +20,173 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "weekly-team-meeting-agenda",
+    title: "A Weekly Team Meeting Agenda That Starts With What's Open",
+    description:
+      "A weekly team meeting agenda that starts with what's still open from last week: a 45-minute format, a copy-paste template and the rules that keep it useful.",
+    date: "2026-11-05",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Tuesday, 10:00. The weekly team meeting starts with a round of updates. Eight people, five minutes each, mostly things everyone could have read. Somebody raises a real question at 10:42, there's no time to settle it, and it rolls into next week. Last week's action items never come up at all. If that sounds familiar, the problem usually isn't the people. It's the weekly team meeting agenda, or the lack of one.",
+      },
+      {
+        type: "p",
+        text: "Most agenda templates list sections: updates, discussion, action items. This post suggests a different order: start with what's still open from last week, spend most of the time on decisions, and push everything else out of the room. You'll get a 45-minute format, a template to copy, and the few rules that keep it working after week three.",
+      },
+      {
+        type: "h2",
+        text: "Why weekly team meetings drift",
+      },
+      {
+        type: "ul",
+        items: [
+          "Round-robin updates eat the time. They feel productive, but most of them are information that could have been read in two minutes before the meeting.",
+          "Nothing connects one week to the next. Each meeting starts fresh, so last week's commitments and open questions quietly disappear.",
+          "The agenda is written at 9:58, if at all. Topics arrive without context, and nobody has prepared.",
+          "Decisions happen but aren't stated. The group nods, moves on, and three people leave with three different understandings.",
+          "Hard topics go last. The one discussion that mattered gets the final eight minutes.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "p",
+        text: "Here's a 45-minute format for a team of five to ten people. Adjust the minutes, but keep the order:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Open from last week (10 minutes). Go through last week's action items: done, blocked or dropped. Then the open questions and risks: has anything been answered, or got worse? This is the part most teams skip, and the one that makes the meeting a series instead of a string of separate events.",
+          "Signals (5 minutes). Two or three numbers or facts that tell the team how things are going, such as a metric, a deadline or a customer issue. Only what changed, not a full report.",
+          "Decisions needed (20 minutes). Topics added in advance, each with an owner and the specific question the group needs to answer. Most important first. This is what the meeting is for.",
+          "Heads-ups (5 minutes). Short announcements that need no discussion. If one turns into a debate, it becomes a topic for next week.",
+          "Wrap-up (5 minutes). Read back what was decided and every new action item, with one owner and a date each. This is next week's first section.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Open with what's still open from last week, spend most of the meeting on decisions, and close by reading back owners and dates. The wrap-up of one meeting becomes the opening of the next, and nothing falls between weeks.",
+      },
+      {
+        type: "h3",
+        text: "A template to copy",
+      },
+      {
+        type: "p",
+        text: "Use one running document for the meeting, newest week at the top, so last week's wrap-up is right below this week's agenda:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Date · facilitator · note-taker",
+          "1. Open from last week: each action item with owner and status (done / blocked / dropped); each open question or risk with what changed",
+          "2. Signals: two or three lines, only what changed",
+          "3. Decisions needed: topic · owner · the question to decide · decision (written in the meeting)",
+          "4. Heads-ups: one line each, no discussion",
+          "5. Wrap-up: decisions made today; new action items with owner and date",
+          "Parking lot: topics for another week or another meeting",
+        ],
+      },
+      {
+        type: "h3",
+        text: "What it sounds like in practice",
+      },
+      {
+        type: "p",
+        text: "An operations team of seven, Tuesday morning. Open from last week takes eight minutes: the carrier contract renewal is done; the warehouse staffing plan is blocked waiting on finance; the idea of a second support shift is dropped, because ticket volume went down. One open question, whether to move returns to a new provider, got an answer in another meeting: not this quarter. One risk got worse: the peak-season forecast is 20% above last year's.",
+      },
+      {
+        type: "p",
+        text: "Signals: on-time delivery, open tickets, and that forecast. Decisions needed: two topics, both submitted the day before. Whether to hire two temporary staff for peak (decided: yes, Laura owns it, offers out by the 15th), and whether to pause the new packaging rollout until January (not decided, needs numbers from the supplier; Marco brings them next week). Heads-ups: an office move date. Wrap-up: two decisions, three new action items, each with a name and a date. Forty minutes in total, and next week's opening section is already written.",
+      },
+      {
+        type: "h2",
+        text: "What to move out of the meeting",
+      },
+      {
+        type: "p",
+        text: "The format only fits in 45 minutes if some things leave the room:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Status updates go in writing, before the meeting. A short note per person in the doc or in a channel the day before. Read them before you join; ask questions in the meeting only if something needs the group.",
+          "FYIs go to the team channel. If nobody needs to respond, nobody needs to hear it live.",
+          "Deep dives get their own meeting. If a topic needs more than 15 minutes of the whole team, schedule it with the people who need to be there.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Rules that keep it working",
+      },
+      {
+        type: "p",
+        text: "Formats like this tend to work for three weeks and then drift back. A few rules prevent that:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Topics are added by the end of the day before, with what the owner needs from the group: a decision, input or just awareness. A topic with no ask is a heads-up.",
+          "Every decision is said out loud in one sentence before moving on: \"So we're doing X, Diego owns it, by Friday.\"",
+          "One person runs the \"open from last week\" review, and the role rotates. It stops the review depending on the manager's memory.",
+          "End on time, even if a topic isn't finished. Unfinished topics go first next week, not into overtime.",
+          "Keep the opening review even in short weeks. If there's nothing to decide, the meeting can be 15 minutes, but those 15 minutes still start with what's open.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The wrap-up and the opening review are the same habit seen from two sides. Action items that are read back with an owner and a date, and asked about a week later, mostly get done. Those that aren't usually don't.",
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Remote and hybrid teams",
+      },
+      {
+        type: "p",
+        text: "The format works the same on a video call, with two adjustments. Share the doc on screen during the opening review and the wrap-up, so everyone sees the same list and can correct it on the spot. And let people add to the \"decisions needed\" section asynchronously during the week, so quieter team members and other time zones get their topics in without having to speak up first. If your calls have transcripts or AI notes turned on, use them to check the wrap-up afterwards, not to replace it: the read-back in the room is what makes people agree on the same version.",
+      },
+      {
+        type: "p",
+        text: "Decisions made in the meeting also deserve a home outside the meeting doc, because a running agenda is still organised by week. When someone asks in three months what was decided about a topic, they shouldn't have to scroll through twelve agendas.",
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both",
+      },
+      {
+        type: "h2",
+        text: "Preparing the opening review automatically",
+      },
+      {
+        type: "p",
+        text: "The first section is the one that takes preparation: someone has to collect last week's action items, questions and risks. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting, with the meeting they came from, and the morning email (with calendar access) lists today's meetings with what's still open from each one's earlier sessions. The weekly meeting's opening review is ready before anyone opens the doc.",
+      },
+      {
+        type: "p",
+        text: "With or without a tool, the principle is the same: a weekly meeting should pick up where the last one left off.",
+      },
+      {
+        type: "cta",
+        text: "Corteza prepares your recurring meetings with what's still open from last time, straight from your Google Meet meetings. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "architecture-decision-records",
     title: "Architecture Decision Records vs a Team Decision Log",
     description:
