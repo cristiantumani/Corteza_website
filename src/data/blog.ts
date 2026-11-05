@@ -174,7 +174,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The first section is the one that takes preparation: someone has to collect last week's action items, questions and risks. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting, with the meeting they came from, and the morning email (with calendar access) lists today's meetings with what's still open from each one's earlier sessions. The weekly meeting's opening review is ready before anyone opens the doc.",
+        text: "The first section is the one that takes preparation: someone has to collect last week's action items, questions and risks. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting, with the meeting they came from, and the morning email (with calendar access) lists today's meetings with what's still open from each one's earlier sessions. The list for the weekly meeting's opening review is there before anyone opens the doc.",
       },
       {
         type: "p",
