@@ -20,6 +20,352 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "weekly-team-meeting-agenda",
+    title: "A Weekly Team Meeting Agenda That Starts With What's Open",
+    description:
+      "A weekly team meeting agenda that starts with what's still open from last week: a 45-minute format, a copy-paste template and the rules that keep it useful.",
+    date: "2026-11-05",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Tuesday, 10:00. The weekly team meeting starts with a round of updates. Eight people, five minutes each, mostly things everyone could have read. Somebody raises a real question at 10:42, there's no time to settle it, and it rolls into next week. Last week's action items never come up at all. If that sounds familiar, the problem usually isn't the people. It's the weekly team meeting agenda, or the lack of one.",
+      },
+      {
+        type: "p",
+        text: "Most agenda templates list sections: updates, discussion, action items. This post suggests a different order: start with what's still open from last week, spend most of the time on decisions, and push everything else out of the room. You'll get a 45-minute format, a template to copy, and the few rules that keep it working after week three.",
+      },
+      {
+        type: "h2",
+        text: "Why weekly team meetings drift",
+      },
+      {
+        type: "ul",
+        items: [
+          "Round-robin updates eat the time. They feel productive, but most of them are information that could have been read in two minutes before the meeting.",
+          "Nothing connects one week to the next. Each meeting starts fresh, so last week's commitments and open questions quietly disappear.",
+          "The agenda is written at 9:58, if at all. Topics arrive without context, and nobody has prepared.",
+          "Decisions happen but aren't stated. The group nods, moves on, and three people leave with three different understandings.",
+          "Hard topics go last. The one discussion that mattered gets the final eight minutes.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "p",
+        text: "Here's a 45-minute format for a team of five to ten people. Adjust the minutes, but keep the order:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Open from last week (10 minutes). Go through last week's action items: done, blocked or dropped. Then the open questions and risks: has anything been answered, or got worse? This is the part most teams skip, and the one that makes the meeting a series instead of a string of separate events.",
+          "Signals (5 minutes). Two or three numbers or facts that tell the team how things are going, such as a metric, a deadline or a customer issue. Only what changed, not a full report.",
+          "Decisions needed (20 minutes). Topics added in advance, each with an owner and the specific question the group needs to answer. Most important first. This is what the meeting is for.",
+          "Heads-ups (5 minutes). Short announcements that need no discussion. If one turns into a debate, it becomes a topic for next week.",
+          "Wrap-up (5 minutes). Read back what was decided and every new action item, with one owner and a date each. This is next week's first section.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Open with what's still open from last week, spend most of the meeting on decisions, and close by reading back owners and dates. The wrap-up of one meeting becomes the opening of the next, and nothing falls between weeks.",
+      },
+      {
+        type: "h3",
+        text: "A template to copy",
+      },
+      {
+        type: "p",
+        text: "Use one running document for the meeting, newest week at the top, so last week's wrap-up is right below this week's agenda:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Date · facilitator · note-taker",
+          "1. Open from last week: each action item with owner and status (done / blocked / dropped); each open question or risk with what changed",
+          "2. Signals: two or three lines, only what changed",
+          "3. Decisions needed: topic · owner · the question to decide · decision (written in the meeting)",
+          "4. Heads-ups: one line each, no discussion",
+          "5. Wrap-up: decisions made today; new action items with owner and date",
+          "Parking lot: topics for another week or another meeting",
+        ],
+      },
+      {
+        type: "h3",
+        text: "What it sounds like in practice",
+      },
+      {
+        type: "p",
+        text: "An operations team of seven, Tuesday morning. Open from last week takes eight minutes: the carrier contract renewal is done; the warehouse staffing plan is blocked waiting on finance; the idea of a second support shift is dropped, because ticket volume went down. One open question, whether to move returns to a new provider, got an answer in another meeting: not this quarter. One risk got worse: the peak-season forecast is 20% above last year's.",
+      },
+      {
+        type: "p",
+        text: "Signals: on-time delivery, open tickets, and that forecast. Decisions needed: two topics, both submitted the day before. Whether to hire two temporary staff for peak (decided: yes, Laura owns it, offers out by the 15th), and whether to pause the new packaging rollout until January (not decided, needs numbers from the supplier; Marco brings them next week). Heads-ups: an office move date. Wrap-up: two decisions, three new action items, each with a name and a date. Forty minutes in total, and next week's opening section is already written.",
+      },
+      {
+        type: "h2",
+        text: "What to move out of the meeting",
+      },
+      {
+        type: "p",
+        text: "The format only fits in 45 minutes if some things leave the room:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Status updates go in writing, before the meeting. A short note per person in the doc or in a channel the day before. Read them before you join; ask questions in the meeting only if something needs the group.",
+          "FYIs go to the team channel. If nobody needs to respond, nobody needs to hear it live.",
+          "Deep dives get their own meeting. If a topic needs more than 15 minutes of the whole team, schedule it with the people who need to be there.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Rules that keep it working",
+      },
+      {
+        type: "p",
+        text: "Formats like this tend to work for three weeks and then drift back. A few rules prevent that:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Topics are added by the end of the day before, with what the owner needs from the group: a decision, input or just awareness. A topic with no ask is a heads-up.",
+          "Every decision is said out loud in one sentence before moving on: \"So we're doing X, Diego owns it, by Friday.\"",
+          "One person runs the \"open from last week\" review, and the role rotates. It stops the review depending on the manager's memory.",
+          "End on time, even if a topic isn't finished. Unfinished topics go first next week, not into overtime.",
+          "Keep the opening review even in short weeks. If there's nothing to decide, the meeting can be 15 minutes, but those 15 minutes still start with what's open.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The wrap-up and the opening review are the same habit seen from two sides. Action items that are read back with an owner and a date, and asked about a week later, mostly get done. Those that aren't usually don't.",
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Remote and hybrid teams",
+      },
+      {
+        type: "p",
+        text: "The format works the same on a video call, with two adjustments. Share the doc on screen during the opening review and the wrap-up, so everyone sees the same list and can correct it on the spot. And let people add to the \"decisions needed\" section asynchronously during the week, so quieter team members and other time zones get their topics in without having to speak up first. If your calls have transcripts or AI notes turned on, use them to check the wrap-up afterwards, not to replace it: the read-back in the room is what makes people agree on the same version.",
+      },
+      {
+        type: "p",
+        text: "Decisions made in the meeting also deserve a home outside the meeting doc, because a running agenda is still organised by week. When someone asks in three months what was decided about a topic, they shouldn't have to scroll through twelve agendas.",
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both",
+      },
+      {
+        type: "h2",
+        text: "Preparing the opening review automatically",
+      },
+      {
+        type: "p",
+        text: "The first section is the one that takes preparation: someone has to collect last week's action items, questions and risks. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting, with the meeting they came from, and the morning email (with calendar access) lists today's meetings with what's still open from each one's earlier sessions. The list for the weekly meeting's opening review is there before anyone opens the doc.",
+      },
+      {
+        type: "p",
+        text: "With or without a tool, the principle is the same: a weekly meeting should pick up where the last one left off.",
+      },
+      {
+        type: "cta",
+        text: "Corteza prepares your recurring meetings with what's still open from last time, straight from your Google Meet meetings. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
+    slug: "architecture-decision-records",
+    title: "Architecture Decision Records vs a Team Decision Log",
+    description:
+      "Architecture decision records explained: what goes in an ADR, when to write one, and how ADRs and a team decision log work together without duplication.",
+    date: "2026-11-02",
+    readTime: "6 min read",
+    category: "Engineering Leadership",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "A new engineer asks why the billing service uses a message queue instead of direct calls. Someone links ADR-0012, and the question is answered in two minutes: the context, the options, the trade-offs, the date. Then the same engineer asks why the mobile launch moved to Q2, and nobody can find anything. Architecture decision records are excellent at the first kind of question. Most teams have nothing for the second.",
+      },
+      {
+        type: "p",
+        text: "This post covers what an ADR is, when it's worth writing one, how it differs from a team decision log, and how to use both without writing everything twice.",
+      },
+      {
+        type: "h2",
+        text: "What architecture decision records are",
+      },
+      {
+        type: "p",
+        text: "An architecture decision record (ADR) is a short document that captures one significant technical decision, why it was made and what follows from it. The format was popularised by Michael Nygard in 2011 and is still the one most teams start with. Each ADR is numbered and has a few sections:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title: a short phrase, like \"ADR-0012: Use a message queue between billing and invoicing\".",
+          "Status: proposed, accepted, deprecated or superseded (by which ADR).",
+          "Context: the forces at play: the problem, the constraints, what the team knew at the time.",
+          "Decision: what was decided, stated plainly, in the active voice.",
+          "Consequences: what becomes easier, what becomes harder, and what the team now has to live with.",
+        ],
+      },
+      {
+        type: "p",
+        text: "ADRs usually live in the code repository, in a folder like docs/adr, and go through the same pull request review as code. Once accepted, an ADR isn't edited to reflect a new reality: a new ADR supersedes it, and the old one says so. Some teams use richer templates, such as MADR, which add the options considered with their pros and cons.",
+      },
+      {
+        type: "link",
+        text: "The original post that introduced the format, and still the best short explanation of why it works.",
+        href: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+        linkLabel: "Michael Nygard: Documenting Architecture Decisions (2011)",
+      },
+      {
+        type: "h2",
+        text: "What a team decision log is",
+      },
+      {
+        type: "p",
+        text: "A team decision log is a running list of the decisions a team makes in its meetings and conversations: one entry per decision, with the reasoning, an owner, a date, a status and where it came from. Its scope is everything the team decides, not only architecture: priorities, scope cuts, release dates, process changes, hiring plans, vendor choices.",
+      },
+      {
+        type: "p",
+        text: "Where an ADR is a carefully reviewed document about one technical choice, a log entry is a few lines written the same day, so that \"what did we decide about the launch?\" has an answer in ten seconds.",
+      },
+      {
+        type: "h2",
+        text: "Architecture decision records vs a team decision log",
+      },
+      {
+        type: "ul",
+        items: [
+          "Scope: ADRs cover significant technical and architectural choices. A decision log covers any decision the team makes.",
+          "Depth: an ADR is a short document with context and consequences. A log entry is a few lines with a link to where the detail lives.",
+          "Where it lives: ADRs sit next to the code, in the repo. A decision log sits where the whole team can search it, engineers and non-engineers alike.",
+          "How it's written: ADRs are drafted, reviewed and accepted, often through a pull request. Log entries are captured right after the meeting where the decision happened.",
+          "Who reads it: ADRs serve engineers working on the system, now and in the future. A log serves anyone who needs to act on a decision, including product, design and leadership.",
+          "When it changes: both are superseded rather than rewritten, but log entries change status far more often, because most team decisions are revisited sooner than architecture.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "ADRs are the deep record of a few architectural decisions. A decision log is the broad record of everything the team decides. They don't compete: the log tells you a decision exists and where it came from, and the ADR explains the technical reasoning in full.",
+      },
+      {
+        type: "h2",
+        text: "When to write an ADR",
+      },
+      {
+        type: "p",
+        text: "Not every technical choice deserves an ADR. A good test: would a capable engineer joining in a year be surprised by this, or tempted to undo it? Write one when a decision:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Is expensive to reverse: a database, a framework, a service boundary, a data model.",
+          "Affects other teams or systems: an API contract, an event format, a shared library.",
+          "Goes against what people would assume, so someone will \"fix\" it later unless the reason is written down.",
+          "Took more than one meeting to settle, or had a strong argument on the losing side.",
+          "Accepts a known trade-off, like eventual consistency or a performance cost, that people should know about.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Skip it for choices that are cheap to change: a library you could swap in an afternoon, naming, code style. Those belong in a pull request description or a linter config. And keep ADRs short: if a decision took an hour of discussion, the record should take a fraction of that to write.",
+      },
+      {
+        type: "h2",
+        text: "When it belongs in the decision log instead",
+      },
+      {
+        type: "p",
+        text: "Engineering teams make plenty of decisions that aren't architectural, and they're just as easy to lose:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Scope and priority: \"We ship the importer without CSV support in v1.\"",
+          "Dates and sequencing: \"The mobile launch moves to Q2 so the API can stabilise first.\"",
+          "Process: \"On-call rotates weekly starting next sprint; incidents get a review within 48 hours.\"",
+          "People and ownership: \"Platform team owns the deploy pipeline from now on.\"",
+        ],
+      },
+      {
+        type: "p",
+        text: "None of these needs an ADR. All of them will be asked about again. A one-line entry in the decision log, with the meeting it came from, is enough.",
+      },
+      {
+        type: "h2",
+        text: "Using ADRs and a decision log together",
+      },
+      {
+        type: "p",
+        text: "The two work best when each one points at the other, instead of repeating it:",
+      },
+      {
+        type: "ol",
+        items: [
+          "When a meeting settles an architectural question, log the decision the same day and add an action item: \"Write ADR-0018\", with an owner and a date.",
+          "When the ADR is accepted, link it from the log entry. The log says what was decided and when; the ADR explains why, in depth.",
+          "Keep open questions in the log until they're decided. \"Do we split the billing database?\" can sit there for weeks with its risks; the ADR comes once there's an answer.",
+          "When an ADR is superseded, update the log entry too, so nobody follows a link to an outdated design.",
+          "Link both from onboarding. A new engineer should learn on day one where architecture decisions live and where everything else does.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Onboarding is where the payoff shows. A new engineer with both can understand not only how the system works, but why it looks the way it does and what the team has already ruled out.",
+      },
+      {
+        type: "link",
+        text: "What it really costs when engineers join a team and the context behind past decisions is missing.",
+        href: "/blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team",
+        linkLabel: "The hidden cost of lost context when engineers join your team",
+      },
+      {
+        type: "h2",
+        text: "Common ADR mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Writing them months later. By then the context is reconstructed, not recorded. Write it while the discussion is fresh.",
+          "Writing essays. An ADR nobody reads is no better than none. One page is plenty for most decisions.",
+          "Skipping consequences. The trade-offs you accepted are the part future readers most need.",
+          "Editing accepted ADRs. Supersede them instead, so the history stays honest.",
+          "Hiding them. ADRs that only their authors know about don't prevent anyone from re-opening the question.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most architecture decisions start in a meeting, though: a design review, a planning session, an incident follow-up. That's the part Corteza helps with for teams on Google Meet. It captures the decisions, open questions and risks from each meeting, each with the meeting it came from and a short quote as evidence, and keeps a question, its risks and the decisions about one subject together in a thread. When it's time to write the ADR, or someone asks \"What did we decide about the queue migration?\", the answer is one search away, with its sources.",
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both",
+      },
+      {
+        type: "cta",
+        text: "Corteza captures the decisions and open questions from your Google Meet meetings, so the context behind every ADR is already written down. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "how-to-prepare-for-a-1-1-meeting",
     title: "How to Prepare for a 1:1 Meeting in 5 Minutes",
     description:

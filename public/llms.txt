@@ -12,6 +12,8 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Blog
 
+- [A Weekly Team Meeting Agenda That Starts With What's Open](/blog/weekly-team-meeting-agenda): A 45-minute weekly meeting format that opens with last week's open items, plus a template and rules that keep it working.
+- [Architecture Decision Records vs a Team Decision Log](/blog/architecture-decision-records): What goes in an ADR, when to write one, and how ADRs and a team decision log work together.
 - [How to Prepare for a 1:1 Meeting in 5 Minutes](/blog/how-to-prepare-for-a-1-1-meeting): A five-minute 1:1 prep routine that starts from what's still open between you, plus a simple shared doc format.
 - [Meeting Minutes vs Decision Log: Why You Need Both](/blog/meeting-minutes-vs-decision-log): What minutes and a decision log are each for, why minutes alone don't keep decisions alive, and how to keep both.
 - [Why Meeting Action Items Don't Get Done (and How to Fix It)](/blog/meeting-action-items-not-getting-done): Seven reasons action items get forgotten, what a good one looks like, and a simple system to close them.
