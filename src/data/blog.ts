@@ -20,6 +20,179 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "tracking-open-questions-and-risks",
+    title: "How to Track Open Questions and Risks After Meetings",
+    description:
+      "A practical guide to tracking open questions and risks after meetings: what to capture, how to give each one a next step, and a weekly review that closes them.",
+    date: "2026-11-09",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "In March, someone in the product review asks: \"Can we even store EU customer data in our US region?\" Everyone agrees it's a good question. Someone says \"let's check with legal\". In September, two weeks before launch, it comes back as a blocker. Nobody owned it, so nobody asked. Tracking open questions and risks is the least glamorous part of running meetings, and one of the most expensive to skip.",
+      },
+      {
+        type: "p",
+        text: "Teams have got reasonably good at action items. Questions and risks are different: they don't come with a task attached, they rarely have a date, and they're easy to note down once and never see again. This guide covers what to capture, how to make sure each one moves, and a short weekly review that closes them.",
+      },
+      {
+        type: "h2",
+        text: "Why open questions and risks get lost",
+      },
+      {
+        type: "ul",
+        items: [
+          "They aren't tasks. \"Do we support SSO in v1?\" isn't something anyone can tick off. Without a task attached, it lands in nobody's list.",
+          "Nobody owns them. A question raised in a meeting belongs to the meeting, which means it belongs to no one once the meeting ends.",
+          "They have no natural deadline. Action items get dates; questions just wait, until they turn into a blocker.",
+          "Notes record them once. The question appears in the notes of the meeting where it was raised, and nowhere else. The answer, if it comes, appears in the notes of a different meeting.",
+          "Risks feel like worries, not work. \"The vendor might not deliver in time\" gets nods, not an owner.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to capture for each open question and risk",
+      },
+      {
+        type: "p",
+        text: "Keep the record short, but don't skip the fields that make it actionable:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The question or risk, in one sentence anyone can understand outside the meeting.",
+          "Who raised it, and when. The date matters: a question's age is the best signal of whether it's being ignored.",
+          "Who has to answer it, or who owns the risk. One person, even if the answer needs others.",
+          "The next step: the concrete action that moves it forward, with its own owner and date.",
+          "For risks: what happens if it materialises, and what you're doing about it.",
+          "Status: open, answered (with the answer), mitigated (with how), or accepted (with why).",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Every open item needs a next step",
+      },
+      {
+        type: "p",
+        text: "This is the single most useful habit. \"Can we store EU data in the US region?\" is a question. \"Ana sends the question to legal with our current setup by Friday\" is a next step. The question stays open, but now something is happening, and there's a name and a date to ask about.",
+      },
+      {
+        type: "p",
+        text: "The same goes for risks. \"The vendor might be late\" becomes \"Marco asks the vendor for a written delivery date this week, and we decide on a fallback if it's after the 20th\". A risk with a next step is being managed. A risk without one is just being remembered.",
+      },
+      {
+        type: "p",
+        text: "Pick the owner deliberately. It's usually not the person who raised the question, and not the person who will eventually answer it if they're outside the team. It's the person inside the team who will chase the answer and bring it back. For the legal question, that's whoever needs the answer to ship, not the lawyer.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "An open question or risk without a next step is a hope. Give each one an owner, a concrete next action with a date, and a status that says how it ended: answered, mitigated or accepted, with the reason written down.",
+      },
+      {
+        type: "h2",
+        text: "Open questions, risks and action items: what's the difference?",
+      },
+      {
+        type: "p",
+        text: "They're easy to mix up, and they need slightly different handling:",
+      },
+      {
+        type: "ul",
+        items: [
+          "An action item is something someone will do: \"Update the pricing page by Thursday.\" It ends when it's done.",
+          "An open question is something the team doesn't know yet and needs to: \"Which plan includes SSO?\" It ends when it's answered, often by a decision.",
+          "A risk is something that might go wrong: \"Peak traffic could exceed what the database handles.\" It ends when it's mitigated, accepted, or no longer possible.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Questions and risks usually generate action items, the next steps, and get closed by decisions. Keeping them together, by subject, is what lets you see where a topic actually stands: the question, the risks around it, what's being done, and what was decided.",
+      },
+      {
+        type: "h2",
+        text: "Where to track them",
+      },
+      {
+        type: "p",
+        text: "Project managers often use a RAID log, a single register of risks, assumptions, issues and dependencies (some versions swap in actions and decisions). It works well for formal projects. For most teams, something lighter is enough:",
+      },
+      {
+        type: "ul",
+        items: [
+          "One shared list per team, not one per meeting. A spreadsheet or a database with the fields above is fine.",
+          "Group items by subject, not by date. \"EU data residency\" should show its question, its risks and its next steps together.",
+          "Link to the meeting where each item was raised, so anyone can check the original context.",
+          "Keep it next to your decision log. Many open questions are closed by a decision, and the two should point to each other.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "A weekly review that keeps them moving",
+      },
+      {
+        type: "p",
+        text: "Ten minutes a week, usually at the start of the team meeting, is enough to keep the list honest:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Sort by age, oldest first. Anything open for more than three or four weeks gets attention before anything else.",
+          "Check every item has a next step. If it doesn't, give it one now, or decide it doesn't matter and close it.",
+          "Record answers as they come in. When a question is answered, write the answer next to it and link the decision, if there was one.",
+          "Re-check the risks. Has any become more likely, or more serious? Has any stopped being possible?",
+          "Escalate what's stuck. A question waiting on someone outside the team for weeks needs a different route, not another reminder.",
+        ],
+      },
+      {
+        type: "link",
+        text: "A weekly meeting format that opens with what's still open from last week, questions and risks included.",
+        href: "/blog/weekly-team-meeting-agenda",
+        linkLabel: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "h2",
+        text: "Closing them properly",
+      },
+      {
+        type: "p",
+        text: "How an item is closed matters as much as how it's opened. Three rules help:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Always write down the answer or the mitigation. \"Closed\" with no explanation is how the same question comes back in six months.",
+          "\"Accepted\" is a valid outcome for a risk. Sometimes the right call is to live with it. Say so, and say why.",
+          "Allow reopening. If an answer turns out to be wrong, or a mitigated risk returns, reopen the item instead of creating a new one, so the history stays in one place.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Questions closed without an answer are one of the main reasons teams end up debating the same thing twice.",
+      },
+      {
+        type: "link",
+        text: "Why teams keep revisiting settled topics, and what to do about it.",
+        href: "/blog/why-your-team-keeps-remaking-the-same-decisions",
+        linkLabel: "Why your team keeps re-making the same decisions",
+      },
+      {
+        type: "h2",
+        text: "Capturing them without extra work",
+      },
+      {
+        type: "p",
+        text: "The hard part is writing questions and risks down at all, because they come up mid-conversation and nobody is taking notes for them. For teams on Google Meet, Corteza captures open questions and risks from each meeting's transcript or Gemini notes, with who raised them and the meeting they came from. Each one shows how long it has been open and its next step, or \"No next step\" when it has none. You mark a question answered with the answer, or a risk mitigated with how, and can reopen either. A question, its risks and the decisions about the same subject stay together, so a decision can be used as the answer.",
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps track of the questions and risks your Google Meet meetings leave behind, so they get answered before they become blockers. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "weekly-team-meeting-agenda",
     title: "A Weekly Team Meeting Agenda That Starts With What's Open",
     description:
