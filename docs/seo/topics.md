@@ -17,7 +17,7 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [x] how to prepare for a 1:1 meeting — A 5-minute 1:1 prep routine based on what's still open between you (informational) → /blog/how-to-prepare-for-a-1-1-meeting (2026-10-29)
 - [x] architecture decision records — ADRs vs a team decision log: when to use each (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team → /blog/architecture-decision-records (2026-11-02)
 - [x] weekly team meeting agenda — A weekly meeting format that starts with what's still open from last week (informational) → /blog/weekly-team-meeting-agenda (2026-11-05)
-- [ ] tracking open questions and risks — How to track the open questions and risks a meeting leaves behind (informational)
+- [x] tracking open questions and risks — How to track the open questions and risks a meeting leaves behind (informational) → /blog/tracking-open-questions-and-risks (2026-11-09)
 - [ ] decision ownership — Who owns a decision? Accountability for decisions in small teams (informational)
 - [ ] async decision making remote teams — Making and recording decisions asynchronously without losing context (informational)
 - [ ] cost of unproductive meetings — Meetings without outcomes: how to measure and fix them (informational)
