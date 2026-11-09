@@ -27,7 +27,7 @@ export const faqs = [
   {
     question: "Which meeting tools does it work with?",
     answer:
-      "We're starting the private beta with a small set of tools. Tell us what your team uses when you request early access, and we'll let you know if you're a fit for this first group.",
+      "Google Meet, with transcripts or Gemini's \"Take notes for me\" turned on. Corteza reads them after each meeting. Your action items can also show up in Google Calendar through Google Tasks, and you can ask about everything from Claude, ChatGPT or another AI assistant.",
   },
   {
     question: "Who sees the meeting feedback?",
