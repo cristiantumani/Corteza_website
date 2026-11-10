@@ -18,8 +18,21 @@ function stripQueryString(url: unknown): unknown {
   }
 }
 
+/**
+ * Automated browsers (crawlers, uptime checks, headless scrapers) aren't visitors: without this,
+ * a headless bot with an 800×600 screen and a fake "Edge/12" user agent was most of our page views.
+ * They don't load PostHog at all.
+ */
+function isAutomatedBrowser(): boolean {
+  if (typeof navigator === "undefined") return true;
+  if (navigator.webdriver) return true;
+  const ua = navigator.userAgent || "";
+  if (/HeadlessChrome|PhantomJS|Puppeteer|Playwright|\b(bot|crawler|spider)\b|bot\/|Edge\/12\./i.test(ua)) return true;
+  return typeof screen !== "undefined" && screen.width === 800 && screen.height === 600;
+}
+
 export function initAnalytics() {
-  if (!projectToken || initialized) return;
+  if (!projectToken || initialized || isAutomatedBrowser()) return;
   posthog.init(projectToken, {
     api_host: apiHost,
     autocapture: true,
