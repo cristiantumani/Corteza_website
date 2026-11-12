@@ -12,6 +12,7 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Blog
 
+- [Decision Ownership: Who Owns a Decision in a Small Team?](/blog/decision-ownership): What a decision owner does, what DACI and RAPID get right, and how to name one owner for every decision.
 - [How to Track Open Questions and Risks After Meetings](/blog/tracking-open-questions-and-risks): What to capture for each open question and risk, how to give each a next step, and a weekly review that closes them.
 - [A Weekly Team Meeting Agenda That Starts With What's Open](/blog/weekly-team-meeting-agenda): A 45-minute weekly meeting format that opens with last week's open items, plus a template and rules that keep it working.
 - [Architecture Decision Records vs a Team Decision Log](/blog/architecture-decision-records): What goes in an ADR, when to write one, and how ADRs and a team decision log work together.

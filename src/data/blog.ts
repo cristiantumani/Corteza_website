@@ -20,6 +20,194 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "decision-ownership",
+    title: "Decision Ownership: Who Owns a Decision in a Small Team?",
+    description:
+      "Decision ownership in small teams: what a decision owner does, how DACI and RAPID handle it, and a simple way to name one owner for every decision that matters.",
+    date: "2026-11-12",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Product thinks marketing is deciding the new pricing page. Marketing is waiting for product to sign off. The founder assumes it shipped last week. Three smart people, one simple decision, and nothing has happened for a month. This is what missing decision ownership looks like in a small team: not conflict, just a gap where everyone reasonably assumes someone else has it.",
+      },
+      {
+        type: "p",
+        text: "This post covers what a decision owner actually does, what frameworks like DACI and RAPID get right, a lighter version that suits teams of 10 to 100 people, and the mistakes that quietly undo it.",
+      },
+      {
+        type: "h2",
+        text: "What decision ownership means",
+      },
+      {
+        type: "p",
+        text: "The owner of a decision is the one person who makes the call, after hearing the input that matters, and then answers for it. Three things come with the role:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Making the call, by a date, even when the information isn't perfect.",
+          "Saying it clearly: what was decided, why, and what it means for the people affected.",
+          "Being the person others go to if the decision needs revisiting.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Decision ownership isn't the same as doing the work. The person who decides to change the pricing page may not be the one who updates it. And it isn't automatically the most senior person in the room. In a healthy team, most decisions are owned by whoever is closest to the problem and will live with the consequences.",
+      },
+      {
+        type: "h2",
+        text: "Why small teams struggle with it",
+      },
+      {
+        type: "p",
+        text: "Large organisations have the opposite problem: too many approvers. Small teams usually have too few named owners, for understandable reasons:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Everyone is in every meeting, so decisions default to consensus. When nobody objects, it feels decided, but nobody owns it.",
+          "The founder is the default decider for everything, which works at five people and becomes a bottleneck at twenty-five.",
+          "Roles change faster than titles. Who decides about onboarding now that there's a customer success lead, the product manager or the new lead?",
+          "\"Let's decide async\" means a thread that nobody closes.",
+          "The last person to speak, or the most confident, ends up deciding by accident.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What DACI and RAPID get right",
+      },
+      {
+        type: "p",
+        text: "There are several frameworks for assigning decision roles. Two of the best known:",
+      },
+      {
+        type: "ul",
+        items: [
+          "DACI: a Driver who moves the decision forward, one Approver who makes the final call, Contributors who give input, and Informed people who hear about the outcome.",
+          "RAPID, from Bain & Company: people who Recommend, Agree, Perform, give Input, and one person who Decides.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The details differ, but they share the part that matters: exactly one person has the final say on each decision. Everyone else contributes, agrees, executes or is informed, and knows which. RAPID's Agree role is worth borrowing on its own: it names the few people, often legal or finance, whose sign-off is genuinely required. Most decisions don't need one.",
+      },
+      {
+        type: "p",
+        text: "For a small team, the full frameworks can feel like paperwork. A lighter version works for most decisions: one Owner, the people who give Input, and the people who need to be Informed. Three lines, written down before the discussion starts.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Every decision that matters needs exactly one named owner before the discussion starts: the person who will make the call by a date, say it clearly, and answer for it. Input from many people is good; ownership by many people is how decisions stall.",
+      },
+      {
+        type: "h2",
+        text: "How to assign decision ownership",
+      },
+      {
+        type: "p",
+        text: "You don't need a matrix for every team. You need a habit for every decision that's worth more than a quick chat:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Name the decision as a question. \"Do we redesign the pricing page before the Q1 campaign?\" is something someone can own. \"Pricing page\" isn't.",
+          "Name the owner before discussing it. Pick the person closest to the problem who has the authority to act on it. If nobody has that authority, that's the first thing to fix.",
+          "Set a decide-by date. Without one, the decision drifts until it's made for you.",
+          "List who gives input. The owner asks them; they don't need to agree, but they need to be heard.",
+          "The owner announces the decision and the reason, in the meeting or in writing, to everyone affected.",
+          "Record it where people will look for it, with the owner's name next to it.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "An example",
+      },
+      {
+        type: "p",
+        text: "In a weekly leadership meeting, the pricing page comes up again. This time, the CEO stops the discussion: \"Who owns this?\" They agree it's Lucía, the head of marketing, because the page is part of her Q1 campaign. Input: product (what's changing in the plans) and sales (what customers ask about). Informed: the whole team. Decide-by: next Thursday. On Thursday, Lucía posts in the team channel: redesign the page before the campaign, with the new plan comparison; product reviews the copy by the 20th. The month-long stall ends in a week.",
+      },
+      {
+        type: "h2",
+        text: "Decision owner vs action item owner",
+      },
+      {
+        type: "p",
+        text: "Both are called \"owner\", and that causes confusion:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The decision owner decides what happens and answers for the choice. There's one per decision.",
+          "Action item owners do the work that follows. One decision usually creates several action items, each with its own owner and date.",
+          "The person who raised an open question is not necessarily its owner either. Someone still has to chase the answer.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Keeping these apart makes follow-up much clearer. \"Lucía decided; Diego updates the page by the 15th; product reviews the copy by the 20th\" leaves no room for \"I thought you had it\".",
+      },
+      {
+        type: "link",
+        text: "Open questions need an owner too: how to track the questions and risks a meeting leaves behind.",
+        href: "/blog/tracking-open-questions-and-risks",
+        linkLabel: "How to track open questions and risks after meetings",
+      },
+      {
+        type: "h2",
+        text: "When a decision needs revisiting",
+      },
+      {
+        type: "p",
+        text: "Owners will sometimes be wrong, and that's fine. What matters is how decisions get reopened. A few rules help:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Reopen for new information, not because someone missed the meeting. \"I wasn't there\" is a reason to explain the decision, not to remake it.",
+          "Go through the owner. They can reopen it, or hand it to someone else.",
+          "Disagree and commit. Once the owner has decided, people who disagreed say so and then support it, instead of slowly working around it.",
+          "Record the change, with the reason. The new decision should point to the old one, so nobody finds the outdated version first.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Two owners. \"Ana and Diego will decide\" means each waits for the other.",
+          "The owner is whoever raised it. Raising a problem shouldn't mean you're stuck with deciding it.",
+          "Ownership by committee. A group can give input; one person decides.",
+          "Hidden decisions. A call made in a DM, never announced, isn't a decision the team can follow.",
+          "No record. If nobody can find who decided and why, the decision will be made again, probably by someone else.",
+        ],
+      },
+      {
+        type: "link",
+        text: "A lightweight way to write decisions down, owner included, without slowing the team down.",
+        href: "/blog/how-to-document-team-decisions-without-slowing-down",
+        linkLabel: "How to document team decisions without slowing down",
+      },
+      {
+        type: "h2",
+        text: "Keeping owners visible after the meeting",
+      },
+      {
+        type: "p",
+        text: "Naming an owner in the meeting is the easy part. Remembering it three weeks later is harder. For teams on Google Meet, Corteza captures decisions and action items from each meeting, with the meeting they came from, a short quote as evidence, and the owner and due date when they were said. Anyone can ask \"What's pending from Lucía?\" and get the answer with its sources. And when an owner settles something, they can type the decision, like \"We decided not to redesign the pricing page this quarter\", and Corteza finds the open questions, risks and action items it settles, and closes them once they confirm.",
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps every decision from your Google Meet meetings with its owner and its evidence, so nobody has to ask who decided. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "tracking-open-questions-and-risks",
     title: "How to Track Open Questions and Risks After Meetings",
     description:
