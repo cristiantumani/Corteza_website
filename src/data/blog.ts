@@ -199,11 +199,11 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Naming an owner in the meeting is the easy part. Remembering it three weeks later is harder. For teams on Google Meet, Corteza captures decisions and action items from each meeting, with the meeting they came from, a short quote as evidence, and the owner and due date when they were said. Anyone can ask \"What's pending from Lucía?\" and get the answer with its sources. And when an owner settles something, they can type the decision, like \"We decided not to redesign the pricing page this quarter\", and Corteza finds the open questions, risks and action items it settles, and closes them once they confirm.",
+        text: "Naming an owner in the meeting is the easy part. Remembering it three weeks later is harder. For teams on Google Meet, Corteza captures decisions and action items from each meeting, with the meeting they came from, a short quote as evidence, and the owner and due date when they were said. You can ask \"What's pending from Lucía?\" and get the answer with its sources. And when an owner settles something, they can type the decision, like \"We decided not to redesign the pricing page this quarter\", and Corteza finds the open questions, risks and action items it settles, and closes them once they confirm.",
       },
       {
         type: "cta",
-        text: "Corteza keeps every decision from your Google Meet meetings with its owner and its evidence, so nobody has to ask who decided. Request early access to the private beta, free during the beta.",
+        text: "Corteza keeps the decisions from your Google Meet meetings with their evidence and, when it was said, their owner, so nobody has to ask who decided. Request early access to the private beta, free during the beta.",
       },
     ],
   },
