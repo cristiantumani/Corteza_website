@@ -95,8 +95,9 @@ async function rest(path: string, init: RequestInit = {}): Promise<Response> {
  * The signup to email, claimed so it's emailed only once; null when there's nothing to send
  * (no such signup, or already emailed)
  */
-async function claimSignup(email: string): Promise<Signup | null> {
-  const filter = `early_access_signups?email=eq.${encodeURIComponent(email)}`;
+async function claimSignup(email: string, id: string): Promise<Signup | null> {
+  const since = new Date(Date.now() - FALLBACK_WINDOW_MS).toISOString();
+  const filter = `early_access_signups?id=eq.${encodeURIComponent(id)}&email=eq.${encodeURIComponent(email)}&created_at=gte.${encodeURIComponent(since)}`;
   const claimed = await rest(`${filter}&welcome_sent_at=is.null`, {
     method: "PATCH",
     headers: { Prefer: "return=representation" },
@@ -234,17 +235,20 @@ serve(async (req) => {
     }
 
     let email: string;
+    let id: string;
     try {
       const body = await req.json();
+      id = typeof body?.id === "string" ? body.id.trim().toLowerCase() : "";
+      if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id)) throw new Error("invalid id");
       email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 100) throw new Error("invalid email");
     } catch {
       return json({ error: "Invalid request data" }, 400);
     }
 
-    const signup = await claimSignup(email);
+    const signup = await claimSignup(email, id);
     if (!signup) {
-      console.log(`[Signup emails] Nothing to send for ${email} (no recent signup, or already emailed)`);
+      console.log("[Signup emails] Nothing to send (no matching recent signup, or already emailed)");
       return json({ success: true, sent: false });
     }
 
@@ -263,7 +267,7 @@ serve(async (req) => {
     if (!notifyTo.length) console.warn("[Signup emails] SIGNUP_NOTIFY_EMAIL is not set: no team notification sent");
 
     const ok = results.every((result) => result.status === "fulfilled");
-    console.log(`[Signup emails] ${ok ? "Sent" : "Partly sent"} for ${email} (origin ${origin})`);
+    console.log(`[Signup emails] ${ok ? "Sent" : "Partly sent"} (origin ${origin})`);
     return json({ success: ok, sent: true }, ok ? 200 : 502);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
