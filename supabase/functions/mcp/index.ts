@@ -12,6 +12,706 @@ import { z } from "npm:zod@^4.6.5";
 // src/data/blog.ts
 var posts = [
   {
+    slug: "tracking-open-questions-and-risks",
+    title: "How to Track Open Questions and Risks After Meetings",
+    description: "A practical guide to tracking open questions and risks after meetings: what to capture, how to give each one a next step, and a weekly review that closes them.",
+    date: "2026-11-09",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: `In March, someone in the product review asks: "Can we even store EU customer data in our US region?" Everyone agrees it's a good question. Someone says "let's check with legal". In September, two weeks before launch, it comes back as a blocker. Nobody owned it, so nobody asked. Tracking open questions and risks is the least glamorous part of running meetings, and one of the most expensive to skip.`
+      },
+      {
+        type: "p",
+        text: "Teams have got reasonably good at action items. Questions and risks are different: they don't come with a task attached, they rarely have a date, and they're easy to note down once and never see again. This guide covers what to capture, how to make sure each one moves, and a short weekly review that closes them."
+      },
+      {
+        type: "h2",
+        text: "Why open questions and risks get lost"
+      },
+      {
+        type: "ul",
+        items: [
+          `They aren't tasks. "Do we support SSO in v1?" isn't something anyone can tick off. Without a task attached, it lands in nobody's list.`,
+          "Nobody owns them. A question raised in a meeting belongs to the meeting, which means it belongs to no one once the meeting ends.",
+          "They have no natural deadline. Action items get dates; questions just wait, until they turn into a blocker.",
+          "Notes record them once. The question appears in the notes of the meeting where it was raised, and nowhere else. The answer, if it comes, appears in the notes of a different meeting.",
+          'Risks feel like worries, not work. "The vendor might not deliver in time" gets nods, not an owner.'
+        ]
+      },
+      {
+        type: "h2",
+        text: "What to capture for each open question and risk"
+      },
+      {
+        type: "p",
+        text: "Keep the record short, but don't skip the fields that make it actionable:"
+      },
+      {
+        type: "ul",
+        items: [
+          "The question or risk, in one sentence anyone can understand outside the meeting.",
+          "Who raised it, and when. The date matters: a question's age is the best signal of whether it's being ignored.",
+          "Who has to answer it, or who owns the risk. One person, even if the answer needs others.",
+          "The next step: the concrete action that moves it forward, with its own owner and date.",
+          "For risks: what happens if it materialises, and what you're doing about it.",
+          "Status: open, answered (with the answer), mitigated (with how), or accepted (with why)."
+        ]
+      },
+      {
+        type: "h3",
+        text: "Every open item needs a next step"
+      },
+      {
+        type: "p",
+        text: `This is the single most useful habit. "Can we store EU data in the US region?" is a question. "Ana sends the question to legal with our current setup by Friday" is a next step. The question stays open, but now something is happening, and there's a name and a date to ask about.`
+      },
+      {
+        type: "p",
+        text: `The same goes for risks. "The vendor might be late" becomes "Marco asks the vendor for a written delivery date this week, and we decide on a fallback if it's after the 20th". A risk with a next step is being managed. A risk without one is just being remembered.`
+      },
+      {
+        type: "p",
+        text: "Pick the owner deliberately. It's usually not the person who raised the question, and not the person who will eventually answer it if they're outside the team. It's the person inside the team who will chase the answer and bring it back. For the legal question, that's whoever needs the answer to ship, not the lawyer."
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "An open question or risk without a next step is a hope. Give each one an owner, a concrete next action with a date, and a status that says how it ended: answered, mitigated or accepted, with the reason written down."
+      },
+      {
+        type: "h2",
+        text: "Open questions, risks and action items: what's the difference?"
+      },
+      {
+        type: "p",
+        text: "They're easy to mix up, and they need slightly different handling:"
+      },
+      {
+        type: "ul",
+        items: [
+          `An action item is something someone will do: "Update the pricing page by Thursday." It ends when it's done.`,
+          `An open question is something the team doesn't know yet and needs to: "Which plan includes SSO?" It ends when it's answered, often by a decision.`,
+          `A risk is something that might go wrong: "Peak traffic could exceed what the database handles." It ends when it's mitigated, accepted, or no longer possible.`
+        ]
+      },
+      {
+        type: "p",
+        text: "Questions and risks usually generate action items, the next steps, and get closed by decisions. Keeping them together, by subject, is what lets you see where a topic actually stands: the question, the risks around it, what's being done, and what was decided."
+      },
+      {
+        type: "h2",
+        text: "Where to track them"
+      },
+      {
+        type: "p",
+        text: "Project managers often use a RAID log, a single register of risks, assumptions, issues and dependencies (some versions swap in actions and decisions). It works well for formal projects. For most teams, something lighter is enough:"
+      },
+      {
+        type: "ul",
+        items: [
+          "One shared list per team, not one per meeting. A spreadsheet or a database with the fields above is fine.",
+          'Group items by subject, not by date. "EU data residency" should show its question, its risks and its next steps together.',
+          "Link to the meeting where each item was raised, so anyone can check the original context.",
+          "Keep it next to your decision log. Many open questions are closed by a decision, and the two should point to each other."
+        ]
+      },
+      {
+        type: "h2",
+        text: "A weekly review that keeps them moving"
+      },
+      {
+        type: "p",
+        text: "Ten minutes a week, usually at the start of the team meeting, is enough to keep the list honest:"
+      },
+      {
+        type: "ol",
+        items: [
+          "Sort by age, oldest first. Anything open for more than three or four weeks gets attention before anything else.",
+          "Check every item has a next step. If it doesn't, give it one now, or decide it doesn't matter and close it.",
+          "Record answers as they come in. When a question is answered, write the answer next to it and link the decision, if there was one.",
+          "Re-check the risks. Has any become more likely, or more serious? Has any stopped being possible?",
+          "Escalate what's stuck. A question waiting on someone outside the team for weeks needs a different route, not another reminder."
+        ]
+      },
+      {
+        type: "link",
+        text: "A weekly meeting format that opens with what's still open from last week, questions and risks included.",
+        href: "/blog/weekly-team-meeting-agenda",
+        linkLabel: "A weekly team meeting agenda that starts with what's open"
+      },
+      {
+        type: "h2",
+        text: "Closing them properly"
+      },
+      {
+        type: "p",
+        text: "How an item is closed matters as much as how it's opened. Three rules help:"
+      },
+      {
+        type: "ul",
+        items: [
+          'Always write down the answer or the mitigation. "Closed" with no explanation is how the same question comes back in six months.',
+          '"Accepted" is a valid outcome for a risk. Sometimes the right call is to live with it. Say so, and say why.',
+          "Allow reopening. If an answer turns out to be wrong, or a mitigated risk returns, reopen the item instead of creating a new one, so the history stays in one place."
+        ]
+      },
+      {
+        type: "p",
+        text: "Questions closed without an answer are one of the main reasons teams end up debating the same thing twice."
+      },
+      {
+        type: "link",
+        text: "Why teams keep revisiting settled topics, and what to do about it.",
+        href: "/blog/why-your-team-keeps-remaking-the-same-decisions",
+        linkLabel: "Why your team keeps re-making the same decisions"
+      },
+      {
+        type: "h2",
+        text: "Capturing them without extra work"
+      },
+      {
+        type: "p",
+        text: `The hard part is writing questions and risks down at all, because they come up mid-conversation and nobody is taking notes for them. For teams on Google Meet, Corteza captures open questions and risks from each meeting's transcript or Gemini notes, with who raised them and the meeting they came from. Each one shows how long it has been open and its next step, or "No next step" when it has none. You mark a question answered with the answer, or a risk mitigated with how, and can reopen either. A question, its risks and the decisions about the same subject stay together, so a decision can be used as the answer.`
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps track of the questions and risks your Google Meet meetings leave behind, so they get answered before they become blockers. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
+    slug: "weekly-team-meeting-agenda",
+    title: "A Weekly Team Meeting Agenda That Starts With What's Open",
+    description: "A weekly team meeting agenda that starts with what's still open from last week: a 45-minute format, a copy-paste template and the rules that keep it useful.",
+    date: "2026-11-05",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Tuesday, 10:00. The weekly team meeting starts with a round of updates. Eight people, five minutes each, mostly things everyone could have read. Somebody raises a real question at 10:42, there's no time to settle it, and it rolls into next week. Last week's action items never come up at all. If that sounds familiar, the problem usually isn't the people. It's the weekly team meeting agenda, or the lack of one."
+      },
+      {
+        type: "p",
+        text: "Most agenda templates list sections: updates, discussion, action items. This post suggests a different order: start with what's still open from last week, spend most of the time on decisions, and push everything else out of the room. You'll get a 45-minute format, a template to copy, and the few rules that keep it working after week three."
+      },
+      {
+        type: "h2",
+        text: "Why weekly team meetings drift"
+      },
+      {
+        type: "ul",
+        items: [
+          "Round-robin updates eat the time. They feel productive, but most of them are information that could have been read in two minutes before the meeting.",
+          "Nothing connects one week to the next. Each meeting starts fresh, so last week's commitments and open questions quietly disappear.",
+          "The agenda is written at 9:58, if at all. Topics arrive without context, and nobody has prepared.",
+          "Decisions happen but aren't stated. The group nods, moves on, and three people leave with three different understandings.",
+          "Hard topics go last. The one discussion that mattered gets the final eight minutes."
+        ]
+      },
+      {
+        type: "h2",
+        text: "A weekly team meeting agenda that starts with what's open"
+      },
+      {
+        type: "p",
+        text: "Here's a 45-minute format for a team of five to ten people. Adjust the minutes, but keep the order:"
+      },
+      {
+        type: "ol",
+        items: [
+          "Open from last week (10 minutes). Go through last week's action items: done, blocked or dropped. Then the open questions and risks: has anything been answered, or got worse? This is the part most teams skip, and the one that makes the meeting a series instead of a string of separate events.",
+          "Signals (5 minutes). Two or three numbers or facts that tell the team how things are going, such as a metric, a deadline or a customer issue. Only what changed, not a full report.",
+          "Decisions needed (20 minutes). Topics added in advance, each with an owner and the specific question the group needs to answer. Most important first. This is what the meeting is for.",
+          "Heads-ups (5 minutes). Short announcements that need no discussion. If one turns into a debate, it becomes a topic for next week.",
+          "Wrap-up (5 minutes). Read back what was decided and every new action item, with one owner and a date each. This is next week's first section."
+        ]
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Open with what's still open from last week, spend most of the meeting on decisions, and close by reading back owners and dates. The wrap-up of one meeting becomes the opening of the next, and nothing falls between weeks."
+      },
+      {
+        type: "h3",
+        text: "A template to copy"
+      },
+      {
+        type: "p",
+        text: "Use one running document for the meeting, newest week at the top, so last week's wrap-up is right below this week's agenda:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Date \xB7 facilitator \xB7 note-taker",
+          "1. Open from last week: each action item with owner and status (done / blocked / dropped); each open question or risk with what changed",
+          "2. Signals: two or three lines, only what changed",
+          "3. Decisions needed: topic \xB7 owner \xB7 the question to decide \xB7 decision (written in the meeting)",
+          "4. Heads-ups: one line each, no discussion",
+          "5. Wrap-up: decisions made today; new action items with owner and date",
+          "Parking lot: topics for another week or another meeting"
+        ]
+      },
+      {
+        type: "h3",
+        text: "What it sounds like in practice"
+      },
+      {
+        type: "p",
+        text: "An operations team of seven, Tuesday morning. Open from last week takes eight minutes: the carrier contract renewal is done; the warehouse staffing plan is blocked waiting on finance; the idea of a second support shift is dropped, because ticket volume went down. One open question, whether to move returns to a new provider, got an answer in another meeting: not this quarter. One risk got worse: the peak-season forecast is 20% above last year's."
+      },
+      {
+        type: "p",
+        text: "Signals: on-time delivery, open tickets, and that forecast. Decisions needed: two topics, both submitted the day before. Whether to hire two temporary staff for peak (decided: yes, Laura owns it, offers out by the 15th), and whether to pause the new packaging rollout until January (not decided, needs numbers from the supplier; Marco brings them next week). Heads-ups: an office move date. Wrap-up: two decisions, three new action items, each with a name and a date. Forty minutes in total, and next week's opening section is already written."
+      },
+      {
+        type: "h2",
+        text: "What to move out of the meeting"
+      },
+      {
+        type: "p",
+        text: "The format only fits in 45 minutes if some things leave the room:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Status updates go in writing, before the meeting. A short note per person in the doc or in a channel the day before. Read them before you join; ask questions in the meeting only if something needs the group.",
+          "FYIs go to the team channel. If nobody needs to respond, nobody needs to hear it live.",
+          "Deep dives get their own meeting. If a topic needs more than 15 minutes of the whole team, schedule it with the people who need to be there."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Rules that keep it working"
+      },
+      {
+        type: "p",
+        text: "Formats like this tend to work for three weeks and then drift back. A few rules prevent that:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Topics are added by the end of the day before, with what the owner needs from the group: a decision, input or just awareness. A topic with no ask is a heads-up.",
+          `Every decision is said out loud in one sentence before moving on: "So we're doing X, Diego owns it, by Friday."`,
+          `One person runs the "open from last week" review, and the role rotates. It stops the review depending on the manager's memory.`,
+          "End on time, even if a topic isn't finished. Unfinished topics go first next week, not into overtime.",
+          "Keep the opening review even in short weeks. If there's nothing to decide, the meeting can be 15 minutes, but those 15 minutes still start with what's open."
+        ]
+      },
+      {
+        type: "p",
+        text: "The wrap-up and the opening review are the same habit seen from two sides. Action items that are read back with an owner and a date, and asked about a week later, mostly get done. Those that aren't usually don't."
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done"
+      },
+      {
+        type: "h2",
+        text: "Remote and hybrid teams"
+      },
+      {
+        type: "p",
+        text: 'The format works the same on a video call, with two adjustments. Share the doc on screen during the opening review and the wrap-up, so everyone sees the same list and can correct it on the spot. And let people add to the "decisions needed" section asynchronously during the week, so quieter team members and other time zones get their topics in without having to speak up first. If your calls have transcripts or AI notes turned on, use them to check the wrap-up afterwards, not to replace it: the read-back in the room is what makes people agree on the same version.'
+      },
+      {
+        type: "p",
+        text: "Decisions made in the meeting also deserve a home outside the meeting doc, because a running agenda is still organised by week. When someone asks in three months what was decided about a topic, they shouldn't have to scroll through twelve agendas."
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both"
+      },
+      {
+        type: "h2",
+        text: "Preparing the opening review automatically"
+      },
+      {
+        type: "p",
+        text: "The first section is the one that takes preparation: someone has to collect last week's action items, questions and risks. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting, with the meeting they came from, and the morning email (with calendar access) lists today's meetings with what's still open from each one's earlier sessions. The list for the weekly meeting's opening review is there before anyone opens the doc."
+      },
+      {
+        type: "p",
+        text: "With or without a tool, the principle is the same: a weekly meeting should pick up where the last one left off."
+      },
+      {
+        type: "cta",
+        text: "Corteza prepares your recurring meetings with what's still open from last time, straight from your Google Meet meetings. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
+    slug: "architecture-decision-records",
+    title: "Architecture Decision Records vs a Team Decision Log",
+    description: "Architecture decision records explained: what goes in an ADR, when to write one, and how ADRs and a team decision log work together without duplication.",
+    date: "2026-11-02",
+    readTime: "6 min read",
+    category: "Engineering Leadership",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "A new engineer asks why the billing service uses a message queue instead of direct calls. Someone links ADR-0012, and the question is answered in two minutes: the context, the options, the trade-offs, the date. Then the same engineer asks why the mobile launch moved to Q2, and nobody can find anything. Architecture decision records are excellent at the first kind of question. Most teams have nothing for the second."
+      },
+      {
+        type: "p",
+        text: "This post covers what an ADR is, when it's worth writing one, how it differs from a team decision log, and how to use both without writing everything twice."
+      },
+      {
+        type: "h2",
+        text: "What architecture decision records are"
+      },
+      {
+        type: "p",
+        text: "An architecture decision record (ADR) is a short document that captures one significant technical decision, why it was made and what follows from it. The format was popularised by Michael Nygard in 2011 and is still the one most teams start with. Each ADR is numbered and has a few sections:"
+      },
+      {
+        type: "ul",
+        items: [
+          'Title: a short phrase, like "ADR-0012: Use a message queue between billing and invoicing".',
+          "Status: proposed, accepted, deprecated or superseded (by which ADR).",
+          "Context: the forces at play: the problem, the constraints, what the team knew at the time.",
+          "Decision: what was decided, stated plainly, in the active voice.",
+          "Consequences: what becomes easier, what becomes harder, and what the team now has to live with."
+        ]
+      },
+      {
+        type: "p",
+        text: "ADRs usually live in the code repository, in a folder like docs/adr, and go through the same pull request review as code. Once accepted, an ADR isn't edited to reflect a new reality: a new ADR supersedes it, and the old one says so. Some teams use richer templates, such as MADR, which add the options considered with their pros and cons."
+      },
+      {
+        type: "link",
+        text: "The original post that introduced the format, and still the best short explanation of why it works.",
+        href: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+        linkLabel: "Michael Nygard: Documenting Architecture Decisions (2011)"
+      },
+      {
+        type: "h2",
+        text: "What a team decision log is"
+      },
+      {
+        type: "p",
+        text: "A team decision log is a running list of the decisions a team makes in its meetings and conversations: one entry per decision, with the reasoning, an owner, a date, a status and where it came from. Its scope is everything the team decides, not only architecture: priorities, scope cuts, release dates, process changes, hiring plans, vendor choices."
+      },
+      {
+        type: "p",
+        text: 'Where an ADR is a carefully reviewed document about one technical choice, a log entry is a few lines written the same day, so that "what did we decide about the launch?" has an answer in ten seconds.'
+      },
+      {
+        type: "h2",
+        text: "Architecture decision records vs a team decision log"
+      },
+      {
+        type: "ul",
+        items: [
+          "Scope: ADRs cover significant technical and architectural choices. A decision log covers any decision the team makes.",
+          "Depth: an ADR is a short document with context and consequences. A log entry is a few lines with a link to where the detail lives.",
+          "Where it lives: ADRs sit next to the code, in the repo. A decision log sits where the whole team can search it, engineers and non-engineers alike.",
+          "How it's written: ADRs are drafted, reviewed and accepted, often through a pull request. Log entries are captured right after the meeting where the decision happened.",
+          "Who reads it: ADRs serve engineers working on the system, now and in the future. A log serves anyone who needs to act on a decision, including product, design and leadership.",
+          "When it changes: both are superseded rather than rewritten, but log entries change status far more often, because most team decisions are revisited sooner than architecture."
+        ]
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "ADRs are the deep record of a few architectural decisions. A decision log is the broad record of everything the team decides. They don't compete: the log tells you a decision exists and where it came from, and the ADR explains the technical reasoning in full."
+      },
+      {
+        type: "h2",
+        text: "When to write an ADR"
+      },
+      {
+        type: "p",
+        text: "Not every technical choice deserves an ADR. A good test: would a capable engineer joining in a year be surprised by this, or tempted to undo it? Write one when a decision:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Is expensive to reverse: a database, a framework, a service boundary, a data model.",
+          "Affects other teams or systems: an API contract, an event format, a shared library.",
+          'Goes against what people would assume, so someone will "fix" it later unless the reason is written down.',
+          "Took more than one meeting to settle, or had a strong argument on the losing side.",
+          "Accepts a known trade-off, like eventual consistency or a performance cost, that people should know about."
+        ]
+      },
+      {
+        type: "p",
+        text: "Skip it for choices that are cheap to change: a library you could swap in an afternoon, naming, code style. Those belong in a pull request description or a linter config. And keep ADRs short: if a decision took an hour of discussion, the record should take a fraction of that to write."
+      },
+      {
+        type: "h2",
+        text: "When it belongs in the decision log instead"
+      },
+      {
+        type: "p",
+        text: "Engineering teams make plenty of decisions that aren't architectural, and they're just as easy to lose:"
+      },
+      {
+        type: "ul",
+        items: [
+          'Scope and priority: "We ship the importer without CSV support in v1."',
+          'Dates and sequencing: "The mobile launch moves to Q2 so the API can stabilise first."',
+          'Process: "On-call rotates weekly starting next sprint; incidents get a review within 48 hours."',
+          'People and ownership: "Platform team owns the deploy pipeline from now on."'
+        ]
+      },
+      {
+        type: "p",
+        text: "None of these needs an ADR. All of them will be asked about again. A one-line entry in the decision log, with the meeting it came from, is enough."
+      },
+      {
+        type: "h2",
+        text: "Using ADRs and a decision log together"
+      },
+      {
+        type: "p",
+        text: "The two work best when each one points at the other, instead of repeating it:"
+      },
+      {
+        type: "ol",
+        items: [
+          'When a meeting settles an architectural question, log the decision the same day and add an action item: "Write ADR-0018", with an owner and a date.',
+          "When the ADR is accepted, link it from the log entry. The log says what was decided and when; the ADR explains why, in depth.",
+          `Keep open questions in the log until they're decided. "Do we split the billing database?" can sit there for weeks with its risks; the ADR comes once there's an answer.`,
+          "When an ADR is superseded, update the log entry too, so nobody follows a link to an outdated design.",
+          "Link both from onboarding. A new engineer should learn on day one where architecture decisions live and where everything else does."
+        ]
+      },
+      {
+        type: "p",
+        text: "Onboarding is where the payoff shows. A new engineer with both can understand not only how the system works, but why it looks the way it does and what the team has already ruled out."
+      },
+      {
+        type: "link",
+        text: "What it really costs when engineers join a team and the context behind past decisions is missing.",
+        href: "/blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team",
+        linkLabel: "The hidden cost of lost context when engineers join your team"
+      },
+      {
+        type: "h2",
+        text: "Common ADR mistakes"
+      },
+      {
+        type: "ul",
+        items: [
+          "Writing them months later. By then the context is reconstructed, not recorded. Write it while the discussion is fresh.",
+          "Writing essays. An ADR nobody reads is no better than none. One page is plenty for most decisions.",
+          "Skipping consequences. The trade-offs you accepted are the part future readers most need.",
+          "Editing accepted ADRs. Supersede them instead, so the history stays honest.",
+          "Hiding them. ADRs that only their authors know about don't prevent anyone from re-opening the question."
+        ]
+      },
+      {
+        type: "p",
+        text: `Most architecture decisions start in a meeting, though: a design review, a planning session, an incident follow-up. That's the part Corteza helps with for teams on Google Meet. It captures the decisions, open questions and risks from each meeting, each with the meeting it came from and a short quote as evidence, and keeps a question, its risks and the decisions about one subject together in a thread. When it's time to write the ADR, or someone asks "What did we decide about the queue migration?", the answer is one search away, with its sources.`
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both"
+      },
+      {
+        type: "cta",
+        text: "Corteza captures the decisions and open questions from your Google Meet meetings, so the context behind every ADR is already written down. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
+    slug: "how-to-prepare-for-a-1-1-meeting",
+    title: "How to Prepare for a 1:1 Meeting in 5 Minutes",
+    description: "How to prepare for a 1:1 meeting in five minutes: start from what's still open between you, bring one real topic, and leave with clear next steps.",
+    date: "2026-10-29",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: `It's 1:58. Your 1:1 starts at 2:00. You open the shared doc, it says "Oct 15" at the top and nothing underneath, and the meeting begins with "So, anything on your mind?" Thirty minutes of status updates later, you both leave with nothing new. Knowing how to prepare for a 1:1 meeting doesn't take an hour of reflection. It takes five minutes, if you start from the right place.`
+      },
+      {
+        type: "p",
+        text: "Most advice on 1:1s is a list of questions to ask. Questions help, but they skip the most useful input you already have: what's still open between the two of you. This guide gives you a five-minute routine built around that, a simple shared doc format, and what to do in the two minutes after."
+      },
+      {
+        type: "h2",
+        text: "Why most 1:1s turn into status updates"
+      },
+      {
+        type: "p",
+        text: "A 1:1 is one of the few meetings where two people can talk about what's actually in the way. It drifts into a status update for predictable reasons:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Nobody prepared, so the easiest topic, what you worked on this week, fills the time.",
+          "Last time's commitments aren't on the page, so neither person knows whether they were done.",
+          "Things you share outside the 1:1, a decision waiting on one of you or a question from another meeting, never come up because nobody remembers them in the moment.",
+          "The harder topic, a frustration, a career question, a worry about the project, needs a moment to be raised. A meeting with no structure rarely makes that moment."
+        ]
+      },
+      {
+        type: "h2",
+        text: "How to prepare for a 1:1 meeting: the 5-minute routine"
+      },
+      {
+        type: "p",
+        text: "This works whether you're the manager or the direct report. Do it the morning of the 1:1, or the evening before. One minute per step:"
+      },
+      {
+        type: "ol",
+        items: [
+          "Check last time's commitments. What did each of you say you'd do? Mark what's done, and note what isn't. This alone changes the tone of the meeting: it starts from follow-through, not from a blank page.",
+          "Check what's open between you elsewhere. Look beyond the 1:1 itself: action items from other meetings that one of you owns and the other is waiting on, open questions either of you has to answer, decisions that need the other's input. These are often the most important topics, and they're the ones that fall between meetings.",
+          "Write down one thing you need from them. A decision, feedback, an introduction, air cover with another team. If you can't think of one, ask yourself what's slowing you down this week.",
+          "Pick the one topic that matters most. Not five. If the meeting ran out of time after ten minutes, what would you want to have covered? That goes first.",
+          "Put it in the shared doc. Add your topics so the other person can see them before the meeting and come prepared too."
+        ]
+      },
+      {
+        type: "h3",
+        text: "What it looks like in practice"
+      },
+      {
+        type: "p",
+        text: "Marta, an engineering manager, has a 1:1 with Diego at 2:00. At 9:00 she spends five minutes on it. From last time: Diego was going to write up the on-call proposal (done, shared Tuesday), and Marta was going to ask product about moving the release date (not done). Elsewhere: Diego owns an open question from the architecture review about the queue migration, and a decision from the planning meeting is waiting on his estimate. What she needs from him: a yes or no on mentoring the new hire. Most important topic: the release date, because it changes his next two weeks."
+      },
+      {
+        type: "p",
+        text: "She adds three lines to the shared doc. When the meeting starts, she opens with an apology for the release-date item and a date by which she'll have the answer. The conversation goes straight to what matters, and the status update takes two minutes at the end instead of thirty at the start."
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "The best 1:1 prep isn't a list of clever questions. It's knowing what's still open between you: last time's commitments, what each of you is waiting on from the other, and the one topic that matters most this week."
+      },
+      {
+        type: "h2",
+        text: "A simple shared 1:1 doc"
+      },
+      {
+        type: "p",
+        text: "Use one running document per 1:1, newest meeting at the top, so the history is always one scroll away. Each meeting gets four short sections:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Open from last time: the commitments from the previous 1:1, each marked done, in progress or dropped.",
+          "Topics: both people add before the meeting. Most important first.",
+          "Next steps: what each person will do, with a date. Written during the meeting, not after.",
+          "Parking lot: things worth discussing later, so they don't get lost or take over today."
+        ]
+      },
+      {
+        type: "p",
+        text: "That's it. Resist adding sections for goals, feedback, wellbeing and career every week. Those deserve their own conversations every month or quarter, and a template full of empty headings turns into a form to fill in."
+      },
+      {
+        type: "h3",
+        text: "If you're the manager"
+      },
+      {
+        type: "ul",
+        items: [
+          "Let them go first. It's their meeting more than yours. Your updates can wait until the end, or go in writing.",
+          "Track your own commitments as carefully as theirs. Nothing erodes a 1:1 faster than a manager who forgets what they promised.",
+          "Move it, don't cancel it. A cancelled 1:1 tells people where they rank.",
+          `Ask about blockers, not progress. "What's slowing you down?" gets you further than "How's it going?"`
+        ]
+      },
+      {
+        type: "h3",
+        text: "If you're the direct report"
+      },
+      {
+        type: "ul",
+        items: [
+          'Bring a proposal, not just a problem. "I think we should do X, can you back me on it?" is easier to act on than "X is a mess".',
+          "Mention your wins briefly. Your manager sees less of your work than you think.",
+          "Ask what's on their mind. Knowing your manager's priorities for the next month helps you choose your own."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Questions worth keeping in your pocket"
+      },
+      {
+        type: "p",
+        text: "You don't need a list of 70. A handful, used when the conversation stalls, is enough:"
+      },
+      {
+        type: "ul",
+        items: [
+          "What's the most important thing we should talk about today?",
+          "What's slowing you down right now?",
+          "Is there a decision you're waiting on from me, or from someone else?",
+          "What would you change about how we work together?",
+          "What's something you'd like to do more of in the next few months?",
+          "Is anything worrying you that we haven't talked about?"
+        ]
+      },
+      {
+        type: "h2",
+        text: "The two minutes after the 1:1"
+      },
+      {
+        type: "p",
+        text: `Preparation is half of it. The other half is making sure next time's "open from last time" list exists. Before you both move on, check the Next steps section: each item has one owner and a date, and anything already done is marked. This is the same discipline that keeps action items from any meeting alive, just at a smaller scale.`
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done"
+      },
+      {
+        type: "h2",
+        text: "Keep the sensitive parts private"
+      },
+      {
+        type: "p",
+        text: `1:1s are where performance, pay, health and "I'm thinking about leaving" come up. Keep those out of the shared doc unless both of you are comfortable with it, never paste them into team documents, and check who can see the notes before you write anything personal. A private note to yourself is often the right place.`
+      },
+      {
+        type: "h2",
+        text: "Making step two take ten seconds"
+      },
+      {
+        type: "p",
+        text: "Steps one, three, four and five only need your head and the shared doc. Step two is the hard one, because what's open between you is scattered across other meetings, other docs and other people's notes."
+      },
+      {
+        type: "p",
+        text: `That's where Corteza helps teams on Google Meet. It captures the decisions, action items, open questions and risks from your meetings, each with the meeting it came from, so before a 1:1 with Ana you can ask "What's pending from Ana?" and get the answer with its sources. People matters (performance, leaving, pay, health) stay visible only to the person whose meeting it was.`
+      },
+      {
+        type: "p",
+        text: "Whatever you use, the principle is simple: a good 1:1 starts where the last one, and every other meeting you share, left off."
+      },
+      {
+        type: "link",
+        text: "How to keep one running list of what's decided across your Google Meet meetings.",
+        href: "/blog/google-meet-decision-log",
+        linkLabel: "Google Meet decision log: keep every decision findable"
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps track of what's still open from your Google Meet meetings, so you walk into every 1:1 prepared. Request early access to the private beta, free during the beta."
+      }
+    ]
+  },
+  {
     slug: "meeting-minutes-vs-decision-log",
     title: "Meeting Minutes vs Decision Log: Why You Need Both",
     description: "Meeting minutes vs decision log: what each one is for, why minutes alone don't keep decisions alive, and how to run both without doing the work twice.",
@@ -1345,7 +2045,7 @@ var faqs = [
   },
   {
     question: "Which meeting tools does it work with?",
-    answer: "We're starting the private beta with a small set of tools. Tell us what your team uses when you request early access, and we'll let you know if you're a fit for this first group."
+    answer: `Google Meet, with transcripts or Gemini's "Take notes for me" turned on. Corteza reads them after each meeting. Your action items can also show up in Google Calendar through Google Tasks, and you can ask about everything from Claude, ChatGPT or another AI assistant.`
   },
   {
     question: "Who sees the meeting feedback?",

@@ -90,7 +90,10 @@ const EarlyAccess = () => {
     setIsLoading(true);
     track("early_access_form_submitted", { team_size: teamSize, meeting_tool: meetingTool });
 
+    // Random id generated here proves to the email function that this browser created the signup
+    const signupId = crypto.randomUUID();
     const base = {
+      id: signupId,
       first_name: firstName.trim(),
       last_name: lastName.trim(),
       email: email.trim().toLowerCase(),
@@ -134,7 +137,7 @@ const EarlyAccess = () => {
     // Welcome email + team notification (edge function, sends with Resend). Never blocks the signup.
     try {
       const { error: emailError } = await supabase.functions.invoke("trigger-webhook", {
-        body: { email: base.email },
+        body: { email: base.email, id: signupId },
       });
       if (emailError) console.error("Signup emails failed:", emailError);
     } catch (emailError) {
