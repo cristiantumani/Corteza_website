@@ -55,6 +55,9 @@ review agent (in the corteza.app repo) keeps it up to date. When in doubt, leave
   changes (record a decision, add or update an action item, close a question or risk): each is shown
   first, made only when you confirm, marked "via" the assistant and can be undone for 24 hours.
   Admins can limit assistants to reading or turn them off.
+- **Help chat in the app:** an AI help agent (Sidebar → Help) answers how-to questions from Corteza's
+  public pages and hands the question to a person when it can't answer. It doesn't see your meetings.
+  It's switched on by configuration: mention it only once it's live.
 - **Lost Google connection:** if Google stops letting Corteza read your meetings, you get an email
   with a one-click Reconnect (and a reminder 3 days later); meetings held meanwhile are captured once
   you reconnect.
