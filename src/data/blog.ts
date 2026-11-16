@@ -20,6 +20,178 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "async-decision-making-remote-teams",
+    title: "Async Decision Making for Remote Teams: A Simple Process",
+    description:
+      "Async decision making for remote teams: a short proposal, one owner, a feedback window and a default, so decisions get made without a meeting and stay findable.",
+    date: "2026-11-16",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Half the team is in Madrid, the other half in Santiago. Someone asks in the team channel whether to move the release to Tuesday. Forty-seven replies and three days later, there are opinions, emoji, a side discussion about QA, and no decision. So someone books a call across two time zones to settle it in ten minutes. Async decision making for remote teams isn't hard because people are far apart. It's hard because a chat thread isn't a decision process.",
+      },
+      {
+        type: "p",
+        text: "This post covers why async decisions stall, which decisions suit async and which don't, a simple six-step process that works in any tool, and how to make sure the result is written down where people will find it.",
+      },
+      {
+        type: "h2",
+        text: "Why async decisions stall",
+      },
+      {
+        type: "ul",
+        items: [
+          "Nobody owns the decision. Everyone comments; nobody is responsible for closing it.",
+          "There's no deadline. Without one, the thread stays open until it's overtaken by events.",
+          "The ask isn't clear. Is this a request for ideas, for feedback on a proposal, or for approval?",
+          "The proposal gets buried. By reply twenty, the original question has scrolled out of view and the discussion has drifted.",
+          "Silence is ambiguous. Does no reply mean agreement, disinterest or not having seen it?",
+          "The result is never written down. Even when a decision happens, it lives in reply 38 of a thread nobody will find in a month.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to decide async, and what not to",
+      },
+      {
+        type: "p",
+        text: "Async works best for decisions where the options are reasonably clear and the people involved mostly need time to think and weigh in:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Good fit: choosing between a few defined options, approving a plan, changing a process, reversible product calls, anything that needs input from people in different time zones.",
+          "Poor fit: problems nobody has framed yet, decisions with strong disagreement or emotion, anything about specific people (performance, roles, pay), and genuine emergencies.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For the poor fits, a short call is usually faster and kinder. The process below still helps: it frames the call and makes sure the result is written down afterwards.",
+      },
+      {
+        type: "h2",
+        text: "A simple async decision process",
+      },
+      {
+        type: "p",
+        text: "Six steps, in whatever tool your team already uses, a doc, a channel or an issue tracker:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Write a short proposal. One page at most: the decision needed, the options, the recommendation and why. Put the question in the first line.",
+          "Name the owner and the reviewers. One person decides. List the few people who must weigh in, and mention them directly so they know it's on them.",
+          "Set a feedback window and a default. For example: \"Feedback by Thursday 15:00 UTC. If there are no blocking concerns by then, we go with option B.\" Forty-eight hours is a common window that covers most time zone gaps.",
+          "Ask for explicit positions. Reviewers reply with one of three: agree, concern (it's fine, but here's a risk), or block (we shouldn't do this, and here's why). Discussion is welcome, but positions make the state of the decision readable at a glance.",
+          "The owner decides and posts it in the same place: what was decided, why, what changes for whom, and how concerns were handled.",
+          "Record it where decisions live, with a link to the discussion, so it doesn't stay buried in a thread.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "A proposal template",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decision needed: one sentence, as a question.",
+          "Owner and reviewers: who decides, who must weigh in.",
+          "Context: why this needs deciding now, in three or four lines.",
+          "Options: two or three, each with its main trade-off.",
+          "Recommendation: which option and why.",
+          "Deadline and default: when feedback closes and what happens if nobody blocks.",
+          "Decision (filled in at the end): what was decided, by whom, on what date.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "The release date, done async",
+      },
+      {
+        type: "p",
+        text: "Back to the team from the start. This time, Marta, the engineering lead, posts a proposal on Monday morning Madrid time: \"Decision needed: do we move the release from Friday to Tuesday? I own it. Reviewers: Diego (QA), Ana (support). Context: two payment fixes land Thursday and QA needs a full regression pass. Options: ship Friday without the fixes, or ship Tuesday with them. Recommendation: Tuesday. Feedback by Wednesday 15:00 UTC; if nobody blocks, we move it.\"",
+      },
+      {
+        type: "p",
+        text: "Diego replies \"agree\". Ana replies \"concern: two customers were promised Friday, I'll let them know\". Nobody blocks. On Wednesday afternoon Marta posts the decision in the same thread and adds it to the team's decision log. Total time spent by the team: maybe fifteen minutes, spread across three days and two time zones, and no call.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Async decisions work when each one has a written proposal, a single owner, a feedback deadline and a stated default. Without those four things, a thread is just a conversation, and conversations don't end on their own.",
+      },
+      {
+        type: "h2",
+        text: "Making silence mean something",
+      },
+      {
+        type: "p",
+        text: "The default is what turns silence from ambiguous into useful. If the proposal says \"no blocking concerns by Thursday means we go ahead\", then nobody has to chase a reply from people who are fine with it.",
+      },
+      {
+        type: "p",
+        text: "Two refinements make it fair. First, separate the reviewers who must respond from everyone else who may: for the named reviewers, the owner checks they've seen it before the deadline. Second, make blocking cheap but accountable: anyone can block, but a block comes with a reason and, ideally, an alternative.",
+      },
+      {
+        type: "h2",
+        text: "When to switch to a call",
+      },
+      {
+        type: "p",
+        text: "Async isn't a religion. A simple rule avoids endless threads: if there's a block that two rounds of replies haven't resolved, or the discussion keeps reframing the problem, the owner books a short call with only the people needed. The call settles it; the decision still gets posted in writing, in the same place, for everyone who wasn't there.",
+      },
+      {
+        type: "p",
+        text: "The reverse also applies. When a decision is made in a meeting, post it afterwards for the people who weren't in the room, and give them a short window, say 24 hours, to raise anything the meeting missed. That's what keeps hybrid teams from splitting into those who were in the call and those who weren't.",
+      },
+      {
+        type: "h2",
+        text: "Common mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Asking an open question when you mean a proposal. \"Thoughts on the release date?\" invites brainstorming. \"I propose Tuesday, objections by Thursday?\" invites a decision.",
+          "Too many reviewers. If ten people must weigh in, it's not a decision, it's a survey.",
+          "Moving the deadline every time someone is busy. Extend it once, if you must, then decide.",
+          "Deciding in a DM. If the decision changes in a private conversation, post the change where the proposal is.",
+          "Not recording the outcome. The thread is the discussion; the decision belongs somewhere searchable.",
+        ],
+      },
+      {
+        type: "link",
+        text: "Every async decision needs one owner. How to choose them, and what they're responsible for.",
+        href: "/blog/decision-ownership",
+        linkLabel: "Decision ownership: who owns a decision in a small team?",
+      },
+      {
+        type: "h2",
+        text: "One place for decisions, wherever they were made",
+      },
+      {
+        type: "p",
+        text: "Remote teams make decisions in three places: in threads, in docs and in calls. If each place keeps its own record, nobody can answer \"what did we decide?\" without searching all three. A single decision log, with a link back to wherever the discussion happened, fixes that.",
+      },
+      {
+        type: "link",
+        text: "Why a record of decisions is different from meeting notes, and how to keep both without doing the work twice.",
+        href: "/blog/meeting-minutes-vs-decision-log",
+        linkLabel: "Meeting minutes vs decision log: why you need both",
+      },
+      {
+        type: "p",
+        text: "For teams on Google Workspace, Corteza covers two of those places. It captures decisions, open questions and action items from Google Meet calls automatically, each with the meeting it came from and a short quote as evidence, and decisions made in Slack threads can be logged with /decision. Both end up in the same place, so \"What did we decide about the release date?\" has one answer, with its sources.",
+      },
+      {
+        type: "cta",
+        text: "Corteza keeps the decisions from your calls and threads in one searchable place, each with where it came from. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "decision-ownership",
     title: "Decision Ownership: Who Owns a Decision in a Small Team?",
     description:
