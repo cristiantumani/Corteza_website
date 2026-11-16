@@ -187,7 +187,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "cta",
-        text: "Corteza keeps the decisions from your calls and threads in one searchable place, with the evidence for each one. Request early access to the private beta, free during the beta.",
+        text: "Corteza keeps the decisions from your calls and threads in one searchable place, each with where it came from. Request early access to the private beta, free during the beta.",
       },
     ],
   },
