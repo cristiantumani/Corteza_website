@@ -20,6 +20,173 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "cost-of-unproductive-meetings",
+    title: "The Cost of Unproductive Meetings: How to Measure and Fix It",
+    description:
+      "The cost of unproductive meetings goes beyond salaries. How to calculate what your meetings cost, measure what they produce, and fix the ones without outcomes.",
+    date: "2026-11-19",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Every Tuesday, eight people spend an hour in the product sync. Afterwards, everyone agrees it was a good discussion. But if you ask what changed because of it, what was decided, who is doing what by when, the answer is often: nothing in particular. The cost of unproductive meetings isn't the hour itself. It's an hour of eight people's time that produced no outcome anyone can point to.",
+      },
+      {
+        type: "p",
+        text: "Headline numbers about meeting waste are everywhere, and they vary wildly. This post skips them. Instead, it shows how to calculate what your own meetings cost, how to measure what they produce, and what to change in the ones that produce nothing.",
+      },
+      {
+        type: "h2",
+        text: "How to calculate the cost of a meeting",
+      },
+      {
+        type: "p",
+        text: "The direct cost is simple arithmetic: the number of attendees, times their average hourly cost, times the meeting's length in hours. To get an hourly cost, divide an annual salary by the hours actually worked in a year, roughly 1,700 to 2,000 depending on the country, and add something for employer costs if you want to be thorough.",
+      },
+      {
+        type: "p",
+        text: "An example with round numbers: eight people at an average of €60 an hour, in a one-hour weekly meeting, cost €480 a meeting. Over 48 working weeks, that's about €23,000 a year for one recurring meeting. Most teams have several.",
+      },
+      {
+        type: "h3",
+        text: "The costs that don't show up in the formula",
+      },
+      {
+        type: "ul",
+        items: [
+          "Preparation: the time people spend getting ready, or should spend and don't.",
+          "Context switching: a meeting in the middle of the morning breaks the longest block of focused time most people get.",
+          "Waiting: work that pauses until \"we discuss it on Tuesday\", sometimes for a week.",
+          "Rework: decisions that weren't clear get made again, or implemented two different ways.",
+          "Lost follow-through: action items nobody owns, and open questions that resurface a month later as blockers.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The last two are usually the largest, and they're invisible in any calendar report. A meeting that ends without clear outcomes doesn't just waste its own hour; it creates more meetings.",
+      },
+      {
+        type: "h2",
+        text: "The real problem: meetings without outcomes",
+      },
+      {
+        type: "p",
+        text: "Expensive isn't the same as unproductive. A two-hour planning session with ten people is expensive, and can be worth every minute if it settles the quarter. A fifteen-minute call that ends with \"let's sync again next week\" is cheap, and still a waste.",
+      },
+      {
+        type: "p",
+        text: "So the useful question isn't \"how much do our meetings cost?\" but \"what do they produce?\" A meeting produces an outcome when it leaves behind at least one of these:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A decision, stated clearly, with an owner.",
+          "An action item with one owner and a date.",
+          "An open question answered, or a risk assessed and handled.",
+          "A deliberate \"no change\": the group looked at something and agreed to leave it as it is.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Measure meetings by what they produce, not only by what they cost. A meeting that ends with clear decisions and owned action items is usually worth its price. A meeting that ends with \"good discussion\" is the expensive kind, however short it was.",
+      },
+      {
+        type: "h2",
+        text: "How to measure meeting productivity without a dashboard",
+      },
+      {
+        type: "p",
+        text: "You don't need software for a first picture. Four weeks and a spreadsheet are enough:",
+      },
+      {
+        type: "ol",
+        items: [
+          "List your recurring meetings and calculate the cost of each with the formula above.",
+          "For four weeks, write down after each meeting how many decisions, action items and answered questions it produced. Two minutes per meeting.",
+          "Divide cost by outcomes. A meeting that costs €480 and produces four outcomes costs €120 per outcome; one that produces none has an infinite cost per outcome, which is a clear enough signal.",
+          "Ask one question after each meeting: \"Will you do anything differently this week because of this meeting?\" Count the yeses.",
+          "Check follow-through: what share of last week's action items were done by this week? Outcomes that never happen don't count.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The numbers will be rough, and that's fine. The point is to compare meetings with each other. Within a month, most teams find one or two meetings that produce almost nothing, and one or two that carry most of the real decisions.",
+      },
+      {
+        type: "h3",
+        text: "What a month of tracking might show",
+      },
+      {
+        type: "p",
+        text: "Take a team of eight with three recurring meetings. The Monday planning meeting (an hour, all eight people) produces three or four decisions and a handful of owned action items every week. The Tuesday product sync (an hour, eight people) produces a decision every other week, and most of its action items have no date. The Thursday stand-up (fifteen minutes, five people) produces almost nothing that isn't already in the tracker.",
+      },
+      {
+        type: "p",
+        text: "The conclusion isn't \"cancel the expensive one\". Planning costs the most and is clearly worth it. The sync is the problem: it costs as much as planning and produces a fraction of the outcomes. The stand-up is cheap, but could be a written update. Two changes, turning the sync into a decisions-only meeting with an agenda and making the stand-up async, give the team back hours a week without losing anything that mattered.",
+      },
+      {
+        type: "h2",
+        text: "How to fix unproductive meetings",
+      },
+      {
+        type: "p",
+        text: "Once you know which meetings aren't producing outcomes, start with the one with the worst cost per outcome. Change one or two things, keep tracking for another two weeks, and check whether the outcomes went up. The fixes themselves are mostly simple:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Replace status rounds with written updates. If a meeting is mostly people reporting what they did, it can be a short written note read before the meeting, or instead of it.",
+          "Put the expected outcome in the invite. \"We'll decide the Q1 launch date\" tells people why they're there, and tells everyone afterwards whether it worked.",
+          "Invite fewer people. Those who only need to know the result can get it in writing.",
+          "Shorten the default. Twenty-five or fifty minutes instead of thirty or sixty leaves room between meetings and keeps discussions tighter.",
+          "Start with what's still open from last time. It turns a series of meetings into a sequence that makes progress.",
+          "End with a read-back of decisions and action items, each with one owner and a date.",
+          "Cancel when there's nothing to decide. A recurring meeting with an empty agenda is an invitation to fill an hour.",
+        ],
+      },
+      {
+        type: "link",
+        text: "A weekly meeting format that starts with what's still open and spends most of its time on decisions.",
+        href: "/blog/weekly-team-meeting-agenda",
+        linkLabel: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "h2",
+        text: "What not to do",
+      },
+      {
+        type: "ul",
+        items: [
+          "Don't measure only time. Cutting meeting hours without looking at outcomes can remove the meetings that actually move work forward.",
+          "Don't ban meetings wholesale. \"No-meeting\" policies tend to push decisions into long threads, which have their own costs.",
+          "Don't turn it into a scorecard for people. The goal is to fix meetings, not to judge who runs them.",
+          "Don't ignore follow-through. A meeting full of decisions that nobody acts on is just a more convincing version of an unproductive one.",
+        ],
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Seeing what each meeting produced",
+      },
+      {
+        type: "p",
+        text: "The step most teams skip is the second one: writing down what each meeting produced. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting's transcript or Gemini notes, with no bot in the call, and its Meetings view lists each of your meetings from the last 90 days with what came out of it. A meeting that keeps showing up with nothing next to it is the first one to fix.",
+      },
+      {
+        type: "cta",
+        text: "Corteza shows what each of your Google Meet meetings actually produced, and keeps track of it afterwards. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "async-decision-making-remote-teams",
     title: "Async Decision Making for Remote Teams: A Simple Process",
     description:
