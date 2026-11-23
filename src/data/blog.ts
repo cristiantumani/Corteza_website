@@ -20,6 +20,361 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-write-a-decision-record",
+    title: "How to Write a Decision Record (With Examples)",
+    description:
+      "How to write a decision record people understand months later: the parts it needs, before-and-after examples, and the mistakes that make records useless.",
+    date: "2026-11-23",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Eight months later, someone finds the entry in the team's decision log: \"Pricing: discussed at length, going with option B.\" Option B of what? Why? Who decided, and does it still hold? The record exists, and it answers none of the questions it was written for. Knowing how to write a decision record is a small skill, but it's the difference between a log people trust and one they stop opening.",
+      },
+      {
+        type: "p",
+        text: "This guide covers what a good decision record contains, shows before-and-after examples for three kinds of decisions, and lists the writing habits that make records useful months later.",
+      },
+      {
+        type: "h2",
+        text: "The test a decision record has to pass",
+      },
+      {
+        type: "p",
+        text: "A decision record is written for a reader who wasn't in the room: a new hire, someone from another team, or you in six months. A good one lets that reader answer five questions in under a minute:",
+      },
+      {
+        type: "ul",
+        items: [
+          "What exactly was decided?",
+          "Why?",
+          "What else was considered, and why wasn't it chosen?",
+          "Who owns it, and when was it decided?",
+          "Is it still valid?",
+        ],
+      },
+      {
+        type: "p",
+        text: "If any of those needs a conversation with someone who was there, the record isn't finished. The question most records skip is the last one: almost none of them say how a reader would know the decision has since been replaced.",
+      },
+      {
+        type: "h2",
+        text: "The parts of a good decision record",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title: the decision itself, as a short phrase. \"Annual plans get a 15% discount\", not \"Pricing\".",
+          "Context: one to three sentences on why this needed deciding now.",
+          "Decision: one sentence, specific enough to act on, including its scope and any exceptions.",
+          "Reasons: the two or three that actually carried the decision.",
+          "Alternatives: what else was on the table, and why each lost.",
+          "Owner and date: one name, and when it was decided.",
+          "Status: proposed, active, superseded (by which record) or reversed.",
+          "Source: a link to the meeting, document or thread where it happened.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For bigger decisions, two optional fields earn their place: consequences (what changes, what gets harder) and a review date for decisions you already expect to revisit, like pricing experiments or temporary policies.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Write every decision record for someone who wasn't there. State the decision as one specific sentence, keep the two or three reasons that carried it, record the alternatives you rejected, and name an owner. If a reader has to ask someone what it means, it isn't done.",
+      },
+      {
+        type: "h2",
+        text: "Decision record examples: before and after",
+      },
+      {
+        type: "h3",
+        text: "A product decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Pricing: discussed at length, going with option B.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"Annual plans get a 15% discount, new customers only, from January 1. Context: churn on monthly plans is our biggest revenue risk going into Q1. Reasons: annual commitments reduce churn, and 15% matches what customers already ask for in negotiations. Rejected: 20% (too much margin for the expected uplift), discounts for existing customers (revisit in Q2 once we see the uptake). Owner: Laura. Decided: leadership meeting, November 12. Status: active.\"",
+      },
+      {
+        type: "h3",
+        text: "A process decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"On-call: agreed to change the rotation.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"On-call rotates weekly instead of daily, starting with the sprint of December 1. Context: daily handovers caused two missed incidents last month. Reasons: fewer handovers, and a full week gives the person on call time to follow up on what they see. Rejected: keeping daily rotation with a handover checklist (tried in October, didn't stick). Owner: Diego. Decided: engineering sync, November 18. Status: active, review after six weeks.\"",
+      },
+      {
+        type: "h3",
+        text: "A tool decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Analytics: we'll keep the current tool for now.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"We stay on our current analytics tool until the end of Q1, and don't start a migration this quarter. Context: the contract renews in April, and two alternatives were evaluated. Reasons: neither alternative covers the funnel reports sales relies on, and a migration during the Q1 launch is too risky. Rejected: switching now (cost and risk), building our own reports (no capacity). Owner: Marta. Decided: product review, November 20. Status: active; decide renewal by March 1.\"",
+      },
+      {
+        type: "p",
+        text: "Notice what the rewrites have in common. Each one names its scope, its date and its owner. Each one keeps the rejected options. And each one is still under 120 words.",
+      },
+      {
+        type: "h3",
+        text: "A decision record template to copy",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decision: [what was decided, in one sentence, with scope and start date]",
+          "Context: [why this needed deciding now, in one to three sentences]",
+          "Reasons: [the two or three that carried it]",
+          "Rejected: [each alternative, and why it lost]",
+          "Owner: [one name] · Decided: [meeting or document, date]",
+          "Status: [proposed / active / superseded by … / reversed] · Review: [date or trigger, if any]",
+        ],
+      },
+      {
+        type: "p",
+        text: "Who writes it matters less than when. In most teams it works best if whoever ran the meeting drafts it the same day and the decision owner checks it. The owner knows the reasons best; the person running the meeting knows what was actually said.",
+      },
+      {
+        type: "h2",
+        text: "Writing habits that make records useful",
+      },
+      {
+        type: "ul",
+        items: [
+          "Write the decision as something someone could act on. \"Going with option B\" can't be acted on; \"Annual plans get a 15% discount from January 1\" can.",
+          "Name the scope and the exceptions. Most later confusion comes from scope: new customers or all of them, this team or every team, this quarter or for good.",
+          "Use numbers and dates instead of adjectives. \"Soon\" and \"significant\" age badly.",
+          "Record the losing argument fairly. If someone reading it later thinks \"they never considered X\", the record has failed, even if X was discussed for an hour.",
+          "Separate what you knew from what you assumed. \"We expect uptake to be at least 10%\" tells a future reader what to check.",
+          "Keep it short. If a record needs more than 200 words, the details belong in a linked document.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Summarising the discussion instead of stating the decision. Records are not minutes.",
+          "Leaving out the alternatives. This is the part that stops the same debate from happening again.",
+          "\"We'll revisit later\" without a date or a trigger. Say when, or what would make you reopen it.",
+          "Editing an old record when the decision changes. Mark it superseded and write a new one, so the history stays honest.",
+          "Hiding uncertainty. A decision made with open questions is fine; say which questions, and who is chasing them.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Write the record the same day, while the reasons are still fresh. A short, accurate record written in ten minutes beats a polished one written from memory a week later.",
+      },
+      {
+        type: "link",
+        text: "Need a place to put your records? The free template has these fields ready, as an Excel file or a version for Notion and Google Docs.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template",
+      },
+      {
+        type: "link",
+        text: "For significant technical choices, architecture decision records add a deeper format. When to use each.",
+        href: "/blog/architecture-decision-records",
+        linkLabel: "Architecture decision records vs a team decision log",
+      },
+      {
+        type: "h2",
+        text: "Getting the first draft written for you",
+      },
+      {
+        type: "p",
+        text: "The hardest part of decision records is starting them at all, right after a meeting that ran over. For teams on Google Meet, Corteza writes the first draft. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures every decision as a short headline with a one-line why, the owner when it was stated, and the quote from the meeting it came from. You confirm or dismiss each one, and the record keeps a link back to the meeting where it was decided.",
+      },
+      {
+        type: "cta",
+        text: "Corteza drafts a decision record for every decision in your Google Meet meetings, with the evidence attached. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
+    slug: "cost-of-unproductive-meetings",
+    title: "The Cost of Unproductive Meetings: How to Measure and Fix It",
+    description:
+      "The cost of unproductive meetings goes beyond salaries. How to calculate what your meetings cost, measure what they produce, and fix the ones without outcomes.",
+    date: "2026-11-19",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Every Tuesday, eight people spend an hour in the product sync. Afterwards, everyone agrees it was a good discussion. But if you ask what changed because of it, what was decided, who is doing what by when, the answer is often: nothing in particular. The cost of unproductive meetings isn't the hour itself. It's an hour of eight people's time that produced no outcome anyone can point to.",
+      },
+      {
+        type: "p",
+        text: "Headline numbers about meeting waste are everywhere, and they vary wildly. This post skips them. Instead, it shows how to calculate what your own meetings cost, how to measure what they produce, and what to change in the ones that produce nothing.",
+      },
+      {
+        type: "h2",
+        text: "How to calculate the cost of a meeting",
+      },
+      {
+        type: "p",
+        text: "The direct cost is simple arithmetic: the number of attendees, times their average hourly cost, times the meeting's length in hours. To get an hourly cost, divide an annual salary by the hours actually worked in a year, roughly 1,700 to 2,000 depending on the country, and add something for employer costs if you want to be thorough.",
+      },
+      {
+        type: "p",
+        text: "An example with round numbers: eight people at an average of €60 an hour, in a one-hour weekly meeting, cost €480 a meeting. Over 48 working weeks, that's about €23,000 a year for one recurring meeting. Most teams have several.",
+      },
+      {
+        type: "h3",
+        text: "The costs that don't show up in the formula",
+      },
+      {
+        type: "ul",
+        items: [
+          "Preparation: the time people spend getting ready, or should spend and don't.",
+          "Context switching: a meeting in the middle of the morning breaks the longest block of focused time most people get.",
+          "Waiting: work that pauses until \"we discuss it on Tuesday\", sometimes for a week.",
+          "Rework: decisions that weren't clear get made again, or implemented two different ways.",
+          "Lost follow-through: action items nobody owns, and open questions that resurface a month later as blockers.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The last two are usually the largest, and they're invisible in any calendar report. A meeting that ends without clear outcomes doesn't just waste its own hour; it creates more meetings.",
+      },
+      {
+        type: "h2",
+        text: "The real problem: meetings without outcomes",
+      },
+      {
+        type: "p",
+        text: "Expensive isn't the same as unproductive. A two-hour planning session with ten people is expensive, and can be worth every minute if it settles the quarter. A fifteen-minute call that ends with \"let's sync again next week\" is cheap, and still a waste.",
+      },
+      {
+        type: "p",
+        text: "So the useful question isn't \"how much do our meetings cost?\" but \"what do they produce?\" A meeting produces an outcome when it leaves behind at least one of these:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A decision, stated clearly, with an owner.",
+          "An action item with one owner and a date.",
+          "An open question answered, or a risk assessed and handled.",
+          "A deliberate \"no change\": the group looked at something and agreed to leave it as it is.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Measure meetings by what they produce, not only by what they cost. A meeting that ends with clear decisions and owned action items is usually worth its price. A meeting that ends with \"good discussion\" is the expensive kind, however short it was.",
+      },
+      {
+        type: "h2",
+        text: "How to measure meeting productivity without a dashboard",
+      },
+      {
+        type: "p",
+        text: "You don't need software for a first picture. Four weeks and a spreadsheet are enough:",
+      },
+      {
+        type: "ol",
+        items: [
+          "List your recurring meetings and calculate the cost of each with the formula above.",
+          "For four weeks, write down after each meeting how many decisions, action items and answered questions it produced. Two minutes per meeting.",
+          "Divide cost by outcomes. A meeting that costs €480 and produces four outcomes costs €120 per outcome; one that produces none has an infinite cost per outcome, which is a clear enough signal.",
+          "Ask one question after each meeting: \"Will you do anything differently this week because of this meeting?\" Count the yeses.",
+          "Check follow-through: what share of last week's action items were done by this week? Outcomes that never happen don't count.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The numbers will be rough, and that's fine. The point is to compare meetings with each other. Within a month, most teams find one or two meetings that produce almost nothing, and one or two that carry most of the real decisions.",
+      },
+      {
+        type: "h3",
+        text: "What a month of tracking might show",
+      },
+      {
+        type: "p",
+        text: "Take a team of eight with three recurring meetings. The Monday planning meeting (an hour, all eight people) produces three or four decisions and a handful of owned action items every week. The Tuesday product sync (an hour, eight people) produces a decision every other week, and most of its action items have no date. The Thursday stand-up (fifteen minutes, five people) produces almost nothing that isn't already in the tracker.",
+      },
+      {
+        type: "p",
+        text: "The conclusion isn't \"cancel the expensive one\". Planning costs the most and is clearly worth it. The sync is the problem: it costs as much as planning and produces a fraction of the outcomes. The stand-up is cheap, but could be a written update. Two changes, turning the sync into a decisions-only meeting with an agenda and making the stand-up async, give the team back hours a week without losing anything that mattered.",
+      },
+      {
+        type: "h2",
+        text: "How to fix unproductive meetings",
+      },
+      {
+        type: "p",
+        text: "Once you know which meetings aren't producing outcomes, start with the one with the worst cost per outcome. Change one or two things, keep tracking for another two weeks, and check whether the outcomes went up. The fixes themselves are mostly simple:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Replace status rounds with written updates. If a meeting is mostly people reporting what they did, it can be a short written note read before the meeting, or instead of it.",
+          "Put the expected outcome in the invite. \"We'll decide the Q1 launch date\" tells people why they're there, and tells everyone afterwards whether it worked.",
+          "Invite fewer people. Those who only need to know the result can get it in writing.",
+          "Shorten the default. Twenty-five or fifty minutes instead of thirty or sixty leaves room between meetings and keeps discussions tighter.",
+          "Start with what's still open from last time. It turns a series of meetings into a sequence that makes progress.",
+          "End with a read-back of decisions and action items, each with one owner and a date.",
+          "Cancel when there's nothing to decide. A recurring meeting with an empty agenda is an invitation to fill an hour.",
+        ],
+      },
+      {
+        type: "link",
+        text: "A weekly meeting format that starts with what's still open and spends most of its time on decisions.",
+        href: "/blog/weekly-team-meeting-agenda",
+        linkLabel: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "h2",
+        text: "What not to do",
+      },
+      {
+        type: "ul",
+        items: [
+          "Don't measure only time. Cutting meeting hours without looking at outcomes can remove the meetings that actually move work forward.",
+          "Don't ban meetings wholesale. \"No-meeting\" policies tend to push decisions into long threads, which have their own costs.",
+          "Don't turn it into a scorecard for people. The goal is to fix meetings, not to judge who runs them.",
+          "Don't ignore follow-through. A meeting full of decisions that nobody acts on is just a more convincing version of an unproductive one.",
+        ],
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Seeing what each meeting produced",
+      },
+      {
+        type: "p",
+        text: "The step most teams skip is the second one: writing down what each meeting produced. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting's transcript or Gemini notes, with no bot in the call, and its Meetings view lists each of your meetings from the last 90 days with what came out of it. A meeting that keeps showing up with nothing next to it is the first one to fix.",
+      },
+      {
+        type: "cta",
+        text: "Corteza shows what each of your Google Meet meetings actually produced, and keeps track of it afterwards. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "async-decision-making-remote-teams",
     title: "Async Decision Making for Remote Teams: A Simple Process",
     description:

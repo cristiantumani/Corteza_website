@@ -20,9 +20,12 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [x] tracking open questions and risks — How to track the open questions and risks a meeting leaves behind (informational) → /blog/tracking-open-questions-and-risks (2026-11-09)
 - [x] decision ownership — Who owns a decision? Accountability for decisions in small teams (informational) → /blog/decision-ownership (2026-11-12)
 - [x] async decision making remote teams — Making and recording decisions asynchronously without losing context (informational) → /blog/async-decision-making-remote-teams (2026-11-16)
-- [ ] cost of unproductive meetings — Meetings without outcomes: how to measure and fix them (informational)
-- [ ] how to write a decision record — How to write a good decision record, with examples (informational) · /decision-log-template
+- [x] cost of unproductive meetings — Meetings without outcomes: how to measure and fix them (informational) → /blog/cost-of-unproductive-meetings (2026-11-19)
+- [x] how to write a decision record — How to write a good decision record, with examples (informational) · /decision-log-template → /blog/how-to-write-a-decision-record (2026-11-23)
 - [ ] ai meeting assistant follow-through — AI note-takers vs follow-through: what happens after the meeting ends (commercial; describe categories, not competitors' features)
 - [ ] google workspace meeting productivity — Getting more out of Google Meet, Calendar and Gemini for team follow-through (informational)
 - [ ] onboarding new team members context — Giving new hires the context behind past decisions (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team
 - [ ] gemini meeting notes decisions section — Google Meet's new Decisions section (Aligned / Needs further discussion / Disagreed / Shelved): how to use it and how to carry those statuses across meetings (informational; new feature since April 2026, little in-depth content yet) · /blog/google-meet-decision-log
+- [ ] meeting recap email — How to write a meeting recap email that gets action items done, with templates (informational; heavily searched template topic, and recaps that bury action items are a common failure the existing posts already describe) · /blog/meeting-action-items-not-getting-done
+- [ ] recurring meeting audit — How to audit your recurring meetings: keep, change or cancel each one (informational; natural follow-up to the cost of unproductive meetings post) · /blog/cost-of-unproductive-meetings
+- [ ] disagree and commit — What disagree and commit means and how to use it in a small team without silencing people (informational; a follow-up to the decision ownership post, which uses the idea without explaining it) · /blog/decision-ownership
