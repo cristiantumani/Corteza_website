@@ -21,7 +21,7 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [x] decision ownership — Who owns a decision? Accountability for decisions in small teams (informational) → /blog/decision-ownership (2026-11-12)
 - [x] async decision making remote teams — Making and recording decisions asynchronously without losing context (informational) → /blog/async-decision-making-remote-teams (2026-11-16)
 - [x] cost of unproductive meetings — Meetings without outcomes: how to measure and fix them (informational) → /blog/cost-of-unproductive-meetings (2026-11-19)
-- [ ] how to write a decision record — How to write a good decision record, with examples (informational) · /decision-log-template
+- [x] how to write a decision record — How to write a good decision record, with examples (informational) · /decision-log-template → /blog/how-to-write-a-decision-record (2026-11-23)
 - [ ] ai meeting assistant follow-through — AI note-takers vs follow-through: what happens after the meeting ends (commercial; describe categories, not competitors' features)
 - [ ] google workspace meeting productivity — Getting more out of Google Meet, Calendar and Gemini for team follow-through (informational)
 - [ ] onboarding new team members context — Giving new hires the context behind past decisions (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team

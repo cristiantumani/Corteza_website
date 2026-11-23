@@ -20,6 +20,194 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-write-a-decision-record",
+    title: "How to Write a Decision Record (With Examples)",
+    description:
+      "How to write a decision record people understand months later: the parts it needs, before-and-after examples, and the mistakes that make records useless.",
+    date: "2026-11-23",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Eight months later, someone finds the entry in the team's decision log: \"Pricing: discussed at length, going with option B.\" Option B of what? Why? Who decided, and does it still hold? The record exists, and it answers none of the questions it was written for. Knowing how to write a decision record is a small skill, but it's the difference between a log people trust and one they stop opening.",
+      },
+      {
+        type: "p",
+        text: "This guide covers what a good decision record contains, shows before-and-after examples for three kinds of decisions, and lists the writing habits that make records useful months later.",
+      },
+      {
+        type: "h2",
+        text: "The test a decision record has to pass",
+      },
+      {
+        type: "p",
+        text: "A decision record is written for a reader who wasn't in the room: a new hire, someone from another team, or you in six months. A good one lets that reader answer five questions in under a minute:",
+      },
+      {
+        type: "ul",
+        items: [
+          "What exactly was decided?",
+          "Why?",
+          "What else was considered, and why wasn't it chosen?",
+          "Who owns it, and when was it decided?",
+          "Is it still valid?",
+        ],
+      },
+      {
+        type: "p",
+        text: "If any of those needs a conversation with someone who was there, the record isn't finished. The question most records skip is the last one: almost none of them say how a reader would know the decision has since been replaced.",
+      },
+      {
+        type: "h2",
+        text: "The parts of a good decision record",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title: the decision itself, as a short phrase. \"Annual plans get a 15% discount\", not \"Pricing\".",
+          "Context: one to three sentences on why this needed deciding now.",
+          "Decision: one sentence, specific enough to act on, including its scope and any exceptions.",
+          "Reasons: the two or three that actually carried the decision.",
+          "Alternatives: what else was on the table, and why each lost.",
+          "Owner and date: one name, and when it was decided.",
+          "Status: proposed, active, superseded (by which record) or reversed.",
+          "Source: a link to the meeting, document or thread where it happened.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For bigger decisions, two optional fields earn their place: consequences (what changes, what gets harder) and a review date for decisions you already expect to revisit, like pricing experiments or temporary policies.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Write every decision record for someone who wasn't there. State the decision as one specific sentence, keep the two or three reasons that carried it, record the alternatives you rejected, and name an owner. If a reader has to ask someone what it means, it isn't done.",
+      },
+      {
+        type: "h2",
+        text: "Decision record examples: before and after",
+      },
+      {
+        type: "h3",
+        text: "A product decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Pricing: discussed at length, going with option B.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"Annual plans get a 15% discount, new customers only, from January 1. Context: churn on monthly plans is our biggest revenue risk going into Q1. Reasons: annual commitments reduce churn, and 15% matches what customers already ask for in negotiations. Rejected: 20% (too much margin for the expected uplift), discounts for existing customers (revisit in Q2 once we see the uptake). Owner: Laura. Decided: leadership meeting, November 12. Status: active.\"",
+      },
+      {
+        type: "h3",
+        text: "A process decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"On-call: agreed to change the rotation.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"On-call rotates weekly instead of daily, starting with the sprint of December 1. Context: daily handovers caused two missed incidents last month. Reasons: fewer handovers, and a full week gives the person on call time to follow up on what they see. Rejected: keeping daily rotation with a handover checklist (tried in October, didn't stick). Owner: Diego. Decided: engineering sync, November 18. Status: active, review after six weeks.\"",
+      },
+      {
+        type: "h3",
+        text: "A tool decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Analytics: we'll keep the current tool for now.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"We stay on our current analytics tool until the end of Q1, and don't start a migration this quarter. Context: the contract renews in April, and two alternatives were evaluated. Reasons: neither alternative covers the funnel reports sales relies on, and a migration during the Q1 launch is too risky. Rejected: switching now (cost and risk), building our own reports (no capacity). Owner: Marta. Decided: product review, November 20. Status: active; decide renewal by March 1.\"",
+      },
+      {
+        type: "p",
+        text: "Notice what the rewrites have in common. Each one names its scope, its date and its owner. Each one keeps the rejected options. And each one is still under 120 words.",
+      },
+      {
+        type: "h3",
+        text: "A decision record template to copy",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decision: [what was decided, in one sentence, with scope and start date]",
+          "Context: [why this needed deciding now, in one to three sentences]",
+          "Reasons: [the two or three that carried it]",
+          "Rejected: [each alternative, and why it lost]",
+          "Owner: [one name] · Decided: [meeting or document, date]",
+          "Status: [proposed / active / superseded by … / reversed] · Review: [date or trigger, if any]",
+        ],
+      },
+      {
+        type: "p",
+        text: "Who writes it matters less than when. In most teams it works best if whoever ran the meeting drafts it the same day and the decision owner checks it. The owner knows the reasons best; the person running the meeting knows what was actually said.",
+      },
+      {
+        type: "h2",
+        text: "Writing habits that make records useful",
+      },
+      {
+        type: "ul",
+        items: [
+          "Write the decision as something someone could act on. \"Going with option B\" can't be acted on; \"Annual plans get a 15% discount from January 1\" can.",
+          "Name the scope and the exceptions. Most later confusion comes from scope: new customers or all of them, this team or every team, this quarter or for good.",
+          "Use numbers and dates instead of adjectives. \"Soon\" and \"significant\" age badly.",
+          "Record the losing argument fairly. If someone reading it later thinks \"they never considered X\", the record has failed, even if X was discussed for an hour.",
+          "Separate what you knew from what you assumed. \"We expect uptake to be at least 10%\" tells a future reader what to check.",
+          "Keep it short. If a record needs more than 200 words, the details belong in a linked document.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Summarising the discussion instead of stating the decision. Records are not minutes.",
+          "Leaving out the alternatives. This is the part that stops the same debate from happening again.",
+          "\"We'll revisit later\" without a date or a trigger. Say when, or what would make you reopen it.",
+          "Editing an old record when the decision changes. Mark it superseded and write a new one, so the history stays honest.",
+          "Hiding uncertainty. A decision made with open questions is fine; say which questions, and who is chasing them.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Write the record the same day, while the reasons are still fresh. A short, accurate record written in ten minutes beats a polished one written from memory a week later.",
+      },
+      {
+        type: "link",
+        text: "Need a place to put your records? The free template has these fields ready, as an Excel file or a version for Notion and Google Docs.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template",
+      },
+      {
+        type: "link",
+        text: "For significant technical choices, architecture decision records add a deeper format. When to use each.",
+        href: "/blog/architecture-decision-records",
+        linkLabel: "Architecture decision records vs a team decision log",
+      },
+      {
+        type: "h2",
+        text: "Getting the first draft written for you",
+      },
+      {
+        type: "p",
+        text: "The hardest part of decision records is starting them at all, right after a meeting that ran over. For teams on Google Meet, Corteza writes the first draft. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures every decision as a short headline with a one-line why, the owner when it was stated, and the quote from the meeting it came from. You confirm or dismiss each one, and the record keeps a link back to the meeting where it was decided.",
+      },
+      {
+        type: "cta",
+        text: "Corteza drafts a decision record for every decision in your Google Meet meetings, with the evidence attached. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "cost-of-unproductive-meetings",
     title: "The Cost of Unproductive Meetings: How to Measure and Fix It",
     description:
