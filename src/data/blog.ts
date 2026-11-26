@@ -20,6 +20,181 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "ai-meeting-assistant-follow-through",
+    title: "AI Meeting Assistants Take Notes. Who Does the Follow-Through?",
+    description:
+      "AI meeting assistant follow-through: what note-takers do well, where follow-up breaks after the call, and what to look for in a tool that closes the loop.",
+    date: "2026-11-26",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "The AI notes from Thursday's planning meeting are excellent: a clean summary, nine action items, even who said what. By the following Thursday, nobody has opened them. Three of the nine items are done, two were quietly dropped, and four are waiting for someone to remember them. That's the gap in AI meeting assistant follow-through: the tools have become very good at writing down what happened, and the work that comes after the call still depends on people remembering.",
+      },
+      {
+        type: "p",
+        text: "This post covers what AI meeting assistants do well, where follow-through breaks, the three kinds of tools teams use after a meeting, and what to look for if you want the loop to actually close.",
+      },
+      {
+        type: "h2",
+        text: "What AI meeting assistants do well",
+      },
+      {
+        type: "p",
+        text: "Today's assistants come in a few forms: built into the meeting platform, like Gemini in Google Meet; separate note-takers that join the call as a participant; and recorder apps that run on your own computer. Whatever the form, most of them now do the same core job well:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A transcript, so nobody has to type during the meeting.",
+          "A summary that someone who missed the call can read in two minutes.",
+          "A list of suggested action items and decisions, often with names attached.",
+          "Search within a meeting, or across a library of past recordings.",
+        ],
+      },
+      {
+        type: "p",
+        text: "That's a real improvement. A few years ago, most internal meetings had no notes at all. For anyone who missed a call, or needs to check what was actually said, they're genuinely useful.",
+      },
+      {
+        type: "h2",
+        text: "Where follow-through breaks",
+      },
+      {
+        type: "p",
+        text: "The trouble starts once the meeting ends, and it's mostly structural:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Notes are per meeting. Each call produces its own document. Last week's action items stay in last week's notes.",
+          "Nobody confirms what was captured. An AI-suggested action item may have the wrong owner, or not be a commitment at all. Without a quick review, nobody trusts the list.",
+          "Nothing reaches the owner. An item in a document doesn't remind anyone. It waits to be read.",
+          "Nothing connects meetings. A question raised on Monday and answered on Thursday lives in two documents, and neither knows about the other.",
+          "Nothing gets closed. Done items, dropped items and decisions that replace older ones all look the same in a pile of notes.",
+        ],
+      },
+      {
+        type: "p",
+        text: "None of this is a flaw in the note-taking. It's a different job. Notes record a meeting; follow-through tracks what happens next, across many meetings and many people.",
+      },
+      {
+        type: "h2",
+        text: "Three kinds of tools after the meeting",
+      },
+      {
+        type: "ul",
+        items: [
+          "Note-takers capture what was said. Strong on transcripts and summaries; usually weak on what happens after the document is written.",
+          "Task trackers, like the project tools teams already use, hold the work once it's there. Strong on execution; they depend on someone copying items in, and they don't know what was decided or what's still an open question.",
+          "A follow-through layer sits between the two. It takes outcomes from meetings (decisions, action items, open questions, risks), confirms them, puts them in front of the right person, carries what's open into the next meeting, and closes things when they're done or replaced.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most teams have the first two and do the third by hand, when they do it at all. The manual version usually lives with one conscientious person, the team lead or a project manager, and it stops the week that person is on holiday.",
+      },
+      {
+        type: "h3",
+        text: "The same meeting, a week later, two ways",
+      },
+      {
+        type: "p",
+        text: "With notes only: the planning meeting's document sits in the organiser's Drive. On Wednesday, Ana asks in the team channel whether anyone sent the revised quote to the customer. Nobody is sure. Someone opens the notes, finds the item, sees it was assigned to Diego, and pings him. Diego had read it as Marta's. The quote goes out Thursday, a week late.",
+      },
+      {
+        type: "p",
+        text: "With follow-through: Diego confirmed the item as his on Thursday afternoon, it showed up in his morning email on Monday with its due date, and it was the first line of the open items when the planning meeting started again. It went out Tuesday. Same meeting, same notes; the difference is everything that happened after.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "AI meeting assistants solve the writing. Follow-through is a separate job: confirming what was agreed, getting each item to its owner, carrying open items into the next meeting, and closing things when they're done. Judge tools on that second job, not only on the quality of their notes.",
+      },
+      {
+        type: "h2",
+        text: "What to look for in follow-through",
+      },
+      {
+        type: "p",
+        text: "If you're evaluating tools, or deciding whether your current setup is enough, these are the questions that matter after the call:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does it separate decisions, action items, open questions and risks, or is everything one list?",
+          "Does each item show where it came from, ideally with the words that were said, so you can check it quickly?",
+          "Is there a quick review step to confirm or dismiss what the AI captured?",
+          "Does each owner see their own items without opening meeting notes, in an email, their calendar or their task list?",
+          "Before a recurring meeting, does it show what's still open from the previous sessions?",
+          "Can a new decision close the questions and action items it settles?",
+          "Can you ask across all meetings, like \"What did we decide about pricing?\", and get an answer with sources?",
+        ],
+      },
+      {
+        type: "h3",
+        text: "And the privacy questions",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does a bot join the call, or does it work from what your meeting platform already produces?",
+          "Are full transcripts stored, or only the outcomes?",
+          "Who can see what? Can colleagues see each other's meetings, and how are sensitive topics such as performance or pay handled?",
+          "Does it work with the meeting tool your team actually uses?",
+        ],
+      },
+      {
+        type: "h3",
+        text: "How to test a tool in two weeks",
+      },
+      {
+        type: "ol",
+        items: [
+          "Pick two recurring meetings with real decisions in them, not a demo.",
+          "After each meeting, check what the tool captured against what you remember. Count the corrections.",
+          "Watch whether owners hear about their items without being chased.",
+          "At the second session of each meeting, check whether last time's open items were in front of you before it started.",
+          "At the end, ask one question: did fewer things fall through than usual?",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Doing it without another tool",
+      },
+      {
+        type: "p",
+        text: "A lot of follow-through can be done with habits and the notes you already have. Close each meeting by reading back the action items with one owner and a date. Copy them the same day into the list where your team plans work. Start the next meeting with what's still open. It works, as long as someone does it every time.",
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "link",
+        text: "What Gemini's meeting notes capture, what they miss, and a routine to turn them into follow-through.",
+        href: "/blog/gemini-take-notes-for-me",
+        linkLabel: "Gemini Take notes for me: what it captures and what it misses",
+      },
+      {
+        type: "h2",
+        text: "Where Corteza fits",
+      },
+      {
+        type: "p",
+        text: "Corteza is a follow-through layer for teams on Google Meet. It reads each meeting's transcript or Gemini notes, with no bot in the call, and keeps the decisions, action items, open questions and risks, each with the meeting it came from and a short quote. You confirm or dismiss what it found. Each person gets a morning email with their due and overdue items and, with calendar access, what's still open from earlier sessions of today's meetings; action items can also go to Google Tasks so they show on Google Calendar. Typing \"We decided not to pursue X\" closes the questions and action items it settles once you confirm. Transcripts aren't stored, only the outcomes, and people matters stay visible only to the person whose meeting it was.",
+      },
+      {
+        type: "cta",
+        text: "Keep your notes. Let Corteza handle the follow-through from your Google Meet meetings. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "how-to-write-a-decision-record",
     title: "How to Write a Decision Record (With Examples)",
     description:

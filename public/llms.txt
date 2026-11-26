@@ -12,6 +12,7 @@ After a meeting, Corteza follows every decision and commitment until it's done. 
 
 ## Blog
 
+- [AI Meeting Assistants Take Notes. Who Does the Follow-Through?](/blog/ai-meeting-assistant-follow-through): What AI note-takers do well, where follow-up breaks after the call, and what to look for in a tool that closes the loop.
 - [How to Write a Decision Record (With Examples)](/blog/how-to-write-a-decision-record): The parts a good decision record needs, before-and-after examples, a template, and the writing mistakes to avoid.
 - [The Cost of Unproductive Meetings: How to Measure and Fix It](/blog/cost-of-unproductive-meetings): How to calculate what meetings cost, measure what they produce, and fix the ones without outcomes.
 - [Async Decision Making for Remote Teams: A Simple Process](/blog/async-decision-making-remote-teams): A six-step process for making decisions without a meeting: proposal, owner, feedback window, default, and a record.

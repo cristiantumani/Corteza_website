@@ -22,7 +22,7 @@ Format: `- [ ] Primary keyword — angle (search intent) · internal link ideas`
 - [x] async decision making remote teams — Making and recording decisions asynchronously without losing context (informational) → /blog/async-decision-making-remote-teams (2026-11-16)
 - [x] cost of unproductive meetings — Meetings without outcomes: how to measure and fix them (informational) → /blog/cost-of-unproductive-meetings (2026-11-19)
 - [x] how to write a decision record — How to write a good decision record, with examples (informational) · /decision-log-template → /blog/how-to-write-a-decision-record (2026-11-23)
-- [ ] ai meeting assistant follow-through — AI note-takers vs follow-through: what happens after the meeting ends (commercial; describe categories, not competitors' features)
+- [x] ai meeting assistant follow-through — AI note-takers vs follow-through: what happens after the meeting ends (commercial; describe categories, not competitors' features) → /blog/ai-meeting-assistant-follow-through (2026-11-26)
 - [ ] google workspace meeting productivity — Getting more out of Google Meet, Calendar and Gemini for team follow-through (informational)
 - [ ] onboarding new team members context — Giving new hires the context behind past decisions (informational) · /blog/the-hidden-cost-of-lost-context-when-engineers-join-your-team
 - [ ] gemini meeting notes decisions section — Google Meet's new Decisions section (Aligned / Needs further discussion / Disagreed / Shelved): how to use it and how to carry those statuses across meetings (informational; new feature since April 2026, little in-depth content yet) · /blog/google-meet-decision-log
