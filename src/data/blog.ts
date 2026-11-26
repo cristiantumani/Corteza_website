@@ -20,6 +20,536 @@ export interface BlogSection {
 
 export const posts: BlogPost[] = [
   {
+    slug: "ai-meeting-assistant-follow-through",
+    title: "AI Meeting Assistants Take Notes. Who Does the Follow-Through?",
+    description:
+      "AI meeting assistant follow-through: what note-takers do well, where follow-up breaks after the call, and what to look for in a tool that closes the loop.",
+    date: "2026-11-26",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "The AI notes from Thursday's planning meeting are excellent: a clean summary, nine action items, even who said what. By the following Thursday, nobody has opened them. Three of the nine items are done, two were quietly dropped, and four are waiting for someone to remember them. That's the gap in AI meeting assistant follow-through: the tools have become very good at writing down what happened, and the work that comes after the call still depends on people remembering.",
+      },
+      {
+        type: "p",
+        text: "This post covers what AI meeting assistants do well, where follow-through breaks, the three kinds of tools teams use after a meeting, and what to look for if you want the loop to actually close.",
+      },
+      {
+        type: "h2",
+        text: "What AI meeting assistants do well",
+      },
+      {
+        type: "p",
+        text: "Today's assistants come in a few forms: built into the meeting platform, like Gemini in Google Meet; separate note-takers that join the call as a participant; and recorder apps that run on your own computer. Whatever the form, most of them now do the same core job well:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A transcript, so nobody has to type during the meeting.",
+          "A summary that someone who missed the call can read in two minutes.",
+          "A list of suggested action items and decisions, often with names attached.",
+          "Search within a meeting, or across a library of past recordings.",
+        ],
+      },
+      {
+        type: "p",
+        text: "That's a real improvement. A few years ago, most internal meetings had no notes at all. For anyone who missed a call, or needs to check what was actually said, they're genuinely useful.",
+      },
+      {
+        type: "h2",
+        text: "Where follow-through breaks",
+      },
+      {
+        type: "p",
+        text: "The trouble starts once the meeting ends, and it's mostly structural:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Notes are per meeting. Each call produces its own document. Last week's action items stay in last week's notes.",
+          "Nobody confirms what was captured. An AI-suggested action item may have the wrong owner, or not be a commitment at all. Without a quick review, nobody trusts the list.",
+          "Nothing reaches the owner. An item in a document doesn't remind anyone. It waits to be read.",
+          "Nothing connects meetings. A question raised on Monday and answered on Thursday lives in two documents, and neither knows about the other.",
+          "Nothing gets closed. Done items, dropped items and decisions that replace older ones all look the same in a pile of notes.",
+        ],
+      },
+      {
+        type: "p",
+        text: "None of this is a flaw in the note-taking. It's a different job. Notes record a meeting; follow-through tracks what happens next, across many meetings and many people.",
+      },
+      {
+        type: "h2",
+        text: "Three kinds of tools after the meeting",
+      },
+      {
+        type: "ul",
+        items: [
+          "Note-takers capture what was said. Strong on transcripts and summaries; usually weak on what happens after the document is written.",
+          "Task trackers, like the project tools teams already use, hold the work once it's there. Strong on execution; they depend on someone copying items in, and they don't know what was decided or what's still an open question.",
+          "A follow-through layer sits between the two. It takes outcomes from meetings (decisions, action items, open questions, risks), confirms them, puts them in front of the right person, carries what's open into the next meeting, and closes things when they're done or replaced.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most teams have the first two and do the third by hand, when they do it at all. The manual version usually lives with one conscientious person, the team lead or a project manager, and it stops the week that person is on holiday.",
+      },
+      {
+        type: "h3",
+        text: "The same meeting, a week later, two ways",
+      },
+      {
+        type: "p",
+        text: "With notes only: the planning meeting's document sits in the organiser's Drive. On Wednesday, Ana asks in the team channel whether anyone sent the revised quote to the customer. Nobody is sure. Someone opens the notes, finds the item, sees it was assigned to Diego, and pings him. Diego had read it as Marta's. The quote goes out Thursday, a week late.",
+      },
+      {
+        type: "p",
+        text: "With follow-through: Diego confirmed the item as his on Thursday afternoon, it showed up in his morning email on Monday with its due date, and it was the first line of the open items when the planning meeting started again. It went out Tuesday. Same meeting, same notes; the difference is everything that happened after.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "AI meeting assistants solve the writing. Follow-through is a separate job: confirming what was agreed, getting each item to its owner, carrying open items into the next meeting, and closing things when they're done. Judge tools on that second job, not only on the quality of their notes.",
+      },
+      {
+        type: "h2",
+        text: "What to look for in follow-through",
+      },
+      {
+        type: "p",
+        text: "If you're evaluating tools, or deciding whether your current setup is enough, these are the questions that matter after the call:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does it separate decisions, action items, open questions and risks, or is everything one list?",
+          "Does each item show where it came from, ideally with the words that were said, so you can check it quickly?",
+          "Is there a quick review step to confirm or dismiss what the AI captured?",
+          "Does each owner see their own items without opening meeting notes, in an email, their calendar or their task list?",
+          "Before a recurring meeting, does it show what's still open from the previous sessions?",
+          "Can a new decision close the questions and action items it settles?",
+          "Can you ask across all meetings, like \"What did we decide about pricing?\", and get an answer with sources?",
+        ],
+      },
+      {
+        type: "h3",
+        text: "And the privacy questions",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does a bot join the call, or does it work from what your meeting platform already produces?",
+          "Are full transcripts stored, or only the outcomes?",
+          "Who can see what? Can colleagues see each other's meetings, and how are sensitive topics such as performance or pay handled?",
+          "Does it work with the meeting tool your team actually uses?",
+        ],
+      },
+      {
+        type: "h3",
+        text: "How to test a tool in two weeks",
+      },
+      {
+        type: "ol",
+        items: [
+          "Pick two recurring meetings with real decisions in them, not a demo.",
+          "After each meeting, check what the tool captured against what you remember. Count the corrections.",
+          "Watch whether owners hear about their items without being chased.",
+          "At the second session of each meeting, check whether last time's open items were in front of you before it started.",
+          "At the end, ask one question: did fewer things fall through than usual?",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Doing it without another tool",
+      },
+      {
+        type: "p",
+        text: "A lot of follow-through can be done with habits and the notes you already have. Close each meeting by reading back the action items with one owner and a date. Copy them the same day into the list where your team plans work. Start the next meeting with what's still open. It works, as long as someone does it every time.",
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "link",
+        text: "What Gemini's meeting notes capture, what they miss, and a routine to turn them into follow-through.",
+        href: "/blog/gemini-take-notes-for-me",
+        linkLabel: "Gemini Take notes for me: what it captures and what it misses",
+      },
+      {
+        type: "h2",
+        text: "Where Corteza fits",
+      },
+      {
+        type: "p",
+        text: "Corteza is a follow-through layer for teams on Google Meet. It reads each meeting's transcript or Gemini notes, with no bot in the call, and keeps the decisions, action items, open questions and risks, each with the meeting it came from and a short quote. You confirm or dismiss what it found. Each person gets a morning email with their due and overdue items and, with calendar access, what's still open from earlier sessions of today's meetings; action items can also go to Google Tasks so they show on Google Calendar. Typing \"We decided not to pursue X\" closes the questions and action items it settles once you confirm. Transcripts aren't stored, only the outcomes, and people matters stay visible only to the person whose meeting it was.",
+      },
+      {
+        type: "cta",
+        text: "Keep your notes. Let Corteza handle the follow-through from your Google Meet meetings. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-write-a-decision-record",
+    title: "How to Write a Decision Record (With Examples)",
+    description:
+      "How to write a decision record people understand months later: the parts it needs, before-and-after examples, and the mistakes that make records useless.",
+    date: "2026-11-23",
+    readTime: "6 min read",
+    category: "Processes & Tools",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Eight months later, someone finds the entry in the team's decision log: \"Pricing: discussed at length, going with option B.\" Option B of what? Why? Who decided, and does it still hold? The record exists, and it answers none of the questions it was written for. Knowing how to write a decision record is a small skill, but it's the difference between a log people trust and one they stop opening.",
+      },
+      {
+        type: "p",
+        text: "This guide covers what a good decision record contains, shows before-and-after examples for three kinds of decisions, and lists the writing habits that make records useful months later.",
+      },
+      {
+        type: "h2",
+        text: "The test a decision record has to pass",
+      },
+      {
+        type: "p",
+        text: "A decision record is written for a reader who wasn't in the room: a new hire, someone from another team, or you in six months. A good one lets that reader answer five questions in under a minute:",
+      },
+      {
+        type: "ul",
+        items: [
+          "What exactly was decided?",
+          "Why?",
+          "What else was considered, and why wasn't it chosen?",
+          "Who owns it, and when was it decided?",
+          "Is it still valid?",
+        ],
+      },
+      {
+        type: "p",
+        text: "If any of those needs a conversation with someone who was there, the record isn't finished. The question most records skip is the last one: almost none of them say how a reader would know the decision has since been replaced.",
+      },
+      {
+        type: "h2",
+        text: "The parts of a good decision record",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title: the decision itself, as a short phrase. \"Annual plans get a 15% discount\", not \"Pricing\".",
+          "Context: one to three sentences on why this needed deciding now.",
+          "Decision: one sentence, specific enough to act on, including its scope and any exceptions.",
+          "Reasons: the two or three that actually carried the decision.",
+          "Alternatives: what else was on the table, and why each lost.",
+          "Owner and date: one name, and when it was decided.",
+          "Status: proposed, active, superseded (by which record) or reversed.",
+          "Source: a link to the meeting, document or thread where it happened.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For bigger decisions, two optional fields earn their place: consequences (what changes, what gets harder) and a review date for decisions you already expect to revisit, like pricing experiments or temporary policies.",
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Write every decision record for someone who wasn't there. State the decision as one specific sentence, keep the two or three reasons that carried it, record the alternatives you rejected, and name an owner. If a reader has to ask someone what it means, it isn't done.",
+      },
+      {
+        type: "h2",
+        text: "Decision record examples: before and after",
+      },
+      {
+        type: "h3",
+        text: "A product decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Pricing: discussed at length, going with option B.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"Annual plans get a 15% discount, new customers only, from January 1. Context: churn on monthly plans is our biggest revenue risk going into Q1. Reasons: annual commitments reduce churn, and 15% matches what customers already ask for in negotiations. Rejected: 20% (too much margin for the expected uplift), discounts for existing customers (revisit in Q2 once we see the uptake). Owner: Laura. Decided: leadership meeting, November 12. Status: active.\"",
+      },
+      {
+        type: "h3",
+        text: "A process decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"On-call: agreed to change the rotation.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"On-call rotates weekly instead of daily, starting with the sprint of December 1. Context: daily handovers caused two missed incidents last month. Reasons: fewer handovers, and a full week gives the person on call time to follow up on what they see. Rejected: keeping daily rotation with a handover checklist (tried in October, didn't stick). Owner: Diego. Decided: engineering sync, November 18. Status: active, review after six weeks.\"",
+      },
+      {
+        type: "h3",
+        text: "A tool decision",
+      },
+      {
+        type: "p",
+        text: "Before: \"Analytics: we'll keep the current tool for now.\"",
+      },
+      {
+        type: "p",
+        text: "After: \"We stay on our current analytics tool until the end of Q1, and don't start a migration this quarter. Context: the contract renews in April, and two alternatives were evaluated. Reasons: neither alternative covers the funnel reports sales relies on, and a migration during the Q1 launch is too risky. Rejected: switching now (cost and risk), building our own reports (no capacity). Owner: Marta. Decided: product review, November 20. Status: active; decide renewal by March 1.\"",
+      },
+      {
+        type: "p",
+        text: "Notice what the rewrites have in common. Each one names its scope, its date and its owner. Each one keeps the rejected options. And each one is still under 120 words.",
+      },
+      {
+        type: "h3",
+        text: "A decision record template to copy",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decision: [what was decided, in one sentence, with scope and start date]",
+          "Context: [why this needed deciding now, in one to three sentences]",
+          "Reasons: [the two or three that carried it]",
+          "Rejected: [each alternative, and why it lost]",
+          "Owner: [one name] · Decided: [meeting or document, date]",
+          "Status: [proposed / active / superseded by … / reversed] · Review: [date or trigger, if any]",
+        ],
+      },
+      {
+        type: "p",
+        text: "Who writes it matters less than when. In most teams it works best if whoever ran the meeting drafts it the same day and the decision owner checks it. The owner knows the reasons best; the person running the meeting knows what was actually said.",
+      },
+      {
+        type: "h2",
+        text: "Writing habits that make records useful",
+      },
+      {
+        type: "ul",
+        items: [
+          "Write the decision as something someone could act on. \"Going with option B\" can't be acted on; \"Annual plans get a 15% discount from January 1\" can.",
+          "Name the scope and the exceptions. Most later confusion comes from scope: new customers or all of them, this team or every team, this quarter or for good.",
+          "Use numbers and dates instead of adjectives. \"Soon\" and \"significant\" age badly.",
+          "Record the losing argument fairly. If someone reading it later thinks \"they never considered X\", the record has failed, even if X was discussed for an hour.",
+          "Separate what you knew from what you assumed. \"We expect uptake to be at least 10%\" tells a future reader what to check.",
+          "Keep it short. If a record needs more than 200 words, the details belong in a linked document.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common mistakes",
+      },
+      {
+        type: "ul",
+        items: [
+          "Summarising the discussion instead of stating the decision. Records are not minutes.",
+          "Leaving out the alternatives. This is the part that stops the same debate from happening again.",
+          "\"We'll revisit later\" without a date or a trigger. Say when, or what would make you reopen it.",
+          "Editing an old record when the decision changes. Mark it superseded and write a new one, so the history stays honest.",
+          "Hiding uncertainty. A decision made with open questions is fine; say which questions, and who is chasing them.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Write the record the same day, while the reasons are still fresh. A short, accurate record written in ten minutes beats a polished one written from memory a week later.",
+      },
+      {
+        type: "link",
+        text: "Need a place to put your records? The free template has these fields ready, as an Excel file or a version for Notion and Google Docs.",
+        href: "/decision-log-template",
+        linkLabel: "Get the free decision log template",
+      },
+      {
+        type: "link",
+        text: "For significant technical choices, architecture decision records add a deeper format. When to use each.",
+        href: "/blog/architecture-decision-records",
+        linkLabel: "Architecture decision records vs a team decision log",
+      },
+      {
+        type: "h2",
+        text: "Getting the first draft written for you",
+      },
+      {
+        type: "p",
+        text: "The hardest part of decision records is starting them at all, right after a meeting that ran over. For teams on Google Meet, Corteza writes the first draft. It reads each meeting's transcript or Gemini notes, with no bot in the call, and captures every decision as a short headline with a one-line why, the owner when it was stated, and the quote from the meeting it came from. You confirm or dismiss each one, and the record keeps a link back to the meeting where it was decided.",
+      },
+      {
+        type: "cta",
+        text: "Corteza drafts a decision record for every decision in your Google Meet meetings, with the evidence attached. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
+    slug: "cost-of-unproductive-meetings",
+    title: "The Cost of Unproductive Meetings: How to Measure and Fix It",
+    description:
+      "The cost of unproductive meetings goes beyond salaries. How to calculate what your meetings cost, measure what they produce, and fix the ones without outcomes.",
+    date: "2026-11-19",
+    readTime: "6 min read",
+    category: "Team Productivity",
+    author: "Cristian Tumani",
+    content: [
+      {
+        type: "p",
+        text: "Every Tuesday, eight people spend an hour in the product sync. Afterwards, everyone agrees it was a good discussion. But if you ask what changed because of it, what was decided, who is doing what by when, the answer is often: nothing in particular. The cost of unproductive meetings isn't the hour itself. It's an hour of eight people's time that produced no outcome anyone can point to.",
+      },
+      {
+        type: "p",
+        text: "Headline numbers about meeting waste are everywhere, and they vary wildly. This post skips them. Instead, it shows how to calculate what your own meetings cost, how to measure what they produce, and what to change in the ones that produce nothing.",
+      },
+      {
+        type: "h2",
+        text: "How to calculate the cost of a meeting",
+      },
+      {
+        type: "p",
+        text: "The direct cost is simple arithmetic: the number of attendees, times their average hourly cost, times the meeting's length in hours. To get an hourly cost, divide an annual salary by the hours actually worked in a year, roughly 1,700 to 2,000 depending on the country, and add something for employer costs if you want to be thorough.",
+      },
+      {
+        type: "p",
+        text: "An example with round numbers: eight people at an average of €60 an hour, in a one-hour weekly meeting, cost €480 a meeting. Over 48 working weeks, that's about €23,000 a year for one recurring meeting. Most teams have several.",
+      },
+      {
+        type: "h3",
+        text: "The costs that don't show up in the formula",
+      },
+      {
+        type: "ul",
+        items: [
+          "Preparation: the time people spend getting ready, or should spend and don't.",
+          "Context switching: a meeting in the middle of the morning breaks the longest block of focused time most people get.",
+          "Waiting: work that pauses until \"we discuss it on Tuesday\", sometimes for a week.",
+          "Rework: decisions that weren't clear get made again, or implemented two different ways.",
+          "Lost follow-through: action items nobody owns, and open questions that resurface a month later as blockers.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The last two are usually the largest, and they're invisible in any calendar report. A meeting that ends without clear outcomes doesn't just waste its own hour; it creates more meetings.",
+      },
+      {
+        type: "h2",
+        text: "The real problem: meetings without outcomes",
+      },
+      {
+        type: "p",
+        text: "Expensive isn't the same as unproductive. A two-hour planning session with ten people is expensive, and can be worth every minute if it settles the quarter. A fifteen-minute call that ends with \"let's sync again next week\" is cheap, and still a waste.",
+      },
+      {
+        type: "p",
+        text: "So the useful question isn't \"how much do our meetings cost?\" but \"what do they produce?\" A meeting produces an outcome when it leaves behind at least one of these:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A decision, stated clearly, with an owner.",
+          "An action item with one owner and a date.",
+          "An open question answered, or a risk assessed and handled.",
+          "A deliberate \"no change\": the group looked at something and agreed to leave it as it is.",
+        ],
+      },
+      {
+        type: "callout",
+        label: "The key takeaway",
+        text: "Measure meetings by what they produce, not only by what they cost. A meeting that ends with clear decisions and owned action items is usually worth its price. A meeting that ends with \"good discussion\" is the expensive kind, however short it was.",
+      },
+      {
+        type: "h2",
+        text: "How to measure meeting productivity without a dashboard",
+      },
+      {
+        type: "p",
+        text: "You don't need software for a first picture. Four weeks and a spreadsheet are enough:",
+      },
+      {
+        type: "ol",
+        items: [
+          "List your recurring meetings and calculate the cost of each with the formula above.",
+          "For four weeks, write down after each meeting how many decisions, action items and answered questions it produced. Two minutes per meeting.",
+          "Divide cost by outcomes. A meeting that costs €480 and produces four outcomes costs €120 per outcome; one that produces none has an infinite cost per outcome, which is a clear enough signal.",
+          "Ask one question after each meeting: \"Will you do anything differently this week because of this meeting?\" Count the yeses.",
+          "Check follow-through: what share of last week's action items were done by this week? Outcomes that never happen don't count.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The numbers will be rough, and that's fine. The point is to compare meetings with each other. Within a month, most teams find one or two meetings that produce almost nothing, and one or two that carry most of the real decisions.",
+      },
+      {
+        type: "h3",
+        text: "What a month of tracking might show",
+      },
+      {
+        type: "p",
+        text: "Take a team of eight with three recurring meetings. The Monday planning meeting (an hour, all eight people) produces three or four decisions and a handful of owned action items every week. The Tuesday product sync (an hour, eight people) produces a decision every other week, and most of its action items have no date. The Thursday stand-up (fifteen minutes, five people) produces almost nothing that isn't already in the tracker.",
+      },
+      {
+        type: "p",
+        text: "The conclusion isn't \"cancel the expensive one\". Planning costs the most and is clearly worth it. The sync is the problem: it costs as much as planning and produces a fraction of the outcomes. The stand-up is cheap, but could be a written update. Two changes, turning the sync into a decisions-only meeting with an agenda and making the stand-up async, give the team back hours a week without losing anything that mattered.",
+      },
+      {
+        type: "h2",
+        text: "How to fix unproductive meetings",
+      },
+      {
+        type: "p",
+        text: "Once you know which meetings aren't producing outcomes, start with the one with the worst cost per outcome. Change one or two things, keep tracking for another two weeks, and check whether the outcomes went up. The fixes themselves are mostly simple:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Replace status rounds with written updates. If a meeting is mostly people reporting what they did, it can be a short written note read before the meeting, or instead of it.",
+          "Put the expected outcome in the invite. \"We'll decide the Q1 launch date\" tells people why they're there, and tells everyone afterwards whether it worked.",
+          "Invite fewer people. Those who only need to know the result can get it in writing.",
+          "Shorten the default. Twenty-five or fifty minutes instead of thirty or sixty leaves room between meetings and keeps discussions tighter.",
+          "Start with what's still open from last time. It turns a series of meetings into a sequence that makes progress.",
+          "End with a read-back of decisions and action items, each with one owner and a date.",
+          "Cancel when there's nothing to decide. A recurring meeting with an empty agenda is an invitation to fill an hour.",
+        ],
+      },
+      {
+        type: "link",
+        text: "A weekly meeting format that starts with what's still open and spends most of its time on decisions.",
+        href: "/blog/weekly-team-meeting-agenda",
+        linkLabel: "A weekly team meeting agenda that starts with what's open",
+      },
+      {
+        type: "h2",
+        text: "What not to do",
+      },
+      {
+        type: "ul",
+        items: [
+          "Don't measure only time. Cutting meeting hours without looking at outcomes can remove the meetings that actually move work forward.",
+          "Don't ban meetings wholesale. \"No-meeting\" policies tend to push decisions into long threads, which have their own costs.",
+          "Don't turn it into a scorecard for people. The goal is to fix meetings, not to judge who runs them.",
+          "Don't ignore follow-through. A meeting full of decisions that nobody acts on is just a more convincing version of an unproductive one.",
+        ],
+      },
+      {
+        type: "link",
+        text: "Why action items from meetings get forgotten, and a simple system to close them.",
+        href: "/blog/meeting-action-items-not-getting-done",
+        linkLabel: "Why meeting action items don't get done",
+      },
+      {
+        type: "h2",
+        text: "Seeing what each meeting produced",
+      },
+      {
+        type: "p",
+        text: "The step most teams skip is the second one: writing down what each meeting produced. For teams on Google Meet, Corteza does that part. It captures the decisions, action items, open questions and risks from each meeting's transcript or Gemini notes, with no bot in the call, and its Meetings view lists each of your meetings from the last 90 days with what came out of it. A meeting that keeps showing up with nothing next to it is the first one to fix.",
+      },
+      {
+        type: "cta",
+        text: "Corteza shows what each of your Google Meet meetings actually produced, and keeps track of it afterwards. Request early access to the private beta, free during the beta.",
+      },
+    ],
+  },
+  {
     slug: "async-decision-making-remote-teams",
     title: "Async Decision Making for Remote Teams: A Simple Process",
     description:
